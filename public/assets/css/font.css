@@ -1,0 +1,14 @@
+.text-bold {
+    font-weight: 700;
+}
+.text-normal {
+    font-weight: normal;
+}
+.text-semibold {
+    font-weight: 600;
+}
+
+.rdn .text-smaller {
+    font-size: 6.2pt;
+}
+
