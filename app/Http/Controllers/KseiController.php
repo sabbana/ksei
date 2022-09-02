@@ -25,7 +25,6 @@ class KseiController extends Controller
         $port = config('ksei.outgoingPort');
         $timeout = config('ksei.timeout');
         $suffix = config('ksei.suffix');
-        dd($suffix);
         try {
             $openSocket = fsockopen($host, $port, $errnum, $errstr, $timeout) ;
             if (!is_resource($openSocket)) {
