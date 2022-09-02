@@ -26,8 +26,8 @@ class KseiController extends Controller
         $timeout = config('ksei.timeout');
         $suffix = config('ksei.suffix');
         try {
-            $openSocket = fsockopen($host, $port, $errnum, $errstr, $timeout) ;
-            if (!is_resource($openSocket)) {
+            $sk = fsockopen($host, $port, $errnum, $errstr, $timeout);
+            if (!is_resource($sk)) {
                 return response()->json(response_meta(400, false, 'Connection fail: '.$errnum.' => '.$errstr));
             } else {
                 $message = $stringMessage.$suffix;
@@ -41,7 +41,7 @@ class KseiController extends Controller
                 }
                 socket_close($socket);
             }
-            return response()->json(response_detail($stringMessage, 'Success'));
+            return response()->json(response_detail($message, 'Success'));
         } catch (\Exception $e) {
             return response()->json(response_meta(400, false, 'Connection fail: '.$e->getMessage()));
         }
