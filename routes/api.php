@@ -22,5 +22,6 @@ Route::get('generate-pdf-fpre', 'GeneratePdfController@fpre');
 Route::get('generate-pdf-rdn', 'GeneratePdfController@rdn');
 
 Route::group(['prefix'=>'outgoing'], function() {
+    Route::post('/logs', 'KseiController@index');
     Route::post('/static-data-investor', 'KseiController@outgoingMessage');
 });
