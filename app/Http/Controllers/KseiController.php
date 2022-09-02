@@ -43,7 +43,7 @@ class KseiController extends Controller
             }
             return response()->json(response_detail($stringMessage, 'Success'));
         } catch (\Exception $e) {
-            return response()->json(response_meta(400, false, 'Connection fail: '.$e->getMessage().'\n'.$stringMessage));
+            return response()->json(response_meta(400, false, 'Connection fail: '.$e->getMessage()));
         }
     }
 
