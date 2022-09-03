@@ -50,8 +50,14 @@ class KseiController extends Controller
                     return response()->json(response_meta(400, false, 'Could not send data: '.$errorcode.' => '.$errormsg));
                 }
                 socket_close($socket);
+                // create file
+                $filename = date('YmdHis');
+                if (!empty($payload)) {
+                    $filename = $payload[0]['value'];
+                }
+                $this->createFile($stringMessage, $filename);
             }
-            return response()->json(response_detail(['messageXML' => $message], 'Success'));
+            return response()->json(response_meta(200, 'Success'));
         } catch (\Exception $e) {
             return response()->json(response_meta(400, false, 'Connection failed: '.$e->getMessage()));
         }
@@ -68,13 +74,23 @@ class KseiController extends Controller
         $messageData = '';
         if (!empty($payload)) {
             foreach ($payload as $item) {
-                if ($item['value']) { 
-                    $messageData .= '<Field name="'.trim($item['field']).'">'.trim($item['value']).'</Field>'; 
-                } else {
-                    $messageData .= '<Field name="'.trim($item['field']).'/">'; 
-                }
+                if ($item['value']) { $messageData .= '<Field name="'.trim($item['field']).'">'.trim($item['value']).'</Field>'; } 
+                else { $messageData .= '<Field name="'.trim($item['field']).'"/>'; }
             }
         }
         return '<Message name="'.$name.'" type="'.$type.'"><Record name="data">'.$messageData.'</Record></Message>';
     }
+
+
+    /**
+     * Create file txt message sent
+     * 
+     */
+
+     private function createFile($message, $filename) {
+        $fileLocation = storage_path('app/public/xml/'.$filename.'.xml');
+        $myfile = fopen($fileLocation, "w");
+        fwrite($myfile, $message);
+        fclose($myfile);
+     }
 }
