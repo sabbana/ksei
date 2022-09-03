@@ -54,7 +54,7 @@ class KseiController extends Controller
      *      name, KSEI method
      *      type, message type default OutgoingMessage
      */
-    private function generateXMLMessage($payload, $name, $type = 'OutgoingMessage') {
+    private function generateXMLMessage($payload, $name, $type) {
         $messageData = '';
         if (!empty($payload)) {
             foreach ($payload as $item) {

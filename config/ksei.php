@@ -6,5 +6,5 @@ return [
     'incomingIp' => '127.0.0.1',
     'incomingPort' => 12000,
     'suffix' => sprintf("%c%c%c%c", 255, 254, 253, 252),
-    
+    'timeout' => 30
 ];
