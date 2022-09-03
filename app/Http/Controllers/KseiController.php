@@ -34,12 +34,12 @@ class KseiController extends Controller
         $port = config('ksei.outgoingPort');
         $timeout = config('ksei.timeout');
         $suffix = config('ksei.suffix');
+        $message = $stringMessage.$suffix;
         try {
             $sk = fsockopen($host, $port, $errnum, $errstr, $timeout);
             if (!is_resource($sk)) {
                 return response()->json(response_meta(400, false, 'Connection fail: '.$errnum.' => '.$errstr));
             } else {
-                $message = $stringMessage.$suffix;
                 $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
                 $conn = socket_connect($socket, $host, $port);
                 $sending = socket_send ( $socket , $message, strlen($message) , 0);
