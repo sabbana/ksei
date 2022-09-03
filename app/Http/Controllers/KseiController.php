@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Validator;
 
 class KseiController extends Controller
 {
@@ -20,6 +21,14 @@ class KseiController extends Controller
         $payload = $request->data;
         $method = $request->function;
         $type = $request->type;
+        $validator = Validator::make($request->all(), [
+            'function' => 'required',
+            'type' => 'required|in:incomingMessage,OutgoingMessage',
+            'data' => 'required|array',
+		]);
+		if ($validator->fails()) {
+            return response()->json(response_meta(400, false, "Invalid parameter", $validator->messages()));
+		}
         $stringMessage = $this->generateXMLMessage($payload, $method, $type);
         $host = config('ksei.outgoingIp');
         $port = config('ksei.outgoingPort');
@@ -42,7 +51,7 @@ class KseiController extends Controller
                 }
                 socket_close($socket);
             }
-            return response()->json(response_detail($message, 'Success'));
+            return response()->json(response_detail(['messageXML' => $message], 'Success'));
         } catch (\Exception $e) {
             return response()->json(response_meta(400, false, 'Connection failed: '.$e->getMessage()));
         }

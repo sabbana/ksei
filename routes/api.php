@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\ValidateToken;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Route::get('generate-pdf-fpre', 'GeneratePdfController@fpre');
 Route::get('generate-pdf-rdn', 'GeneratePdfController@rdn');
 
 Route::group(['prefix'=>'outgoing'], function() {
-    Route::get('/logs', 'KseiController@index');
-    Route::post('/static-data-investor', 'KseiController@outgoingMessage');
+    Route::group(['middleware'=> ValidateToken::class], function() {
+        Route::post('/', 'KseiController@outgoingMessage');
+        Route::get('/logs', 'KseiController@index');
+    });
 });
