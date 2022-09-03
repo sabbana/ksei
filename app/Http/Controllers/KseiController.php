@@ -35,6 +35,13 @@ class KseiController extends Controller
         $timeout = config('ksei.timeout');
         $suffix = config('ksei.suffix');
         $message = $stringMessage.$suffix;
+        
+        // generate xml file
+        $filename = date('YmdHis');
+        if (!empty($payload)) {
+            $filename = $payload[0]['value'];
+        }
+        $this->createFile($stringMessage, $filename);
         try {
             $sk = fsockopen($host, $port, $errnum, $errstr, $timeout);
             if (!is_resource($sk)) {
@@ -50,12 +57,6 @@ class KseiController extends Controller
                     return response()->json(response_meta(400, false, 'Could not send data: '.$errorcode.' => '.$errormsg));
                 }
                 socket_close($socket);
-                // create file
-                $filename = date('YmdHis');
-                if (!empty($payload)) {
-                    $filename = $payload[0]['value'];
-                }
-                $this->createFile($stringMessage, $filename);
             }
             return response()->json(response_meta(200, 'Success'));
         } catch (\Exception $e) {
@@ -84,7 +85,7 @@ class KseiController extends Controller
 
     /**
      * Create file txt message sent
-     * 
+     * params: messageStringXml, filename
      */
 
      private function createFile($message, $filename) {
