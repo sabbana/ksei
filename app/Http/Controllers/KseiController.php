@@ -31,19 +31,20 @@ class KseiController extends Controller
                 return response()->json(response_meta(400, false, 'Connection fail: '.$errnum.' => '.$errstr));
             } else {
                 $message = $stringMessage.$suffix;
-                $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP) or die("Could not create socket\n");
-                $conn = socket_connect($socket, $host, $port) or die("Could not connect toserver\n");
+                $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+                $conn = socket_connect($socket, $host, $port);
                 $sending = socket_send ( $socket , $message, strlen($message) , 0);
                 if(!$sending) {
                     $errorcode = socket_last_error();
                     $errormsg = socket_strerror($errorcode);
+                    socket_close($socket);
                     return response()->json(response_meta(400, false, 'Could not send data: '.$errorcode.' => '.$errormsg));
                 }
                 socket_close($socket);
             }
             return response()->json(response_detail($message, 'Success'));
         } catch (\Exception $e) {
-            return response()->json(response_meta(400, false, 'Connection fail: '.$e->getMessage()));
+            return response()->json(response_meta(400, false, 'Connection failed: '.$e->getMessage()));
         }
     }
 
