@@ -41,8 +41,8 @@ class KseiController extends Controller
         if (!empty($payload)) {
             $filename = $payload[0]['value'];
         }
-        $this->createFile($stringMessage, $filename);
         try {
+            $xmlFile = $this->createFile($stringMessage, $filename);
             $sk = fsockopen($host, $port, $errnum, $errstr, $timeout);
             if (!is_resource($sk)) {
                 return response()->json(response_meta(400, false, 'Connection fail: '.$errnum.' => '.$errstr));
@@ -58,7 +58,7 @@ class KseiController extends Controller
                 }
                 socket_close($socket);
             }
-            return response()->json(response_meta(200, 'Success'));
+            return response()->json(response_detail(['sent_message_location' => $xmlFile], 'Success'));
         } catch (\Exception $e) {
             return response()->json(response_meta(400, false, 'Connection failed: '.$e->getMessage()));
         }
@@ -93,5 +93,6 @@ class KseiController extends Controller
         $myfile = fopen($fileLocation, "w");
         fwrite($myfile, $message);
         fclose($myfile);
+        return $fileLocation;
      }
 }
