@@ -37,9 +37,9 @@ class KseiController extends Controller
         $message = $stringMessage.$suffix;
         
         // generate xml file
-        $filename = $type.'_'.date('YmdHis');
+        $filename = $method.'_'.date('YmdHis');
         if (!empty($payload)) {
-            $filename = $type.'_'.$payload[0]['value'];
+            $filename = $method.'_'.$payload[0]['value'];
         }
         try {
             $xmlFile = $this->createFile($stringMessage, $filename);
