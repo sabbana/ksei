@@ -28,3 +28,10 @@ Route::group(['prefix'=>'outgoing'], function() {
         Route::get('/logs', 'KseiController@index');
     });
 });
+
+Route::group(['prefix'=>'incoming'], function() {
+    Route::group(['middleware'=> ValidateToken::class], function() {
+        Route::post('/', 'KseiController@readIncomingMessage');
+        Route::get('/logs', 'KseiController@index');
+    });
+});
