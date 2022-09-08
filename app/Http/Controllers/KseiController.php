@@ -32,8 +32,12 @@ class KseiController extends Controller
 		if ($validator->fails()) {
 			return response()->json(response_meta(400, false, "Invalid parameter", $validator->messages()));
 		}
+		$sdiExt = 'sdi';
+		if ($method == 'StaticDataInvestorAccountCreation') {
+			$sdiExt = 'sdia';
+		}
 		$stringMessage = $this->generateXMLMessage($payload, $method, $type);
-		$stringMessageSdi = $this->generateXMLMessage($payload, $method, $type, 'sdi');
+		$stringMessageSdi = $this->generateXMLMessage($payload, $method, $type, $sdiExt);
 		$host = config('ksei.outgoingIp');
 		$port = config('ksei.outgoingPort');
 		$timeout = config('ksei.timeout');
