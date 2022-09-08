@@ -55,7 +55,6 @@ class KseiController extends Controller
 			'method_ksei' => $method,
 			'json_request' => json_encode($request->all()),
 			'xml_request' => $stringMessage,
-			'response' => null, 
 			'status' => 1,
 			'no_cif' => $noCiff,
 			'external_reference' => $extReff,
