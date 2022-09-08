@@ -62,7 +62,7 @@ class KseiController extends Controller
 		KseiOutgoingLogs::create($dataLogs);
 		try {
 			$xmlFile = $this->createFile($stringMessage, $filename);
-			$sdiFile = $this->createFile($stringMessageSdi, $filenameSdi, 'sdi');
+			$sdiFile = $this->createFile($stringMessageSdi, $filenameSdi, $sdiExt);
 			$sk = fsockopen($host, $port, $errnum, $errstr, $timeout);
 			if (!is_resource($sk)) {
 				return response()->json(response_meta(400, false, 'Connection fail: '.$errnum.' => '.$errstr));
