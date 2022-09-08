@@ -33,17 +33,19 @@ class KseiController extends Controller
 			return response()->json(response_meta(400, false, "Invalid parameter", $validator->messages()));
 		}
 		$stringMessage = $this->generateXMLMessage($payload, $method, $type);
+		$stringMessageSdi = $this->generateXMLMessage($payload, $method, $type, 'sdi');
 		$host = config('ksei.outgoingIp');
 		$port = config('ksei.outgoingPort');
 		$timeout = config('ksei.timeout');
 		$suffix = config('ksei.suffix');
 		$message = $stringMessage.$suffix;
+		$noCiff = $this->getcif($payload);
+		$extReff = $this->getExternalReference($payload);
 		
 		// generate xml file
-		$filename = $method.'_'.date('YmdHis');
-		if (!empty($payload)) {
-			$filename = $method.'_'.$payload[0]['value'];
-		}
+		$filename = $method.'_'.($extReff ?? date('YmdHis'));
+		$filenameSdi = 'CREATION_001-'.($noCiff ?? date('YmdHis'));
+
 		$dataLogs = [
 			'msg_id' => (string) Str::uuid(),
 			'method_ksei' => $method,
@@ -51,12 +53,13 @@ class KseiController extends Controller
 			'xml_request' => $stringMessage,
 			'response' => null, 
 			'status' => 1,
-			'no_cif' => $this->getcif($payload),
-			'external_reference' => $this->getExternalReference($payload),
+			'no_cif' => $noCiff,
+			'external_reference' => $extReff,
 			'created_at' => date('Y-m-d H:i:s')
 		];
 		try {
 			$xmlFile = $this->createFile($stringMessage, $filename);
+			$sdiFile = $this->createFile($stringMessageSdi, $filenameSdi, 'sdi');
 			$sk = fsockopen($host, $port, $errnum, $errstr, $timeout);
 			if (!is_resource($sk)) {
 				$dataLogs['status'] = 2;
@@ -80,7 +83,7 @@ class KseiController extends Controller
 				// store logs
 				KseiOutgoingLogs::create($dataLogs);
 			}
-			return response()->json(response_detail(['sent_message_location' => $xmlFile], 'Success'));
+			return response()->json(response_detail(['xml_file' => $xmlFile, 'sdi_file' => $sdiFile], 'Success'));
 		} catch (\Exception $e) {
 			$dataLogs['status'] = 2;
 			$dataLogs['response'] = $e->getMessage();
@@ -96,13 +99,23 @@ class KseiController extends Controller
 	 *      name, KSEI method
 	 *      type, message type default OutgoingMessage
 	 */
-	private function generateXMLMessage($payload, $name, $type) {
+	private function generateXMLMessage($payload, $name, $type, $ext = null) {
 		$messageData = '';
 		if (!empty($payload)) {
 			foreach ($payload as $item) {
-				if ($item['value']) { $messageData .= '<Field name="'.trim($item['field']).'">'.trim($item['value']).'</Field>'; } 
-				else { $messageData .= '<Field name="'.trim($item['field']).'"/>'; }
+				if ($ext && in_array($ext, ['sdi', 'sdia'])) {
+					if ($item['field'] !== 'externalReference') {
+						if ($item['value']) { $messageData .= '<Field name="'.trim($item['field']).'">'.trim($item['value']).'</Field>'; } 
+						else { $messageData .= '<Field name="'.trim($item['field']).'"></Field>'; }
+					}
+				} else {
+					if ($item['value']) { $messageData .= '<Field name="'.trim($item['field']).'">'.trim($item['value']).'</Field>'; } 
+					else { $messageData .= '<Field name="'.trim($item['field']).'"/>'; }
+				}
 			}
+		}
+		if ($ext && in_array($ext, ['sdi', 'sdia'])) {
+			return '<Message><Record name="data">'.$messageData.'</Record></Message>';
 		}
 		return '<Message name="'.$name.'" type="'.$type.'"><Record name="data">'.$messageData.'</Record></Message>';
 	}
@@ -113,8 +126,11 @@ class KseiController extends Controller
 	 * params: messageStringXml, filename
 	 */
 
-	private function createFile($message, $filename) {
-		$fileLocation = storage_path('app/public/xml/'.$filename.'.xml');
+	private function createFile($message, $filename, $ext = 'xml') {
+		$fileLocation = storage_path('app/public/xml/'.$filename.'.'.$ext);
+		if ($ext != 'xml') {
+			$fileLocation = storage_path('app/public/sdi/'.$filename.'.'.$ext);
+		}
 		$myfile = fopen($fileLocation, "w");
 		fwrite($myfile, $message);
 		fclose($myfile);
