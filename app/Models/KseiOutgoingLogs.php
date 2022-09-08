@@ -17,7 +17,6 @@ class KseiOutgoingLogs extends Model
         "method_ksei",
         "json_request",
         "xml_request",
-        "response",
         "status",
         "external_reference",
         "no_cif",
