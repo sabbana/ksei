@@ -55,19 +55,16 @@ class KseiController extends Controller
 			'method_ksei' => $method,
 			'json_request' => json_encode($request->all()),
 			'xml_request' => $stringMessage,
-			'status' => 1,
 			'no_cif' => $noCiff,
 			'external_reference' => $extReff,
 			'created_at' => date('Y-m-d H:i:s')
 		];
+		KseiOutgoingLogs::create($dataLogs);
 		try {
 			$xmlFile = $this->createFile($stringMessage, $filename);
 			$sdiFile = $this->createFile($stringMessageSdi, $filenameSdi, 'sdi');
 			$sk = fsockopen($host, $port, $errnum, $errstr, $timeout);
 			if (!is_resource($sk)) {
-				$dataLogs['status'] = 2;
-				$dataLogs['response'] = $errnum.":".$errstr;
-				KseiOutgoingLogs::create($dataLogs);
 				return response()->json(response_meta(400, false, 'Connection fail: '.$errnum.' => '.$errstr));
 			} else {
 				$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
@@ -77,20 +74,12 @@ class KseiController extends Controller
 					$errorcode = socket_last_error();
 					$errormsg = socket_strerror($errorcode);
 					socket_close($socket);
-					$dataLogs['status'] = 2;
-					$dataLogs['response'] = $errorcode.":".$errormsg;
-					KseiOutgoingLogs::create($dataLogs);
 					return response()->json(response_meta(400, false, 'Could not send data: '.$errorcode.' => '.$errormsg));
 				}
 				socket_close($socket);
-				// store logs
-				KseiOutgoingLogs::create($dataLogs);
 			}
 			return response()->json(response_detail(['xml_file' => $xmlFile, 'sdi_file' => $sdiFile], 'Success'));
 		} catch (\Exception $e) {
-			$dataLogs['status'] = 2;
-			$dataLogs['response'] = $e->getMessage();
-			KseiOutgoingLogs::create($dataLogs);
 			return response()->json(response_meta(400, false, 'Connection failed: '.$e->getMessage()));
 		}
 	}
