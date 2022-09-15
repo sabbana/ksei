@@ -26,7 +26,7 @@ class KseiController extends Controller
 		$type = $request->type;
 		$validator = Validator::make($request->all(), [
 			'function' => 'required',
-			'type' => 'required|in:incomingMessage,OutgoingMessage',
+			'type' => 'required|in:IncomingMessage,OutgoingMessage',
 			'data' => 'required|array',
 		]);
 		if ($validator->fails()) {
@@ -96,13 +96,13 @@ class KseiController extends Controller
 		if (!empty($payload)) {
 			foreach ($payload as $item) {
 				if ($ext && in_array($ext, ['sdi', 'sdia'])) {
-					if ($item['field'] !== 'externalReference') {
-						if ($item['value']) { $messageData .= '<Field name="'.trim($item['field']).'">'.trim($item['value']).'</Field>'; } 
-						else { $messageData .= '<Field name="'.trim($item['field']).'"></Field>'; }
+					if (@$item['field'] !== 'externalReference') {
+						if (@$item['value']) { $messageData .= '<Field name="'.trim(@$item['field']).'">'.trim(@$item['value']).'</Field>'; } 
+						else { $messageData .= '<Field name="'.trim(@$item['field']).'"></Field>'; }
 					}
 				} else {
-					if ($item['value']) { $messageData .= '<Field name="'.trim($item['field']).'">'.trim($item['value']).'</Field>'; } 
-					else { $messageData .= '<Field name="'.trim($item['field']).'"/>'; }
+					if (@$item['value']) { $messageData .= '<Field name="'.trim(@$item['field']).'">'.trim($item['value']).'</Field>'; } 
+					else { $messageData .= '<Field name="'.trim(@$item['field']).'"/>'; }
 				}
 			}
 		}
@@ -136,8 +136,8 @@ class KseiController extends Controller
 		$res = null;
 		if (!empty($payload)) {
 			foreach($payload as $item) {
-				if ($item['field'] == 'accountClientCode') {
-					$res = $item['value'];
+				if (@$item['field'] == 'accountClientCode') {
+					$res = @$item['value'];
 					break;
 				}
 			}
