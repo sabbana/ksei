@@ -19,8 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('generate-pdf', 'GeneratePdfController@index');
-Route::get('generate-pdf-fpre', 'GeneratePdfController@fpre');
-Route::get('generate-pdf-rdn', 'GeneratePdfController@rdn');
+Route::get('generate-pdf-fpre/{id}', 'GeneratePdfController@fpre');
+Route::get('generate-pdf-rdn/{id}', 'GeneratePdfController@rdn');
 
 Route::group(['prefix'=>'outgoing'], function() {
     Route::group(['middleware'=> ValidateToken::class], function() {
