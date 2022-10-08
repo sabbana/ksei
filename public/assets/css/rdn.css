@@ -27,16 +27,10 @@ td.border-bottom {
     border-bottom: solid 1px #555;
 }
 .paper { 
-    /* 8.26 × 11.69 in (portrait) */
-    counter-increment: css-counter 1;
-    width: 8.26in;
-    min-height: 11.69in;
-    max-height: 11.69in;
     margin: auto;
-    padding: 20pt;
-    margin-bottom: 10pt;
-    background-color: #FFF;
-    /* border:  solid 1pt #DDD; */
+    margin: -20px;
+    background-color: #EEE;
+    min-height: 29cm;
 }
 
 .fpre .paper:not(:first-child):not(:last-child)::after {
