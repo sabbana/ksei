@@ -26,7 +26,7 @@ class GeneratePdfController extends Controller {
 		if (!empty($dataNasabah)) {
 			$data = $dataNasabah;
 		}
-		$filename = 'fpre.pdf';
+		$filename = 'FPRE.pdf';
 		if (!Storage::exists('public/document-nasabah/'.$id)) {
 			Storage::makeDirectory('public/document-nasabah/'.$id);
 		}
@@ -46,7 +46,7 @@ class GeneratePdfController extends Controller {
 		if (!empty($dataNasabah)) {
 			$data = $dataNasabah;
 		}
-		$filename = 'rdn.pdf';
+		$filename = 'Formulir Pembukaan RDN.pdf';
 		if (!Storage::exists('public/document-nasabah/'.$id)) {
 			Storage::makeDirectory('public/document-nasabah/'.$id);
 		}
