@@ -27,14 +27,14 @@ class GeneratePdfController extends Controller {
 			$data = $dataNasabah;
 		}
 		$filename = 'fpre.pdf';
-		if (!Storage::exists('public/ksei/document-nasabah/'.$id)) {
-			Storage::makeDirectory('public/ksei/document-nasabah/'.$id);
+		if (!Storage::exists('public/document-nasabah/'.$id)) {
+			Storage::makeDirectory('public/document-nasabah/'.$id);
 		}
-		$sourcePath = storage_path('app/public/ksei/document-nasabah/'.$id.'/');
+		$sourcePath = storage_path('app/public/document-nasabah/'.$id.'/');
 		$fileLocation = $sourcePath.$filename;
 		$pdf = PDF::loadView('pdf.fpre', $data)->setPaper(array(0,0,770,1120));
 		$pdf->save($fileLocation);
-		$fileUrl = config('app.url').'storage/ksei/document-nasabah/'.$id.'/'.$filename;
+		$fileUrl = config('app.url').'storage/document-nasabah/'.$id.'/'.$filename;
 		$res['url'] = $fileUrl;
 		$res['file_path'] = $fileLocation;
 		return response()->json(response_detail($res, 'Success'));
@@ -46,18 +46,15 @@ class GeneratePdfController extends Controller {
 		if (!empty($dataNasabah)) {
 			$data = $dataNasabah;
 		}
-		// return response()->json(response_detail($data, 'Success'));
-		$data['data_ksei']['sid'] = "IDD267878H8787H";
-		$data['data_ksei']['sre_01'] = "SQ001JKHX10098";
 		$filename = 'rdn.pdf';
-		if (!Storage::exists('public/ksei/document-nasabah/'.$id)) {
-			Storage::makeDirectory('public/ksei/document-nasabah/'.$id);
+		if (!Storage::exists('public/document-nasabah/'.$id)) {
+			Storage::makeDirectory('public/document-nasabah/'.$id);
 		}
-		$sourcePath = storage_path('app/public/ksei/document-nasabah/'.$id.'/');
+		$sourcePath = storage_path('app/public/document-nasabah/'.$id.'/');
 		$fileLocation = $sourcePath.$filename;
 		$pdf = PDF::loadView('pdf.rdn', $data)->setPaper(array(0,0,700,1100));
 		$pdf->save($fileLocation);
-		$fileUrl = config('app.url').'storage/ksei/document-nasabah/'.$id.'/'.$filename;
+		$fileUrl = config('app.url').'storage/document-nasabah/'.$id.'/'.$filename;
 		$res['url'] = $fileUrl;
 		$res['file_path'] = $fileLocation;
 		return response()->json(response_detail($res, 'Success'));
