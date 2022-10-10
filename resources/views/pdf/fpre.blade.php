@@ -19,7 +19,7 @@
                         <b>No.Formulir</b> / <i>Form Number</i><br/>
                         <div class="textfield grey" id="formNumber"></div>
                     </td>
-                </tr>
+                </tr> 
                 <tr>
                     <td>
                         <b>Nama Nasabah</b> / <i>Customer Name</i><br/>

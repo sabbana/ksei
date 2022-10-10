@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Ixudra\Curl\Facades\Curl;
+use Illuminate\Support\Facades\Storage;
 use App\Models\AkunNasabah;
 use PDF;
 use View;
@@ -25,9 +26,11 @@ class GeneratePdfController extends Controller {
 		if (!empty($dataNasabah)) {
 			$data = $dataNasabah;
 		}
-		// return response()->json(response_detail($data, 'Success'));
         $filename = 'fpre.pdf';
-		$sourcePath = storage_path('app/public/pdf/');
+		if (!Storage::exists('public/ksei/document-nasabah/'.$id)) {
+			Storage::makeDirectory('public/ksei/document-nasabah/'.$id);
+		}
+		$sourcePath = storage_path('app/public/ksei/document-nasabah/'.$id.'/');
 		$fileLocation = $sourcePath.$filename;
 		$pdf = PDF::loadView('pdf.fpre', $data)->setPaper(array(0,0,770,1120));
 		$pdf->save($fileLocation);
@@ -43,10 +46,12 @@ class GeneratePdfController extends Controller {
 			$data = $dataNasabah;
 		}
         $filename = 'rdn.pdf';
-		$sourcePath = storage_path('app/public/pdf/');
+		if (!Storage::exists('public/ksei/document-nasabah/'.$id)) {
+			Storage::makeDirectory('public/ksei/document-nasabah/'.$id);
+		}
+		$sourcePath = storage_path('app/public/ksei/document-nasabah/'.$id.'/');
 		$fileLocation = $sourcePath.$filename;
-		// $pdf = PDF::loadView('pdf.rdn', $data)->setPaper(array(0,0,770,1120));
-		$pdf = PDF::loadView('pdf.rdn', $data)->setPaper('A4');
+		$pdf = PDF::loadView('pdf.rdn', $data)->setPaper(array(0,0,700,1050));
 		$pdf->save($fileLocation);
 		$fileUrl = config('app.url').'storage/pdf/'.$filename;
         $res['url'] = $fileUrl;
