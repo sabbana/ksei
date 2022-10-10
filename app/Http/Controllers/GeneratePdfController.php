@@ -34,8 +34,9 @@ class GeneratePdfController extends Controller {
 		$fileLocation = $sourcePath.$filename;
 		$pdf = PDF::loadView('pdf.fpre', $data)->setPaper(array(0,0,770,1120));
 		$pdf->save($fileLocation);
-		$fileUrl = config('app.url').'storage/pdf/'.$filename;
+		$fileUrl = config('app.url').'storage/ksei/document-nasabah/'.$id.'/'.$filename;
         $res['url'] = $fileUrl;
+		$res['file_path'] = $sourcePath.$fileLocation;
         return response()->json(response_detail($res, 'Success'));
     }
 
@@ -53,8 +54,9 @@ class GeneratePdfController extends Controller {
 		$fileLocation = $sourcePath.$filename;
 		$pdf = PDF::loadView('pdf.rdn', $data)->setPaper(array(0,0,700,1050));
 		$pdf->save($fileLocation);
-		$fileUrl = config('app.url').'storage/pdf/'.$filename;
+		$fileUrl = config('app.url').'storage/ksei/document-nasabah/'.$id.'/'.$filename;
         $res['url'] = $fileUrl;
+        $res['file_path'] = $sourcePath.$fileLocation;
         return response()->json(response_detail($res, 'Success'));
     }
 
