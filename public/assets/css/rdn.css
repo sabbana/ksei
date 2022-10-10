@@ -15,9 +15,18 @@ body, table {
 table td {
     vertical-align: top;
 }
-.table-box {
+.table-box, .table-box2 {
     border: solid 1px #222;
     padding: 5px;
+    margin-top: 10px;
+}
+.table-box2 {
+    width: 90%;
+    margin-left:10px;
+    padding: 2px;
+}
+.table-box2 td {
+    padding: 2px;
 }
 td.border-bottom {
     border-bottom: solid 1px #555;
@@ -30,7 +39,35 @@ td.border-bottom {
 .content {
     border:solid 1px #222;
 }
-
+.content1 {
+    font-size: 14px;
+    border: solid 1px #222;
+}
+.content1 table td {
+    padding: 10px;
+}
+.content1 table.table-bordered {
+    border: solid 1px #000;
+    margin: 10px;
+}
+.content1 table.table-bordered td, .content1 table.table-bordered th {
+    border-bottom: solid 1px #000;
+    border-right: solid 1px #000;
+    padding: 2px;
+}
+.content1 table.table-bordered th {
+    text-align: center;
+    background-color: #444;
+    color: #FFF;
+}
+.content2 {
+    padding:40px;
+    margin:30px;
+    font-size: 14px;
+}
+.content1 table {
+    width: 98%;
+}
 .content table td:first-child {
     padding-left: 5px;
 }
@@ -50,19 +87,33 @@ td.border-bottom {
     text-align: center;
     padding: 6px;
 }
+.sub-header-content {
+    background-color: #DDD;
+    color: #000;
+    padding: 10px;
+}
+
+.sub-header2 {
+    background-color: rgb(121, 118, 118);
+}
+.sub-header2 table td {
+    font-size: 16px;
+    text-align: center;
+    color: #FFF;
+}
 table td.content-left, table td.content-right {
     padding: 10px;
 }
 .blue {
     color: blue;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 table td.dot {
     background-image: url('../images/dot.png');
     background-repeat: repeat-x;
     background-position: bottom;
-    padding-bottom: 10px;
-    background-size: 3px;
+    padding-bottom: 20px;
+    background-size: 5px;
 }
 
 table td.sq15, table td.sq14, table td.sq11, table td.sq10, table td.sq9, table td.sq8, table td.sq7, table td.sq6, table td.sq5, table td.sq4, table td.sq3, table td.sq2, table td.sq1 {
@@ -74,31 +125,47 @@ table td.sq15, table td.sq14, table td.sq11, table td.sq10, table td.sq9, table 
     padding-top: 5px;
     padding-left: 8px;
 }
-table td.sq14 { background-image: url('../images/sq14.png'); }
-table td.sq11 { 
+table td.sq15 {
+    background-size: 250px;
+    letter-spacing: 11px;
+    padding-left: 10px;
+}
+table td.sq14 { 
+    background-image: url('../images/sq14.png'); 
+    background-size: 233px;
+    letter-spacing: 11px;
+    padding-left: 7px;
+}
+table td.sq11 {
     background-image: url('../images/sq11.png'); 
-    background-size: 220px;
-    letter-spacing: 15px;
-    padding-left: 5px;
-
+    background-size: 187px;
+    letter-spacing: 11px;
+    padding-left: 7px;
 }
 table td.sq10 { 
     background-image: url('../images/sq10.png'); 
-    background-size: 200px;
-    letter-spacing: 15px;
+    background-size: 170px;
+    letter-spacing: 12px;
     padding-left: 5px;
 }
 table td.sq9 { background-image: url('../images/sq9.png'); }
-table td.sq8 { background-image: url('../images/sq8.png'); }
+table td.sq8 { 
+    background-image: url('../images/sq8.png'); 
+    background-size: 140px;
+}
 table td.sq7 { background-image: url('../images/sq7.png'); }
 table td.sq6 { background-image: url('../images/sq6.png'); }
 table td.sq5 { 
     background-image: url('../images/sq5.png'); 
     background-size: 84px;
+    padding-left: 7px;
+    letter-spacing: 11px;
 }
 table td.sq4 { 
     background-image: url('../images/sq4.png'); 
     background-size: 70px;
+    letter-spacing: 11px;
+    padding-left: 7px;
 }
 table td.sq3 { 
     background-image: url('../images/sq3.png'); 
@@ -113,7 +180,7 @@ table td.sq1 {
     background-size: 17px;
 }
 
-ul.list-radio-vertical {
+ul.list-radio-vertical, .list-radio-vertical-blue {
     margin: 0;
     padding: 0;
 }
@@ -122,7 +189,6 @@ ul.list-radio-vertical {
     padding-left: 20px;
     list-style-type: none;
     margin: 5px;
-    margin-top: 10px;
     background-image: url('../images/blank-checkbox.png');
     background-repeat: no-repeat;
     background-position: top left;
@@ -133,7 +199,6 @@ ul.list-radio-vertical {
     padding-left: 20px;
     list-style-type: none;
     margin: 5px;
-    margin-bottom: 10px;
     background-image: url('../images/active-checkbox.png');
     background-repeat: no-repeat;
     background-position: top left;
@@ -142,9 +207,29 @@ ul.list-radio-vertical {
 .list-radio-vertical li.none {
     background-image: none;
 }
+.list-radio-vertical-blue li {
+    width:90%;
+    padding-left: 40px;
+    list-style-type: none;
+    margin: 5px;
+    background-image: url('../images/blank-checkbox-blue.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 30px;
+}
+.list-radio-vertical-blue li.active {
+    width:90%;
+    padding-left: 40px;
+    list-style-type: none;
+    margin: 5px;
+    background-image: url('../images/active-checkbox-blue.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 30px;
+}
+
 .paraf-box {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
     width: 100px;
     float:right;
     clear: both;
@@ -155,7 +240,45 @@ ul.list-radio-vertical {
 .paraf-box .page {
     float:right;
 }
-
+table.box {
+    margin:10px;
+    margin-bottom: 2px;
+    width:98%;
+    border-bottom: solid 1px #000;
+    border-right: solid 1px #000;
+}
+table.box thead td, table.box tbody td {
+    background-color: #999;
+    color: #000;
+    text-align: center;
+    vertical-align: middle;
+    padding: 3px;
+    border-top: solid 1px #000;
+    border-left: solid 1px #000;
+}
+table.box tbody td {
+    background-color: #FFF;
+    text-align: left;
+}
+.title {
+    font-size: 11px;
+}
+table.box2 {
+    border-top: solid 1px #000;
+}
+table.box2 thead td {
+    text-align: center;
+    border-bottom: solid 1px #222;
+    border-right: solid 1px #222;
+    padding: 5px;
+}
+table.box2 tbody td {
+    border-bottom: solid 1px #222;
+    border-right: solid 1px #222;
+}
+table.box2 tbody td table td{
+    border:none;
+}
 
 .page_number {
     position: relative;
@@ -275,9 +398,8 @@ ol {
     background-color: #FFF;
 }
 .ttd{
-    text-align: center;
-    width: 50%;
-    margin: auto;
+    border-top: solid 1px #222;
+    padding: 4px;
 }
 .pdl10 {
     padding-left: 10px;
@@ -308,6 +430,10 @@ table.tin td {
 .tac {
     text-align: center;
 }
+.tacb {
+    text-align: center;
+    font-weight: bold;
+}
 table td.border-bottom {
     border-bottom: solid 1px #444;
 }
@@ -326,4 +452,22 @@ table td.border-bottom {
 }
 .square-active {
     background-image: url('../images/square-black.png');
+}
+.white-space {
+    height:500px;
+}
+.bilingual {
+    font-size: 10px;
+    width: 98%;
+}
+.blue-line {
+    background-color: blue;
+    border: solid 1px blue;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.title-big {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 50px;
 }

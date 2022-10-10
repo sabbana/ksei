@@ -11,22 +11,22 @@ use View;
 
 class GeneratePdfController extends Controller {
 	
-    /**
+	/**
 	 * Display a listing of the resource.
 	 * @return Response
 	 */
 
 	public function index(Request $request) {
-        echo "index";
-    }
+		echo "index";
+	}
 
-    public function fpre(Request $request, $id) {
+	public function fpre(Request $request, $id) {
 		$dataNasabah = $this->getDetailNasabah($id);
 		$data = [];
 		if (!empty($dataNasabah)) {
 			$data = $dataNasabah;
 		}
-        $filename = 'fpre.pdf';
+		$filename = 'fpre.pdf';
 		if (!Storage::exists('public/ksei/document-nasabah/'.$id)) {
 			Storage::makeDirectory('public/ksei/document-nasabah/'.$id);
 		}
@@ -35,30 +35,33 @@ class GeneratePdfController extends Controller {
 		$pdf = PDF::loadView('pdf.fpre', $data)->setPaper(array(0,0,770,1120));
 		$pdf->save($fileLocation);
 		$fileUrl = config('app.url').'storage/ksei/document-nasabah/'.$id.'/'.$filename;
-        $res['url'] = $fileUrl;
-		$res['file_path'] = $sourcePath.$fileLocation;
-        return response()->json(response_detail($res, 'Success'));
-    }
+		$res['url'] = $fileUrl;
+		$res['file_path'] = $fileLocation;
+		return response()->json(response_detail($res, 'Success'));
+	}
 
-    public function rdn(Request $request, $id) {
-        $dataNasabah = $this->getDetailNasabah($id);
+	public function rdn(Request $request, $id) {
+		$dataNasabah = $this->getDetailNasabah($id);
 		$data = [];
 		if (!empty($dataNasabah)) {
 			$data = $dataNasabah;
 		}
-        $filename = 'rdn.pdf';
+		// return response()->json(response_detail($data, 'Success'));
+		$data['data_ksei']['sid'] = "IDD267878H8787H";
+		$data['data_ksei']['sre_01'] = "SQ001JKHX10098";
+		$filename = 'rdn.pdf';
 		if (!Storage::exists('public/ksei/document-nasabah/'.$id)) {
 			Storage::makeDirectory('public/ksei/document-nasabah/'.$id);
 		}
 		$sourcePath = storage_path('app/public/ksei/document-nasabah/'.$id.'/');
 		$fileLocation = $sourcePath.$filename;
-		$pdf = PDF::loadView('pdf.rdn', $data)->setPaper(array(0,0,700,1050));
+		$pdf = PDF::loadView('pdf.rdn', $data)->setPaper(array(0,0,700,1100));
 		$pdf->save($fileLocation);
 		$fileUrl = config('app.url').'storage/ksei/document-nasabah/'.$id.'/'.$filename;
-        $res['url'] = $fileUrl;
-        $res['file_path'] = $sourcePath.$fileLocation;
-        return response()->json(response_detail($res, 'Success'));
-    }
+		$res['url'] = $fileUrl;
+		$res['file_path'] = $fileLocation;
+		return response()->json(response_detail($res, 'Success'));
+	}
 
 	/**
 	 * Get detail nasabah by ID nasabah
@@ -86,7 +89,7 @@ class GeneratePdfController extends Controller {
 	 */
 	private function getImage($path) {
 		$token = 'gFAJtJ4iZkKbnn_wivo1lyp2VcO4C6m3CkS_NZTXQloE2jCorYO8iWPJvvprxxzJVeBu6WF1wjYy';
-		$url = 'https://lbfpre.bcasekuritas.co.id/api/detail-account/'.$id;
+		$url = 'https://lbfpre.bcasekuritas.co.id/api/image?name='.$path;
 		$data = Curl::to($url)
 			->withContentType('application/json')
 			->withHeaders([
