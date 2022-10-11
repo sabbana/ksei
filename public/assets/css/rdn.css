@@ -108,6 +108,7 @@ table td.content-left, table td.content-right {
 }
 .blue {
     color: blue;
+    font-style: italic;
     /* font-weight: bold; */
 }
 table td.dot {
