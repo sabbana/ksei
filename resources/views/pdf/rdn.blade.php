@@ -250,7 +250,7 @@
                             <tr>
                                 <td width="25%"><b>Alanat E-mail</b><br/><i class="blue">E-mail Address</i></td>
                                 <td>
-                                    <span>: {{ @$nasabah['email']}}</span><br/>
+                                    <span>: <b>{{ @$nasabah['email']}}</b></span><br/>
                                     <i>(Alamat e-mail ini akan digunakan untuk pengiriman e-Statement)</i>
                                     <i class="blue">(This e-mail address will be used for the delivery of e-Statement)</i>
                                 </td>
@@ -261,16 +261,16 @@
                                 <td><b>NPWP</b><br/><i class="blue">Tax ID No.</i></td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li>Ada<br/><i class="blue">Available</i></li>
+                                        <li class="{{ @$npwp['no_npwp'] ? 'active': '' }}">Ada<br/><i class="blue">Available</i></li>
                                     </ul>
                                 </td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li class="active">Tidak Ada<br/><i class="blue">Not Available</i></li>
+                                        <li class="{{ @$npwp['no_npwp'] ? '': 'active' }}">Tidak Ada<br/><i class="blue">Not Available</i></li>
                                     </ul>
                                 </td>
                             </tr>
-                            <tr><td></td><td colspan="2">No.</td></tr>
+                            <tr><td></td><td colspan="2">No. {{ @$npwp['no_npwp'] }}</td></tr>
                             <tr>
                                 <td><b>Tanda Pengenal</b><br/><i class="blue">Identity Card.</i></td>
                                 <td>
@@ -290,11 +290,11 @@
                             <tr>
                                 <td width="25%"><b>Berlaku s.d.</b><br/><i class="blue">Valid until</i></td>
                                 <td width="10">:</td>
-                                <td class="sq2" width="40">01</td>
+                                <td class="sq2" width="40">31</td>
                                 <td width="10">-</td>
-                                <td class="sq2" width="40">01</td>
+                                <td class="sq2" width="40">12</td>
                                 <td width="10">-</td>
-                                <td class="sq4">2999</td>
+                                <td class="sq4">9998</td>
                             </tr>
                         </table>
                     </td>
@@ -343,13 +343,13 @@
                                 <td>:</td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li class="{{ @strtolower($ktp['status_perkawinan']) == 'single' ? 'active':''}}">Lajang<br/><i class="blue">Single</i></li>
+                                        <li class="{{ @strtolower($ktp['status_perkawinan']) == 'belum menikah' ? 'active':''}}">Lajang<br/><i class="blue">Single</i></li>
                                         <li class="{{ @strtolower($ktp['status_perkawinan']) == 'menikah' ? 'active':''}}">Menikah<br/><i class="blue">Married</i></li>
                                     </ul>
                                 </td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li class="{{ @strtolower($ktp['status_perkawinan']) == 'janda' || strtolower($ktp['status_perkawinan']) == 'duda' ? 'active':''}}">Janda/Duda<br/><i class="blue">Widow/Widower/Divorced</i></li>
+                                        <li class="{{ @strtolower($ktp['status_perkawinan']) == 'janda/duda' ? 'active':''}}">Janda/Duda<br/><i class="blue">Widow/Widower/Divorced</i></li>
                                     </ul>
                                 </td>
                             </tr>
@@ -358,15 +358,15 @@
                                 <td>:</td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li class="active">Islam<br/><i class="blue">Islam</i></li>
-                                        <li>Katolik<br/><i class="blue">Catholic</i></li>
-                                        <li>Kristen<br/><i class="blue">Christianity</i></li>
+                                        <li class="{{ @strtolower($ktp['agama']) == 'islam' ? 'active':''}}">Islam<br/><i class="blue">Islam</i></li>
+                                        <li class="{{ @strtolower($ktp['agama']) == 'katolik' ? 'active':''}}">Katolik<br/><i class="blue">Catholic</i></li>
+                                        <li class="{{ @strtolower($ktp['agama']) == 'kristen' ? 'active':''}}">Kristen<br/><i class="blue">Christianity</i></li>
                                     </ul>
                                 </td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li>Hindu<br/><i class="blue">Hinduism</i></li>
-                                        <li>Buddha<br/><i class="blue">Buddhism</i></li>
+                                        <li class="{{ @strtolower($ktp['agama']) == 'hindu' ? 'active':''}}">Hindu<br/><i class="blue">Hinduism</i></li>
+                                        <li class="{{ @strtolower($ktp['agama']) == 'budha' ? 'active':''}}">Buddha<br/><i class="blue">Buddhism</i></li>
                                     </ul>
                                 </td>
                             </tr>
@@ -398,11 +398,11 @@
                                         <tr>
                                             <td width="40"><b>Berlaku s.d.</b><br/><i class="blue">Valid until</i></td>
                                             <td width="5">:</td>
-                                            <td class="sq2" width="20">01</td>
+                                            <td class="sq2" width="20">31</td>
                                             <td width="5">-</td>
-                                            <td class="sq2" width="20">01</td>
+                                            <td class="sq2" width="20">12</td>
                                             <td width="5">-</td>
-                                            <td class="sq4">2999</td>
+                                            <td class="sq4">9998</td>
                                         </tr>
                                     </table>
                                 </td>
@@ -417,12 +417,12 @@
                                 <td><b>Nasabah berkewarganegaraan Amerika Serikat (AS)</b><br/><i class="blue">Customer is a United States (US) citizen</i></td>
                                 <td width="20">
                                     <ul class="list-radio-vertical">
-                                        <li>Ya<br/><i class="blue">Yes</i></li>
+                                        <li class="{{ $pernyataan[2]['jawaban'] == 'tidak' ? '' : 'active' }}">Ya<br/><i class="blue">Yes</i></li>
                                     </ul>
                                 </td>
                                 <td width="20">
                                     <ul class="list-radio-vertical">
-                                        <li class="active">Tidak<br/><i class="blue">No</i></li>
+                                        <li class="{{ $pernyataan[2]['jawaban'] == 'tidak' ? 'active' : '' }}">Tidak<br/><i class="blue">No</i></li>
                                     </ul>
                                 </td>
                             </tr>
@@ -431,12 +431,12 @@
                                 <td><b>Nasabah adalah pemegang kartu penduduk tetap AS - Green Card</b><br/><i class="blue">Customer is a US Permanent Resident Card (Green Card) holder</i></td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li>Ya<br/><i class="blue">Yes</i></li>
+                                        <li class="{{ $pernyataan[3]['jawaban'] == 'tidak' ? '' : 'active' }}">Ya<br/><i class="blue">Yes</i></li>
                                     </ul>
                                 </td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li class="active">Tidak<br/><i class="blue">No</i></li>
+                                        <li class="{{ $pernyataan[2]['jawaban'] == 'tidak' ? 'active' : '' }}">Tidak<br/><i class="blue">No</i></li>
                                     </ul>
                                 </td>
                             </tr>
@@ -445,12 +445,12 @@
                                 <td><b>Nasabah memiliki kewajiban pelaporan pajak kepada Pemerintah AS</b><br/><i class="blue">Customer is obliged to file income tax returns with the US Government</i></td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li>Ya<br/><i class="blue">Yes</i></li>
+                                        <li class="{{ $pernyataan[6]['jawaban'] == 'tidak' ? '' : 'active' }}">Ya<br/><i class="blue">Yes</i></li>
                                     </ul>
                                 </td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li class="active">Tidak<br/><i class="blue">No</i></li>
+                                        <li class="{{ $pernyataan[2]['jawaban'] == 'tidak' ? 'active' : '' }}">Tidak<br/><i class="blue">No</i></li>
                                     </ul>
                                 </td>
                             </tr>
@@ -636,31 +636,31 @@
                     <td>:</td>
                     <td width="20%">
                         <ul class="list-radio-vertical">
-                            <li><b>Pelajar / Mahasiswa</b><br/><i class="blue">Pupil / Student</i></li>
-                            <li><b>Pegawai Negeri</b><br/><i class="blue">Civil Servant</i></li>
-                            <li><b>Pensiunan</b><br/><i class="blue">Retiree</i></li>
-                            <li><b>Pengusaha Jasa</b><br/><i class="blue">Service Provider</i></li>
-                            <li><b>Akuntan</b><br/><i class="blue">Accountant</i></li>
-                            <li><b>Notaris</b><br/><i class="blue">Notary</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'pelajar/mahasiswa' ? 'active':'' }}"><b>Pelajar / Mahasiswa</b><br/><i class="blue">Pupil / Student</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'pegawai negeri' ? 'active':'' }}"><b>Pegawai Negeri</b><br/><i class="blue">Civil Servant</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'pensiunan' ? 'active':'' }}"><b>Pensiunan</b><br/><i class="blue">Retiree</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'pengusaha jasa' ? 'active':'' }}"><b>Pengusaha Jasa</b><br/><i class="blue">Service Provider</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'akuntan' ? 'active':'' }}"><b>Akuntan</b><br/><i class="blue">Accountant</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'notaris' ? 'active':'' }}"><b>Notaris</b><br/><i class="blue">Notary</i></li>
                         </ul>
                     </td>
                     <td>
                         <ul class="list-radio-vertical">
-                            <li><b>Ibu Rumah Tangga</b><br/><i class="blue">Housewife</i></li>
-                            <li><b>TNI / Polri</b><br/><i class="blue">Armed Force / Police</i></li>
-                            <li><b>Pengusaha Pabrikan</b><br/><i class="blue">Manufacturer</i></li>
-                            <li><b>Dokter</b><br/><i class="blue">Doctor</i></li>
-                            <li><b>Wartawan</b><br/><i class="blue">Wartawan</i></li>
-                            <li><b>Profesional Lainnya</b><br/><i class="blue">Other Professional</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'ibu rumah tangga' ? 'active':'' }}"><b>Ibu Rumah Tangga</b><br/><i class="blue">Housewife</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'tni/polri' ? 'active':'' }}"><b>TNI / Polri</b><br/><i class="blue">Armed Force / Police</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'pengusaha pabrikan' ? 'active':'' }}"><b>Pengusaha Pabrikan</b><br/><i class="blue">Manufacturer</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'dokter' ? 'active':'' }}"><b>Dokter</b><br/><i class="blue">Doctor</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'wartawan' ? 'active':'' }}"><b>Wartawan</b><br/><i class="blue">Wartawan</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'professional lainnya' ? 'active':'' }}"><b>Profesional Lainnya</b><br/><i class="blue">Other Professional</i></li>
                         </ul>
                     </td>
                     <td>
                         <ul class="list-radio-vertical">
-                            <li><b>Karyawan Swasta</b><br/><i class="blue">Private Employee</i></li>
-                            <li><b>Pjb. Negara / Daerah</b><br/><i class="blue">State / Regional Official</i></li>
-                            <li><b>Pedagang</b><br/><i class="blue">Trader</i></li>
-                            <li><b>Dokter</b><br/><i class="blue">Lawyer</i></li>
-                            <li><b>Seniman</b><br/><i class="blue">Seniman</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'karyawan swasta' || @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'pegawai swasta' ? 'active':'' }}"><b>Karyawan Swasta</b><br/><i class="blue">Private Employee</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'pjb. negara/daerah' ? 'active':'' }}"><b>Pjb. Negara / Daerah</b><br/><i class="blue">State / Regional Official</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'pedagang' ? 'active':'' }}"><b>Pedagang</b><br/><i class="blue">Trader</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'pengacara' ? 'active':'' }}"><b>Pengacara</b><br/><i class="blue">Lawyer</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pekerjaan']) == 'seniman' ? 'active':'' }}"><b>Seniman</b><br/><i class="blue">Seniman</i></li>
                             <li><b>........................</b><br/><br/></li>
                         </ul>
                     </td>
@@ -674,13 +674,13 @@
                     <td width="20%">
                         <ul class="list-radio-vertical">
                             <li><b><= 15 Juta</b><br/><i class="blue"><= 15 Million</i></li>
-                            <li><b>> 25 Juta - 400 Juta</b><br/><i class="blue">> 25 Million - 400 Million</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '0 - 50 juta' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 50 - 250 juta' ? 'active':'' }}"><b>> 25 Juta - 400 Juta</b><br/><i class="blue">> 25 Million - 400 Million</i></li>
                         </ul>
                     </td>
                     <td colspan="2">
                         <ul class="list-radio-vertical">
                             <li><b>> 15 Juta - 25 Juta</b><br/><i class="blue">> 15 Million - 25 Million</i></li>
-                            <li><b>> 400 Juta</b><br/><i class="blue">> 400 Million</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 - 1,5 M' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 M' ? 'active':'' }}"><b>> 400 Juta</b><br/><i class="blue">> 400 Million</i></li>
                         </ul>
                     </td>
                 </tr>
@@ -717,13 +717,13 @@
                     <td width="20%">
                         <ul class="list-radio-vertical">
                             <li><b><= 15 Juta</b><br/><i class="blue"><= 15 Million</i></li>
-                            <li><b>> 25 Juta - 400 Juta</b><br/><i class="blue">> 25 Million - 400 Million</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '0 - 50 juta' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 50 - 250 juta' ? 'active':'' }}"><b>> 25 Juta - 400 Juta</b><br/><i class="blue">> 25 Million - 400 Million</i></li>
                         </ul>
                     </td>
                     <td colspan="2">
                         <ul class="list-radio-vertical">
                             <li><b>> 15 Juta - 25 Juta</b><br/><i class="blue">> 15 Million - 25 Million</i></li>
-                            <li><b>> 400 Juta</b><br/><i class="blue">> 400 Million</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 - 1,5 M' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 M' ? 'active':'' }}"><b>> 400 Juta</b><br/><i class="blue">> 400 Million</i></li>
                         </ul>
                     </td>
                 </tr>
@@ -735,14 +735,14 @@
                     <td>:</td>
                     <td width="20%">
                         <ul class="list-radio-vertical">
-                            <li><b>Milik Pribadi</b><br/><i class="blue">Self-owned</i></li>
-                            <li><b>Sewa / Kos</b><br/><i class="blue">Montly Rent</i></li>
+                            <li class="{{ strtolower($pekerjaan_dan_aset['status_tempat_tinggal']) == 'milik pribadi' ? 'active': '' }}"><b>Milik Pribadi</b><br/><i class="blue">Self-owned</i></li>
+                            <li class="{{ strtolower($pekerjaan_dan_aset['status_tempat_tinggal']) == 'sewa/kos' ? 'active': '' }}"><b>Sewa / Kos</b><br/><i class="blue">Montly Rent</i></li>
                         </ul>
                     </td>
                     <td colspan="2">
                         <ul class="list-radio-vertical">
-                            <li><b>Kontrak</b><br/><i class="blue">Rented</i></li>
-                            <li><b>Ikut orang tua</b><br/><i class="blue">Owned by Parents</i></li>
+                            <li class="{{ strtolower($pekerjaan_dan_aset['status_tempat_tinggal']) == 'kontrak' ? 'active': '' }}"><b>Kontrak</b><br/><i class="blue">Rented</i></li>
+                            <li class="{{ strtolower($pekerjaan_dan_aset['status_tempat_tinggal']) == 'milik orang tua' ? 'active': '' }}"><b>Ikut orang tua</b><br/><i class="blue">Owned by Parents</i></li>
                         </ul>
                     </td>
                 </tr>
@@ -825,11 +825,11 @@
                     <td colspan="2">
                         <table>
                             <tr>
-                                <td class="sq2" width="40">01</td>
+                                <td class="sq2" width="40"></td>
                                 <td width="5">-</td>
-                                <td class="sq2" width="40">01</td>
+                                <td class="sq2" width="40"></td>
                                 <td width="5">-</td>
-                                <td class="sq4">2999</td>
+                                <td class="sq4" width="120"></td>
                             </tr>
                         </table>
                     </td>
@@ -1177,7 +1177,7 @@
                     <td>Non Tunai<br/><i class="blue">Non-cash</i> <span class="fr">%</span></td>
                 </tr>
             </table>
-            <p class="pdl10">
+            <p style="font-size:8px;padding-left:10px;">
                 *) Menggunakan uang kertas/logam<br/>
                 <i class="blue">*) Using bank notes/coins</i>
             </p>
@@ -1250,13 +1250,13 @@
                     </td>
                 </tr>
             </table>
-            <p class="pdl10">
+            <p style="font-size:8px;padding-left:10px">
                 *) Diisi jika pernyataan 1 dijawab 'Ya' / <i class="blue">Must be completed if the answer to fact 1 is 'Yes'</i>
             </p>
         </div>
         <div class="paraf-box">
             <span>Paraf:</span>
-            <span class="page-no"></span>
+            <span class="page">3/6</span>
         </div>
     </div>
 
@@ -1546,7 +1546,7 @@
                                     <div class="blue">If Customer does not hold NPWP, Customer hereby states that:</div>
                                 </div>
                                 <ul class="list-radio-vertical">
-                                    <li class="active">
+                                    <li class="{{ @$npwp['no_npwp'] ? 'active':'' }}">
                                         <div class="bilingual">
                                             <div>
                                                 Nasabah adalah Wajib Pajak yang sesuai dengan ketentuan perpajakan yang berlaku sudah memenuhi persyaratan subjektif dan objektif dan diwajibkan untuk
@@ -1560,7 +1560,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li class="{{ @$npwp['no_npwp'] ? '':'active' }}">
                                         <div class="bilingual">
                                             <div>
                                                 Nasabah adalah Wajib Pajak yang sesuai dengan ketentuan perpajakan yang berlaku, saat ini tidak/belum memenuhi persyaratan subjektif dan objektif untuk
@@ -1922,14 +1922,18 @@
                 </tr>
                 <tr>
                     <td>Lama tinggal di alamat tempat tinggal terakhir</td>
-                    <td colspan="2">22 Tahun</td>
+                    @php
+                        $tahunTinggal = date('Y', strtotime($pekerjaan_dan_aset['menempati_sejak']));
+                        $lamaTinggal = date('Y') - $tahunTinggal;
+                    @endphp
+                    <td colspan="2">{{ @$lamaTinggal }} Tahun</td>
                 </tr>
                 <tr>
                     <td>Apakah memiliki rekening/kartu kredit di Bank lain/ institusi lain?</td>
                     <td colspan="2">
                         <ul class="list-radio-vertical-blue">
-                            <li>Ya, di Bank/Institusi Bank BNI.<br/>Sudah berapa lama 4 tahun</li>
-                            <li>Tidak</li>
+                            <li class="{{ @$data_tambahan['kartu_kredit_lain'] ? 'active' : ''}}">Ya, di Bank/Institusi Bank {{ @$data_tambahan['nama_bank'] }}.<br/>Sudah berapa lama {{ @$data_tambahan['lama_tahun'] }} tahun</li>
+                            <li class="{{ @$data_tambahan['kartu_kredit_lain'] ? '':'active'}}">Tidak</li>
                         </ul>
                     </td>
                 </tr>
@@ -1937,8 +1941,8 @@
                     <td>Apakah punya hubungan usaha dengan Luar Negeri?</td>
                     <td colspan="2">
                         <ul class="list-radio-vertical-blue">
-                            <li>Ya, Negara ........................</li>
-                            <li>Tidak</li>
+                            <li class="{{ @$data_tambahan['usaha_luar_negri'] ? 'active':'' }}">Ya, Negara {{ @$data_tambahan['usaha_luar_negri'] ? @$data_tambahan['nama_negara'] : '........................' }}</li>
+                            <li class="{{ @$data_tambahan['usaha_luar_negri'] ? '':'active' }}">Tidak</li>
                         </ul>
                     </td>
                 </tr>
@@ -1946,16 +1950,16 @@
                     <td>Sumber Kekayaan (Source of Wealth) *) ?<br/>*) dapat lebih dari 1 (satu)</td>
                     <td>
                         <ul class="list-radio-vertical-blue">
-                            <li>Warisan</li>
-                            <li>Tabungan</li>
-                            <li>Hasil Usaha</li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['sumber_dana']) == 'warisan' ? 'active': ''}}">Warisan</li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['sumber_dana']) == 'tabungan' ? 'active': ''}}">Tabungan</li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['sumber_dana']) == 'hasil usaha' ? 'active': ''}}">Hasil Usaha</li>
                         </ul>
                     </td>
                     <td>
                         <ul class="list-radio-vertical-blue">
-                            <li>Hibah/Hadiah</li>
-                            <li>Gaji</li>
-                            <li>Lainnya ..........</li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['sumber_dana']) == 'hibah/hadiah' ? 'active': ''}}">Hibah/Hadiah</li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['sumber_dana']) == 'gaji' ? 'active': ''}}">Gaji</li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['sumber_dana']) == 'lainnya' ? 'active': ''}}">Lainnya ..........</li>
                         </ul>
                     </td>
                 </tr>
@@ -2060,7 +2064,7 @@
             </table>
             <table>
                 <tr>
-                    <td class="tac" colspan="3"><b>Mohon berikan tanda &check; pada peryataan berikut.</b></td>
+                    <td class="tac" colspan="3"><b>Mohon berikan tanda <img src="assets/images/square-root.png" alt="check"> pada peryataan berikut.</b></td>
                 </tr>
                 <tr>
                     <td width="70%">Nasabah memiliki kewajiban pajak kepada/merupakan penduduk dari/ warga negara selain Indonesia.</td>

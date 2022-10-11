@@ -23,6 +23,8 @@ table td {
 .table-box2 {
     width: 90%;
     margin-left:10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     padding: 2px;
 }
 .table-box2 td {
@@ -94,7 +96,7 @@ td.border-bottom {
 }
 
 .sub-header2 {
-    background-color: rgb(121, 118, 118);
+    background-color: #808080;
 }
 .sub-header2 table td {
     font-size: 16px;
@@ -139,8 +141,8 @@ table td.sq14 {
 table td.sq11 {
     background-image: url('../images/sq11.png'); 
     background-size: 187px;
-    letter-spacing: 11px;
-    padding-left: 7px;
+    letter-spacing: 12px;
+    padding-left: 6px;
 }
 table td.sq10 { 
     background-image: url('../images/sq10.png'); 
@@ -241,8 +243,9 @@ ul.list-radio-vertical, .list-radio-vertical-blue {
     float:right;
 }
 table.box {
-    margin:10px;
+    margin-left:10px;
     margin-bottom: 2px;
+    margin-top: 2px;
     width:98%;
     border-bottom: solid 1px #000;
     border-right: solid 1px #000;

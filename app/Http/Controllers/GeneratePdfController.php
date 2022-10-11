@@ -46,6 +46,8 @@ class GeneratePdfController extends Controller {
 		if (!empty($dataNasabah)) {
 			$data = $dataNasabah;
 		}
+		$data['data_ksei']['sid'] = $data['data_ksei']['sid'] ?? 'IDD9878hJK78678';
+		$data['data_ksei']['sre_01'] = $data['data_ksei']['sre_01'] ?? 'SQ001HJG10K998';
 		$filename = 'Formulir Pembukaan RDN.pdf';
 		if (!Storage::exists('public/document-nasabah/'.$id)) {
 			Storage::makeDirectory('public/document-nasabah/'.$id);

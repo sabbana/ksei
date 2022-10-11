@@ -119,9 +119,9 @@ class KseiController extends Controller
 	 */
 
 	private function createFile($message, $filename, $ext = 'xml') {
-		$fileLocation = storage_path('app/public/xml/'.$filename.'.'.$ext);
+		$fileLocation = storage_path('app/public/ksei/xml/'.$filename.'.'.$ext);
 		if ($ext != 'xml') {
-			$fileLocation = storage_path('app/public/sdi/'.$filename.'.'.$ext);
+			$fileLocation = storage_path('app/public/ksei/sdi/'.$filename.'.'.$ext);
 		}
 		$myfile = fopen($fileLocation, "w");
 		fwrite($myfile, $message);
