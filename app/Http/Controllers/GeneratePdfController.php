@@ -69,7 +69,7 @@ class GeneratePdfController extends Controller {
 	 */
 	private function getDetailNasabah($id) {
 		$token = 'gFAJtJ4iZkKbnn_wivo1lyp2VcO4C6m3CkS_NZTXQloE2jCorYO8iWPJvvprxxzJVeBu6WF1wjYy';
-		$url = 'https://lbfpre.bcasekuritas.co.id/api/detail-account/'.$id;
+		$url = config('app.api_url').'/api/detail-account/'.$id;
 		$data = Curl::to($url)
 			->withContentType('application/json')
 			->withHeaders([
@@ -88,7 +88,7 @@ class GeneratePdfController extends Controller {
 	 */
 	private function getImage($path) {
 		$token = 'gFAJtJ4iZkKbnn_wivo1lyp2VcO4C6m3CkS_NZTXQloE2jCorYO8iWPJvvprxxzJVeBu6WF1wjYy';
-		$url = 'https://lbfpre.bcasekuritas.co.id/api/image?name='.$path;
+		$url = config('app.api_url').'/api/image?name='.$path;
 		$data = Curl::to($url)
 			->withContentType('application/json')
 			->withHeaders([
