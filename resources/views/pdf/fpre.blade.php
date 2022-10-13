@@ -151,11 +151,11 @@
                         <tr>
                             <td width="25%"><b>Berlaku Hingga</b><br/><i>Valid Through</i></td>
                             <td><b>Tanggal</b><br/><i>Date</i></td>
-                            <td width="15%"><div class="textfield" id="date">01</div></td>
+                            <td width="15%"><div class="textfield" id="date">31</div></td>
                             <td><b>Bulan</b><br/><i>Month</i></td>
-                            <td width="15%"><div class="textfield" id="month">01</div></td>
+                            <td width="15%"><div class="textfield" id="month">12</div></td>
                             <td><b>Tahun</b><br/><i>Year</i></td>
-                            <td width="15%"><div class="textfield" id="year">2999</div></td>
+                            <td width="15%"><div class="textfield" id="year">9998</div></td>
                         </tr>
                     </table>
                     <table>
