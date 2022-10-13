@@ -33,8 +33,22 @@ td.border-bottom {
     text-align: center;
     background-color: #555;
     color: #FFF;
-    z-index: 2;
+    z-index: 9999;
     clear: both;
+}
+.page_number2, .page_number3 {
+    font-weight: bold;
+    float:right;
+    margin-top: 200px;
+    background-color: #555;
+    color: #FFF;
+    padding: 4px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+.page_number3 {
+    margin-top: 500px;
 }
 hr {
     border: none;
@@ -52,15 +66,17 @@ hr {
     font-size:20pt;
 }
 .cover-title {
-    padding-left:30%;
+    padding-left:35%;
+    font-weight: 400;
 }
 .cover-title h1{
-    font-size: 40px;
+    font-size: 45px;
     font-weight: bold;
     margin-top:300px;
+    color: #333;
 }
 .cover-title h3{
-    font-size: 18px;
+    font-size: 25px;
     font-weight: lighter;
     font-style: italic;
     color: #555;
@@ -220,6 +236,9 @@ table.tin td {
     text-align: center;
     padding: 5px;
     vertical-align: middle;
+}
+.vat {
+    vertical-align: top;
 }
 .paraf {
     width: 100px;

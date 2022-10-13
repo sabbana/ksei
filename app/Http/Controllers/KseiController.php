@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use App\Models\KseiOutgoingLogs;
 use Validator;
 
@@ -119,9 +120,16 @@ class KseiController extends Controller
 	 */
 
 	private function createFile($message, $filename, $ext = 'xml') {
-		$fileLocation = storage_path('app/public/ksei/xml/'.$filename.'.'.$ext);
+		$monthFolder = date('Ymd');
+		if (!Storage::exists('public/ksei/xml/'.$monthFolder)) {
+			Storage::makeDirectory('public/ksei/xml/'.$monthFolder);
+		}
+		$fileLocation = storage_path('app/public/ksei/xml/'.$monthFolder.'/'.$filename.'.'.$ext);
 		if ($ext != 'xml') {
-			$fileLocation = storage_path('app/public/ksei/sdi/'.$filename.'.'.$ext);
+			if (!Storage::exists('public/ksei/sdi/'.$monthFolder)) {
+				Storage::makeDirectory('public/ksei/sdi/'.$monthFolder);
+			}
+			$fileLocation = storage_path('app/public/ksei/sdi/'.$monthFolder.'/'.$filename.'.'.$ext);
 		}
 		$myfile = fopen($fileLocation, "w");
 		fwrite($myfile, $message);

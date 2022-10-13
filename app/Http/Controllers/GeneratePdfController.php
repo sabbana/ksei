@@ -46,8 +46,6 @@ class GeneratePdfController extends Controller {
 		if (!empty($dataNasabah)) {
 			$data = $dataNasabah;
 		}
-		$data['data_ksei']['sid'] = $data['data_ksei']['sid'] ?? 'IDD9878hJK78678';
-		$data['data_ksei']['sre_01'] = $data['data_ksei']['sre_01'] ?? 'SQ001HJG10K998';
 		$filename = 'Formulir Pembukaan RDN.pdf';
 		if (!Storage::exists('public/document-nasabah/'.$id)) {
 			Storage::makeDirectory('public/document-nasabah/'.$id);
@@ -69,7 +67,7 @@ class GeneratePdfController extends Controller {
 	 */
 	private function getDetailNasabah($id) {
 		$token = 'gFAJtJ4iZkKbnn_wivo1lyp2VcO4C6m3CkS_NZTXQloE2jCorYO8iWPJvvprxxzJVeBu6WF1wjYy';
-		$url = config('app.api_url').'/api/detail-account/'.$id;
+		$url = config('app.api_url').'detail-account/'.$id;
 		$data = Curl::to($url)
 			->withContentType('application/json')
 			->withHeaders([
@@ -88,7 +86,7 @@ class GeneratePdfController extends Controller {
 	 */
 	private function getImage($path) {
 		$token = 'gFAJtJ4iZkKbnn_wivo1lyp2VcO4C6m3CkS_NZTXQloE2jCorYO8iWPJvvprxxzJVeBu6WF1wjYy';
-		$url = config('app.api_url').'/api/image?name='.$path;
+		$url = config('app.api_url').'image?name='.$path;
 		$data = Curl::to($url)
 			->withContentType('application/json')
 			->withHeaders([

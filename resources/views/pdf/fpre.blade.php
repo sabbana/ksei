@@ -695,25 +695,11 @@
                             <td>
                                 <ol>
                                     <li>
-                                        <b>Fasilitas BEST (BCA Sekuritas Equity Smart Trading</b> / <i>BEST Facility</i>
+                                        <b>Fasilitas Transaksi BCA Sekuritas</b> / <i>BCA Sekuritas Trade Facility</i>
                                         <ul class="list-radio-vertical">
-                                            <li class="{{ @strtolower($interuksi_khusus['fasilitas_transaksi']) != 'sales' ? 'active':'' }}"><b>Ya, saya ingin menggunakan Fasilitas Online trading *</b><br/><i>Yes, I want to use Oline Trading Facility
-                                            </i><br/><b>Pilihlah opsi dibawah ini</b>/<i>please select the following options</i>
-                                                <ul class="list-radio-vertical">
-                                                    <li class="{{ @strtolower($interuksi_khusus['fasilitas_transaksi']) == 'hybrid' ? 'active':'' }}">
-                                                        <b>Saya ingin bertransaksi melalui Sales dan Online Trading</b><br/>
-                                                        <i>I like to be able to make a transaction through Sales and Online Trading</i>
-                                                    </li>
-                                                    <li class="{{ @strtolower($interuksi_khusus['fasilitas_transaksi']) == 'online' ? 'active':'' }}">
-                                                        <b>Saya ingin bertransaksi secara penuh melalui Online Trading tanpa melibatkan Sales</b><br/>
-                                                        <i>I like to make transaction fully through Online Trading without involving Sales</i>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="{{ @strtolower($interuksi_khusus['fasilitas_transaksi']) == 'sales' ? 'active':'' }}">
-                                                <b>Tidak, saya tidak ingin menggunakan Fasilitas Online Trading</b><br/>
-                                                <i>No, I don’t want to use Oline Trading Facility</i>
-                                            </li>
+                                            <li class="{{ @strtolower($interuksi_khusus['fasilitas_transaksi']) == 'online' ? 'active':'' }}"><b>Online Trading</b><br/><i>Online Trade</i></li>
+                                            <li class="{{ @strtolower($interuksi_khusus['fasilitas_transaksi']) == 'sales' ? 'active':'' }}"><b>Sales</b><br/><i>Sales</i></li>
+                                            <li class="{{ @strtolower($interuksi_khusus['fasilitas_transaksi']) == 'hybrid' ? 'active':'' }}"><b>Hybrid (Online Trading and Sales)</b><br/><i>Hybrid (Online Trade and Sales)</i></li>
                                         </ul>
                                     </li>
                                 </ol>
@@ -800,7 +786,7 @@
                             <tr><td colspan="2"><div class="signature">
                                 <table class="ttd">
                                     <tr><td>SIGNATURE<br/><br/><br/><br/></td></tr>
-                                    <tr><td style="border-bottom:solid 1px #222">{{ @$nama_nasabah['nama_lengkap'] }}</td></tr>
+                                    <tr><td style="border-bottom:solid 1px #222">{{ @$ktp['nama_lengkap'] }}</td></tr>
                                     <tr><td><b>Nasabah</b> / <i>Customer</i></td></tr>
                                 </table>
                             </div></td></tr>
@@ -874,10 +860,10 @@
                                 <tr>
                                     <td width="30%">
                                         <ul class="list-radio-vertical">
-                                            <li class="{{ @strtolower($pernyataan[1]['jawaban']) == 'ya' ? 'active' : ''}}"><b>Ya, Nama</b><br/><i>Yes, Name</i></li>
+                                            <li class="{{ @strtolower($pernyataan[0]['jawaban']) == 'ya' ? 'active' : ''}}"><b>Ya, Nama</b><br/><i>Yes, Name</i></li>
                                         </ul>
                                     </td>
-                                    <td><div class="textfield grey"></div></td>
+                                    <td><div class="textfield grey">{{ @strtolower($pernyataan[0]['jawaban']) == 'ya' ? @$pernyataan[0]['child'][1]['child'][0]['jawaban'] : ''}}</div></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -885,12 +871,12 @@
                                             <li class="none-padding"><b>Nama Perusahaan</b><br/><i>Company Name</i></li>
                                         </ul>
                                     </td>
-                                    <td><div class="textfield grey"></div></td>
+                                    <td><div class="textfield grey">{{ @strtolower($pernyataan[0]['jawaban']) == 'ya' ? @$pernyataan[0]['child'][1]['child'][1]['jawaban'] : ''}}</div></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                         <ul class="list-radio-vertical">
-                                            <li class="{{ @strtolower($pernyataan[1]['jawaban']) == 'tidak' ? 'active' : ''}}"><b>Tidak</b><br/><i>No</i></li>
+                                            <li class="{{ @strtolower($pernyataan[0]['jawaban']) == 'tidak' ? 'active' : ''}}"><b>Tidak</b><br/><i>No</i></li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -910,10 +896,10 @@
                                 <tr>
                                     <td width="30%">
                                         <ul class="list-radio-vertical">
-                                            <li class="{{ @strtolower($pernyataan[2]['jawaban']) == 'ya' ? 'active' : ''}}"><b>Ya, Nama</b><br/><i>Yes, Name</i></li>
+                                            <li class="{{ @strtolower($pernyataan[0]['jawaban']) == 'ya' ? 'active' : ''}}"><b>Ya, Nama</b><br/><i>Yes, Name</i></li>
                                         </ul>
                                     </td>
-                                    <td><div class="textfield grey"></div></td>
+                                    <td><div class="textfield grey">{{ @strtolower($pernyataan[0]['jawaban']) == 'ya' ? @$pernyataan[0]['child'][2]['child'][0]['jawaban'] : ''}}</div></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -921,7 +907,7 @@
                                             <li class="none-padding"><b>Nama Perusahaan</b><br/><i>Company Name</i></li>
                                         </ul>
                                     </td>
-                                    <td><div class="textfield grey"></div></td>
+                                    <td><div class="textfield grey">{{ @strtolower($pernyataan[0]['jawaban']) == 'ya' ? @$pernyataan[0]['child'][2]['child'][1]['jawaban'] : ''}}</div></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
@@ -944,12 +930,12 @@
                                 <tr>
                                     <td width="50%">
                                         <ul class="list-radio-vertical">
-                                            <li class="{{ @strtolower($pernyataan[3]['jawaban']) == 'ya' ? 'active' : ''}}"><b>Ya</b> / <i>Yes</i></li>
+                                            <li><b>Ya</b> / <i>Yes</i></li>
                                         </ul>
                                     </td>
                                     <td width="50%">
                                         <ul class="list-radio-vertical">
-                                            <li class="{{ @strtolower($pernyataan[3]['jawaban']) == 'tidak' ? 'active' : ''}}"><b>Tidak</b> / <i>No</i></li>
+                                            <li class="active"><b>Tidak</b> / <i>No</i></li>
                                         </ul>
                                         <br/>
                                     </td>
@@ -965,19 +951,19 @@
                                 <tr>
                                     <td colspan="4">
                                         <ul class="list-radio-vertical">
-                                            <li><b>Ya, Nama Perusahaan Efek</b> / <i>Yes, Securities Company's name</i></li>
+                                            <li class="{{ @strtolower($pernyataan[1]['jawaban']) == 'ya' ? 'active' : ''}}"><b>Ya, Nama Perusahaan Efek</b> / <i>Yes, Securities Company's name</i></li>
                                         </ul>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="20"></td>
                                     <td width="10">1.</td>
-                                    <td colspan="2"><div class="textfield grey"></div></td>
+                                    <td colspan="2"><div class="textfield grey">{{ @strtolower($pernyataan[1]['jawaban']) == 'ya' ? @$pernyataan[1]['child'][0]['jawaban'] : ''}}</div></td>
                                 </tr>
                                 <tr>
                                     <td width="20"></td>
                                     <td colspan="2"><b>Atas Nama</b><br/><i>Under Name</i></td>
-                                    <td width="60%"><div class="textfield grey"></div></td>
+                                    <td width="60%"><div class="textfield grey">{{ @strtolower($pernyataan[1]['jawaban']) == 'ya' ? @$pernyataan[1]['child'][1]['jawaban'] : ''}}</div></td>
                                 </tr>
                                 <tr>
                                     <td width="20"></td>
@@ -992,7 +978,7 @@
                                 <tr>
                                     <td colspan="4">
                                         <ul class="list-radio-vertical">
-                                            <li><b>Tidak</b> / <i>No</i></li>
+                                            <li class="{{ @strtolower($pernyataan[1]['jawaban']) == 'tidak' ? 'active' : ''}}"><b>Tidak</b> / <i>No</i></li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -1008,19 +994,19 @@
                                 <tr>
                                     <td>
                                         <ul class="list-radio-vertical">
-                                            <li><b>Ya (silahkan mengisi formulir W-9)</b><br/><i>Yes (please fill in W-9 form)</i></li>
+                                            <li class="{{ @strtolower($pernyataan[2]['jawaban']) == 'ya' ? 'active' : ''}}"><b>Ya (silahkan mengisi formulir W-9)</b><br/><i>Yes (please fill in W-9 form)</i></li>
                                         </ul>
                                     </td>
                                     <td>
                                         <ul class="list-radio-vertical">
-                                            <li><b>Tidak</b> / <i>No</i></li>
+                                            <li class="{{ @strtolower($pernyataan[2]['jawaban']) == 'tidak' ? 'active' : ''}}"><b>Tidak</b> / <i>No</i></li>
                                         </ul>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                         <ul class="list-radio-vertical">
-                                            <li><b>Ya, namun sudah tidak lagi **</b><br/><i>Yes, but no longer **</i></li>
+                                            <li class="{{ @strtolower($pernyataan[2]['jawaban']) == 'ya' ? 'active' : ''}}"><b>Ya, namun sudah tidak lagi **</b><br/><i>Yes, but no longer **</i></li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -1056,12 +1042,12 @@
                                 <tr>
                                     <td>
                                         <ul class="list-radio-vertical">
-                                            <li><b>Ya, Lampirkan</b><br/><i>Yes, Please attach</i></li>
+                                            <li class="{{ @strtolower($pernyataan[3]['jawaban']) == 'ya' ? 'active' : ''}}"><b>Ya, Lampirkan</b><br/><i>Yes, Please attach</i></li>
                                         </ul>
                                     </td>
                                     <td>
                                         <ul class="list-radio-vertical">
-                                            <li><b>Tidak</b> / <i>No</i></li>
+                                            <li class="{{ @strtolower($pernyataan[3]['jawaban']) == 'tidak' ? 'active' : ''}}"><b>Tidak</b> / <i>No</i></li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -1080,9 +1066,9 @@
                                 <tr>
                                     <td>
                                         <ul class="list-radio-vertical">
-                                            <li>
+                                            <li class="{{ @strtolower($pernyataan[4]['jawaban']) == 'ya' ? 'active' : ''}}">
                                                 <b>Ya, Sebutkan</b> / <i>Yes, Name</i><br/><br/>
-                                                <div class="textfield grey"></div>
+                                                <div class="textfield grey">{{ @strtolower($pernyataan[4]['jawaban']) == 'ya' ? @$pernyataan[4]['child'][0]['jawaban'] : ''}}</div>
                                             </li>
                                         </ul>
                                     </td>
@@ -1090,7 +1076,7 @@
                                 <tr>
                                     <td>
                                         <ul class="list-radio-vertical">
-                                            <li><b>Tidak</b><br/><i>No</i></li>
+                                            <li class="{{ @strtolower($pernyataan[4]['jawaban']) == 'tidak' ? 'active' : ''}}"><b>Tidak</b><br/><i>No</i></li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -1104,7 +1090,7 @@
                                     <td width="40%">
                                         <ul class="list-radio-vertical">
                                             <li>
-                                                <b>Ya, Nama</b><br/><i>Yes, Name</i><br/><br/>
+                                                <b class="{{ @strtolower($pernyataan[5]['jawaban']) == 'ya' ? 'active' : ''}}">Ya, Nama</b><br/><i>Yes, Name</i><br/><br/>
                                             </li>
                                         </ul>
                                     </td>
@@ -1119,9 +1105,30 @@
                                 <tr>
                                     <td colspan="2">
                                         <ul class="list-radio-vertical">
-                                            <li>
+                                            <li class="{{ @strtolower($pernyataan[5]['jawaban']) == 'tidak' ? 'active' : ''}}">
                                                 <b>Tidak</b><br/><i>No</i><br/><br/>
                                             </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li>
+                            <b>Apakah keluarga Anda sekarang / sebelumnya / akan menduduki posisi / sedang dicalonkan untuk suatu posisi publik / politisi (Politicaly Exposed Person) ?</b><br/>
+                            <i>Are your family now / previously / will hold / be nominated for any position exposed to public / Politicaly Exposed Person (PEP) ?</i>
+                            <table>
+                                <tr>
+                                    <td width="30%">
+                                        <ul class="list-radio-vertical">
+                                            <li class=""><b>Ya, Jabatan</b><br/><i>Yes, Name</i></li>
+                                        </ul>
+                                    </td>
+                                    <td><div class="textfield"></div></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <ul class="list-radio-vertical">
+                                            <li class="active"><b>Tidak</b> / <i>No</i></li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -1133,12 +1140,12 @@
                                 <tr>
                                     <td width="50%">
                                         <ul class="list-radio-vertical">
-                                            <li><b>Memiliki</b> / <i>Hold</i></li>
+                                            <li class="{{ @$npwp['no_npwp'] ? 'active':'' }}"><b>Memiliki</b> / <i>Hold</i></li>
                                         </ul>
                                     </td>
                                     <td width="50%">
                                         <ul class="list-radio-vertical">
-                                            <li><b>Tidak Memiliki</b> / <i>Does not hold</i></li>
+                                            <li class="{{ @$npwp['no_npwp'] ? '':'active' }}"><b>Tidak Memiliki</b> / <i>Does not hold</i></li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -1166,14 +1173,14 @@
                                 <tr>
                                     <td>
                                         <ul class="list-radio-vertical">
-                                            <li>
+                                            <li class="{{ @strtolower($pernyataan[6]['jawaban']) == 'ya' ? 'active' : ''}}">
                                                 <b>Ya</b> / <i>Yes<br/><br/></i>
                                             </li>
                                         </ul>
                                     </td>
                                     <td>
                                         <ul class="list-radio-vertical">
-                                            <li><b>Tidak</b> / <i>No</i><br/><br/></li>
+                                            <li class="{{ @strtolower($pernyataan[6]['jawaban']) == 'tidak' ? 'active' : ''}}"><b>Tidak</b> / <i>No</i><br/><br/></li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -1192,8 +1199,8 @@
                                 </tr>
                                 <tr>
                                     <td>1.</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
+                                    <td>{{ @strtolower($pernyataan[6]['jawaban']) == 'ya' ? $pernyataan[6]['child'][0]['jawaban'] : ''}}</td>
+                                    <td>{{ @strtolower($pernyataan[6]['jawaban']) == 'ya' ? $pernyataan[6]['child'][1]['jawaban'] : ''}}</td>
                                 </tr>
                                 <tr>
                                     <td>2.</td>
@@ -1241,6 +1248,14 @@
                             <i>I have met in person (face to face) with the Account Officer/Sales/Marketing Staff of PT BCA SEKURITAS and provided the required information as contained herein.</i>
                         </li>
                         <li>
+                            <b>Saya menyatakan telah dijelaskan oleh pejabat yang ditunjuk oleh PT BCA SEKURITAS atau telah mengakses informasi yang terdapat dalam website milik PT BCA SEKURITAS atau sarana lainnya tentang manfaat, risiko, biaya-biaya yang akan timbul atas hak dan kewajiban Saya.</b><br/>
+	                        <i>I declare that I have been explained by an official appointed by PT BCA SEKURITAS or have accessed the information contained on the PT BCA SEKURITAS website or other means regarding the benefits, risks, costs that will arise on my rights and obligations.</i>
+                        </li>
+                        <li>
+                            <b>Saya menyatakan dan menyetujui bahwa Saya dilarang memberikan kuasa transaksi maupun pengelolaan aset Saya dalam rekening efek Saya kepada pengawai PT BCA SEKURITAS.</b><br/>
+                            <i>I declare and agree that I am prohibited from authorizing transactions or managing My assets in My securities account to employees of PT BCA SEKURITAS</i>
+                        </li>
+                        <li>
                             <b>Saya telah dijelaskan tentang hak dan kewajiban saya dan saya telah membaca, mengerti dan mengikatkan diri serta menyetujui semua ketentuan dan persyaratan yang telah dituangkan di dalam Perjanjian Pembukaan Rekening Efek, yang akan berlaku efektif setelah permohonan pembukaan Rekening Efek ini disetujui oleh PT BCA SEKURITAS.</b><br/>
                             <i>I have received explanation on my rights and obligations, and I have read, understood and bound myself as well as agreed to all terms and conditions set forth in the Securities Account Opening Agreement, which will come into force once this Securities Account opening application is approved by PT BCA SEKURITAS.</i>
                         </li>
@@ -1274,7 +1289,7 @@
                 <div class="content">
                     <ul class="list-radio-vertical">
                         <li class="active"><b>KTP/Paspor/KITAS</b><br/><i>ID/Paspor/KITAS</i></li>
-                        <li class="{{ $npwp['no_npwp'] == null ? 'active' : ''}}"><b>Nomor Pokok Wajib Pajak (NPWP)</b><br/><i>Taxpayer Identification Number</i></li>
+                        <li class="{{ $npwp['no_npwp'] ? 'active' : ''}}"><b>Nomor Pokok Wajib Pajak (NPWP)</b><br/><i>Taxpayer Identification Number</i></li>
                         <li><b>Surat Kuasa (jika diperlukan)</b><br/><i>Power of Attorney</i></li>
                         <li><b>Informasi mengenai Pemilik Manfaat/Beneficial Owner (Jika diperlukan)</b><br/><i>Information on Beneficial Owner (if necessary)</i></li>
                         <li><b>Formulir Rekening Dana Nasabah</b><br/><i>Appliacation Form for Customer</i></li>
@@ -1313,24 +1328,29 @@
                                     <td class="border-bottom" width="50%">{{ @$nasabah['nama_lengkap']}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Alamat sesuai Identitas</td>
-                                    <td>:</td>
+                                    <td class="vat">Alamat sesuai Identitas</td>
+                                    <td class="vat">:</td>
                                     <td class="border-bottom">{{ @$ktp['alamat']}}, RT {{ @$ktp['rt']}}, RW {{ @$ktp['rw']}}<br/>{{ @ucwords(strtolower($ktp['kelurahan']))}}, {{ @ucwords(strtolower($ktp['kecamatan']))}}, {{ @ucwords($ktp['kota']['name'])}}, {{ @ucwords($ktp['provinsi']['name'])}}</td>
                                 </tr>
                                 <tr>
-                                    <td>No. Identitas</td>
-                                    <td>:</td>
-                                    <td class="border-bottom square-active">{{ @$ktp['nik']}}</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="border-bottom square">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="border-bottom square">&nbsp;</td>
+                                    <td class="vat">No. Identitas</td>
+                                    <td class="vat">:</td>
+                                    <td class="square-active">
+                                        <table>
+                                        <tr>
+                                            <td width="30%">KTP</td>
+                                                <td class="border-bottom">{{ @$ktp['nik']}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Passpor</td>
+                                                <td class="border-bottom"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td class="border-bottom"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
                                 </tr>
                             </table>
                         </li>
@@ -1416,7 +1436,7 @@
                 <div class="content" style="font-size:10.5px">
                     <table>
                         <tr><td class="tac"><span class="bold">Nomor: ______________________________</span></td></tr>
-                        <tr><td class="tac"><span class="bold">Tanggal: 10/06/2022</span></td></tr>
+                        <tr><td class="tac"><span class="bold">Tanggal: {{ date('d/m/Y', strtotime($nasabah['active_at'])) }}</span></td></tr>
                     </table>
                     <p>This Securities Account Opening Agreement <b>("Agreement")</b> is made and signed by and between:</p>
                     <ol class="romawi">
@@ -1431,24 +1451,29 @@
                                     <td class="border-bottom" width="50%">{{ @$nasabah['nama_lengkap']}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Alamat sesuai Identitas</td>
-                                    <td>:</td>
+                                    <td class="vat">Alamat sesuai Identitas</td>
+                                    <td class="vat">:</td>
                                     <td class="border-bottom">{{ @$ktp['alamat']}}, RT {{ @$ktp['rt']}}, RW {{ @$ktp['rw']}}<br/>{{ @ucwords(strtolower($ktp['kelurahan']))}}, {{ @ucwords(strtolower($ktp['kecamatan']))}}, {{ @ucwords($ktp['kota']['name'])}}, {{ @ucwords($ktp['provinsi']['name'])}}</td>
                                 </tr>
                                 <tr>
-                                    <td>No. Identitas</td>
-                                    <td>:</td>
-                                    <td class="border-bottom square-active">{{ @$ktp['nik']}}</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="border-bottom square">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="border-bottom square">&nbsp;</td>
+                                    <td class="vat">No. Identitas</td>
+                                    <td class="vat">:</td>
+                                    <td class="square-active">
+                                        <table>
+                                        <tr>
+                                            <td width="30%">KTP</td>
+                                                <td class="border-bottom">{{ @$ktp['nik']}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Passpor</td>
+                                                <td class="border-bottom"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td class="border-bottom"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
                                 </tr>
                             </table>
                         </li>
@@ -1860,6 +1885,8 @@
                                     Formulir Permohonan Pembukaan Rekening Efek terhadap BCAS, kecuali
                                     diperjanjikan khusus dalam perjanjian yang terpisah dengan Formulir Permohonan
                                     Pembukaan Rekening Efek;</li>
+                                <li>menyisihkan atau menempatkan dana senilai Rp 1,- (satu Rupiah) pada Rekening Dana atas Nama Nasabah atau  
+                                    tindakan lain yang diperlukan dalam rangka memastikan Rekening Dana Nasabah tetap aktif kecuali dilakukan penutupan Rekening Efek;</li>
                                 <li>menutup Rekening Efek berdasarkan ketentuan pada Bagian XIX Perjanjian ini,
                                     menjual dan/atau membeli Efek, mengalihkan, menyerahkan dan/atau menerima
                                     Efek dan/atau dana, serta tindakan lain yang berkaitan dengan penutupan
@@ -1949,11 +1976,13 @@
                                     only for the Customer interest which expressly written in Application Form of
                                     Securities Account Opening to BCAS, except speci cally agreed in separated
                                     agreement with Application Form of Securities Account Opening;</li>
+                                <li>set aside or place funds in the amount of Rp. 1,- (one Rupiah) in the Fund Account under the Customer's Name or 
+                                    other necessary actions in order to ensure that the Customer's Fund Account remains active unless the Securities Account is closed</li>
                             </ol>
                             <table class="table-list">
                                 <tr>
                                     <td>
-                                        <ol type="a" start="12">
+                                        <ol type="a" start="13">
                                             <li>Close Securities Account based on provision in
                                                 Section XIX of this Agreement, sale and/or
                                                 purchase Securities, assign, deliver and/or receive
@@ -2918,13 +2947,11 @@
                             negatif Efek yang tidak dibiayai oleh BCAS atau tidak dijamin secara cukup oleh
                             nasabah.</li>
                         <li>Apabila waktu pembayaran telah melewati tanggal penyelesaian Transaksi Efek/atau
-                            dana yang ada dalam Rekening Dana dalam posisi negatif atau tidak mencukupi untuk
-                            menyelesaikan seluruh kewajiban pembayaran oleh Nasabah baik yang telah maupun
-                            belum jatuh tempo, maka BCAS dapat melakukan penjualan atas Efek yang berada
+                            dana yang ada dalam Rekening Dana dalam posisi negatif atau tidak mencukupi untuk 
+                            menyelesaikan seluruh kewajiban pembayaran oleh Nasabah baik yang telah maupun 
+                            belum jatuh tempo, maka BCAS dapat melakukan penjualan atas Efek yang berada 
                             dalam Rekening Efek pada 2 (dua) Hari Bursa setelah tanggal penyelesaian Transaksi
-                            Efek/ baik pada Pasar Reguler, Pasar Tunai, Pasar Negosiasi maupun dengan
-                            mekanisme tutup sendiri tanpa perlu memperoleh persetujuan terlebih dulu dari
-                            Nasabah.</li>
+                            Efek/ baik pada Pasar Reguler tanpa perlu memperoleh persetujuan terlebih dulu dari Nasabah</li>
                         <li>Pemilihan Efek yang akan dijual dan penentuan harga penjualan Efek dimaksud
                             merupakan hak BCAS sepenuhnya dalam rangka mengurangi kewajiban Nasabah
                             terhadap BCAS.</li>
@@ -2973,7 +3000,6 @@
                         <li>Nasabah setuju untuk memberikan wewenang kepada BCAS untuk menjaminkan Efek
                             dalam portofolio Nasabah pada rekening KSEI No. SQ001-0000-004-38 untuk tujuan
                             transaksi Nasabah.</li>
-                        <li></li>
                     </ol>
                     <p><b>XVII. TINDAKAN KORPORASI</b></p>
                     <ol>
@@ -3019,12 +3045,11 @@
                             Securities owned by the Customer for Customer’s Securities Account for the purpose
                             of close negative balance of Securities which does not funded by BCAS or not su
                             ciently secured by the Customer.</li>
-                        <li>If the time of payment has elapsed the settlement date of Securities Transaction or the
-                            funds in the Fund Account is negative or insu cient to settle all payment liabilities by the
-                            Customer which have or have not become due, then BCAS may sell the Securities
-                            available in the Securities Account in 2 (two) Trading Day after the settlement date of
-                            Securities Transaction in the Regular Market, Spot Market, Negotiatiation Market or by
-                            cross mechanism without prior approval from the Customer.</li>
+                        <li>If the time of payment has elapsed the settlement date of Securities Transaction or the 
+                            funds in the Fund Account is negative or insufficient to settle all payment liabilities by 
+                            the Customer which have or have not become due, then BCAS may sell the Securities available in the 
+                            Securities Account in 2 (two) Trading Day after the settlement date of Securities Transaction in the 
+                            Regular Market without prior approval from the Customer.</li>
                         <li>Selection of Securities to be sold and determination of such Securities sale price shall
                             be fully held by BCAS in order to reduce Customer's liabilities to BCAS.</li>
                         <li>Any loss due to the such sale which executed by BCAS shall be borne by the
@@ -3113,9 +3138,9 @@
                 </table>
             </div>
             <div class="box-left">
-                <div class="content">
+                <div class="content" style="font-size:10.7px">
                     <ol start="2">
-                        <li>. Untuk penerimaan hak-hak yang melekat atas Efek tertentu seperti Hak Memesan
+                        <li>Untuk penerimaan hak-hak yang melekat atas Efek tertentu seperti Hak Memesan
                             Efek Terlebih Dahulu, Waran, Opsi maupun hak-hak lain yang pemenuhan/
                             pembayarannya memerlukan prosedur/tata-cara tertentu, pembayaran/distribusinya
                             akan diatur tersendiri oleh BCAS dengan memperhatikan ketentuan peraturan
@@ -3168,6 +3193,8 @@
                                     keputusan tersebut.</li>
                                 <li>tidak memenuhi ketentuan pada pasal II ayat 1.</li>
                                 <li>tidak memenuhi ketentuan pada pasal V.</li>
+                                <li>terdapat  pelanggaran atau tidak terpenuhinya ketentuan yang berlaku di Pasar Modal, 
+                                    baik yang berlaku pada saat ini maupun yang akan berlaku di kemudian hari.</li>
                             </ol>
                         </li>
                         <li>Dalam hal BCAS menutup Rekening Efek, maka BCAS berhak (namun tidak
@@ -3186,11 +3213,10 @@
                             </ol>
                         </li>
                         <li>BCAS mempunyai hak sepenuhnya untuk melakukan pemblokiran atas Rekening Efek
-                            Nasabah secara serta merta jika Nasabah tercantum dalam Daftar Terduga Teroris
-                            dan Organisasi Teroris (DTTOT) atau berdasarkan daftar permintaan pemblokiran
-                            yang dikeluarkan oleh lembaga atau instansi pemerintah yang berwenang atau
-                            berdasarkan permintaan pihak lain yang didasari dengan adanya permintaan
-                            pemblokiran dari lembaga atau instansi pemerintah yang berwenang.</li>
+                            Nasabah secara serta merta jika Nasabah tercantum dalam Daftar Terduga Teroris dan Organisasi Teroris (DTTOT), 
+                            Daftar Pendanaan Proliferasi Senjata Pemusnah Massal atau berdasarkan daftar permintaan pemblokiran yang dikeluarkan
+                            oleh lembaga atau instansi pemerintah yang berwenang atau berdasarkan permintaan pihak lain yang didasari dengan adanya 
+                            permintaan pemblokiran dari lembaga atau instansi pemerintah yang berwenang.</li>
                     </ol>
                     <p><b class="tal">XX. JANGKA WAKTU,PERUBAHAN DAN PENGAKHIRAN PERJANJIAN</b></p>
                     <ol>
@@ -3230,7 +3256,7 @@
                     <ol>
                         <li>The Customer shall be entitled to personally deliver the Securities sales/purchase
                             order at BCAS o ce or to present the order via recorded phone or fax.</li>
-                        <li> The Customer shall maintain the con dentiality of Customer’s code/account number to
+                        <li>The Customer shall maintain the con dentiality of Customer’s code/account number to
                             prevent misuse by other party.</li>
                         <li>The Customer may authorize third party to make the sales/purchase order at BCAS. All
                             actions from such proxy of such authorization shall be the liabilities of the Customer as
@@ -3267,6 +3293,8 @@
                                     provide clari cation with respect to the basis of such decision.</li>
                                 <li>The provisions of Article II Paragraph 1 are not ful lled.</li>
                                 <li>The provisions of Article V are not fulfilled</li>
+                                <li>there is a violation or non-fulfillment of the provisions that apply in the Capital Market, 
+                                    both currently applicable and those that will apply in the future</li>
                             </ol>
                         </li>
                         <li>In case BCAS closed the Securities Account, then BCAS shall be entitled (but not
@@ -3283,11 +3311,11 @@
                                 <li>close the Fund Account.</li>
                             </ol>
                         </li>
-                        <li>BCAS reserves the right to block the Customer's Securities Account immediately and in
-                            full e ect in the event that the Customer is listed on the List of Suspected Terrorists and
-                            Terrorist Organizations (DTTOT) or on other list(s) of blocking requests issued by an
-                            authorized governmental institution or agency or based on a request by another party
-                            founded on a blocking request by an authorized governmental institution or agency.</li>
+                        <li>BCAS reserves the right to block the Customer's Securities Account immediately in the event that the Customer 
+                            is listed on the List of Suspected Terroristsand Terrorist Organizations (DTTOT), 
+                            List of Funding the Proliferation of Weapons of Mass Destruction or on other list(s) of blocking requests 
+                            issued byan authorized governmental institution or agency or based on a request by anotherparty founded on a 
+                            blocking request by an authorized governmental institution or agency.</li>
                     </ol>
                     <p><b>XX. DURATION, AMENDMENT AND TERMINATION OF AGREEMENT</b></p>
                     <ol>
@@ -4050,8 +4078,7 @@
                         menyelesaikan perselisihan dengan cara musyawarah untuk mufakat. Apabila
                         musyawarah untuk mufakat yang dilakukan tidak menghasilkan penyelesaian dalam
                         jangka waktu 30 (tiga puluh) hari, BCAS dan Nasabah sepakat untuk menyelesaikan
-                        perselisihan melalui Badan Arbitrase Pasar Modal Indonesia (BAPMI) di Jakarta,
-                        berdasarkan peraturan-peraturan BAPMI.</p>
+                        perselisihan melalui Lembaga Alternatif Penyelesaian Sengketa (yang diatur dalam Peraturan Otoritas Jasa Keuangan)</p>
                     <ol start="5">
                         <li>Apabila salah satu ketentuan dalam Perjanjian ini menjadi tidak berlaku atau tidak
                             dapat dijalankan, maka ketidakberlakuan tersebut tidak mengakibatkan ketentuanketentuan lain dalam Perjanjian ini menjadi tidak berlaku. Dengan memperhatikan
@@ -4095,7 +4122,8 @@
                             tuntutan hukum yang mungkin timbul sebagai akibat disampaikannya informasi dan
                             data mengenai Nasabah kepada pihak-pihak berwenang oleh BCAS dan Nasabah
                             menyatakan tidak akan melakukan gugatan atau tuntutan hukum kepada BCAS
-                            apabila BCAS menyampaikan informasi dan data mengenai Nasabah kepada pihakpihak tersebut, sepanjang penyampaian informasi dan data tersebut dilakukan sesuai
+                            apabila BCAS menyampaikan informasi dan data mengenai Nasabah kepada pihakpihak tersebut,
+                            sepanjang penyampaian informasi dan data tersebut dilakukan sesuai
                             dengan ketentuan peraturan perundang-undangan yang berlaku.</li>
                     </ol>
                     <p class="pdl10">Perjanjian ini memuat syarat dan ketentuan yang berlaku dan mengikat BCAS serta
@@ -4108,8 +4136,7 @@
                     <p class="pdl20">or other disputes in connection with this Agreement, BCAS and Customer agrees to
                         settle the dispute by means of deliberation. If the deliberation fail to produce a
                         settlement within a period of 30 (thirty) days, BCAS and Customer agrees to settle the
-                        disputes through the Indonesian Capital Market Arbitration Board (BAPMI) in Jakarta,
-                        based on the BAPMI rules.</p><br/><br/>
+                        disputes through Lembaga Alternatif Penyelesaian Sengketa (which is stipulated in the Financial Services Authority regulations).</p><br/><br/>
                     <ol start="5">
                         <li>If any provision of this Agreement becomes invalid or unenforceable, then such
                             invalidity does not result in other provisions of this Agreement are not applicable. With
@@ -4178,7 +4205,7 @@
                         <table>
                             <tr>
                                 <td width="20%"><b>Nama</b><br/><i>Name</i></td>
-                                <td><div class="textfield"></div></td>
+                                <td><div class="textfield">{{ @$ktp['nama_lengkap'] }}</div></td>
                             </tr>
                             <tr>
                                 <td width="20%"><b>Jabatan</b><br/><i>Position</i></td>
@@ -4203,7 +4230,7 @@
                 </tr>
             </table>
         </div>
-        <span class="page_number">17</span>
+        <span class="page_number2">17</span>
     </div>
     
     <!-- perjanjian -->
@@ -4220,19 +4247,19 @@
                                     <tr>
                                         <td>
                                             <ul class="list-radio-vertical">
-                                                <li><b>Website</b><br/><i>Website</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'web' ? 'active':'' }}"><b>Website</b><br/><i>Website</i></li>
                                             </ul>
                                         </td>
                                         <td width="20%"><div class="textfield"></div></td>
                                         <td>
                                             <ul class="list-radio-vertical">
-                                                <li><b>Instagram</b><br/><i>USER ID</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'instagram' ? 'active':'' }}"><b>Instagram</b><br/><i>USER ID</i></li>
                                             </ul>
                                         </td>
                                         <td width="20%"><div class="textfield"></div></td>
                                         <td>
                                             <ul class="list-radio-vertical">
-                                                <li><b>Youtube</b><br/><i>USER ID</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'youtube' ? 'active':'' }}"><b>Youtube</b><br/><i>USER ID</i></li>
                                             </ul>
                                         </td>
                                         <td width="20%"><div class="textfield"></div></td>
@@ -4240,7 +4267,7 @@
                                     <tr>
                                         <td colspan="2">
                                             <ul class="list-radio-vertical">
-                                                <li><b>Acara, Sebutkan</b><br/><i>Event, Specify</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'event' ? 'active':'' }}"><b>Acara, Sebutkan</b><br/><i>Event, Specify</i></li>
                                             </ul>
                                         </td>
                                         <td colspan="4"><div class="textfield"></div></td>
@@ -4248,7 +4275,7 @@
                                     <tr>
                                         <td colspan="2">
                                             <ul class="list-radio-vertical">
-                                                <li><b>Podcast, Sebutkan</b><br/><i>Podcast, Specify</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'podcast' ? 'active':'' }}"><b>Podcast, Sebutkan</b><br/><i>Podcast, Specify</i></li>
                                             </ul>
                                         </td>
                                         <td colspan="4"><div class="textfield"></div></td>
@@ -4260,7 +4287,7 @@
                                     <tr>
                                         <td width="60%">
                                             <ul class="list-radio-vertical">
-                                                <li><b>Referal</b><br/><i>Referral</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'referal' ? 'active':'' }}"><b>Referal</b><br/><i>Referral</i></li>
                                             </ul>
                                         </td>
                                         <td><div class="textfield"></div></td>
@@ -4268,7 +4295,7 @@
                                     <tr>
                                         <td>
                                             <ul class="list-radio-vertical">
-                                                <li><b>Iklan, Sebutkan dimana</b><br/><i>Please describe from where</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'iklan' ? 'active':'' }}"><b>Iklan, Sebutkan dimana</b><br/><i>Please describe from where</i></li>
                                             </ul>
                                         </td>
                                         <td><div class="textfield"></div></td>
@@ -4276,7 +4303,7 @@
                                     <tr>
                                         <td>
                                             <ul class="list-radio-vertical">
-                                                <li><b>Lainnya, Sebutkan</b><br/><i>Other, Specify</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'lainnya' ? 'active':'' }}"><b>Lainnya, Sebutkan</b><br/><i>Other, Specify</i></li>
                                             </ul>
                                         </td>
                                         <td><div class="textfield"></div></td>
@@ -4606,8 +4633,8 @@
                     </div>
                 </div>
             </div>
+            <div class="page_number3">19</div>
         </div>
-        <span class="page_number">19</span>
     </div>
 
     <!-- perjanjian -->
