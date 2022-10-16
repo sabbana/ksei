@@ -131,7 +131,7 @@
                             </td>
                             <td>
                                 <ul class="list-radio-vertical">
-                                    <li><b>WNA</b><br/><i>Passpor</i></li>
+                                    <li><b>Passpor</b><br/><i>Passpor</i></li>
                                 </ul>
                             </td>
                             <td>
@@ -245,9 +245,8 @@
                         </tr>
                         <tr>
                             <td><b>No. Telepon</b><br/><i>Phone Number</i></td>
-                            <td><div class="textfield" id="phone">{{ @$nasabah['no_telp']}}</div></td>
                             <td width="20%"><b>Selular</b><br/><i>Mobile</i></td>
-                            <td><div class="textfield" id="phone"></div></td>
+                            <td colspan="2"><div class="textfield" id="phone">{{ @$nasabah['no_telp']}}</div></td>
                         </tr>
                         <tr>
                             <td><b>Rumah</b><br/><i>Home Number</i></td>
@@ -344,6 +343,10 @@
                         </tr>
                         <tr>
                             <td><b>Alamat</b><br/><i>Address</i></td>
+                            <td colspan="3"><div class="textfield"></div></td>
+                        </tr>
+                        <tr>
+                            <td></td>
                             <td colspan="3"><div class="textfield"></div></td>
                         </tr>
                         <tr>
@@ -482,9 +485,9 @@
                             <td width="20%"><b>Lama Bekerja</b><br/><i>Working Period</i></td>
                             <td><div class="textfield">{{ @$pekerjaan_dan_aset['lama_kerja'] }} Tahun {{ @$pekerjaan_dan_aset['lama_bulan_kerja'] }} Bulan</div></td>
                         </tr>
-                        <tr><td colspan="4"><b>Nama Perusahaan</b><br/><i>Company Name</i></td></tr>
+                        <tr><td colspan="4"><b>Nama Perusahaan</b> / <i>Company Name</i></td></tr>
                         <tr><td colspan="4"><div class="textfield">{{ @$pekerjaan_dan_aset['nama_perusahaan'] }}</div></td></tr>
-                        <tr><td colspan="4"><b>Bidang Usaha</b><br/><i>Bidang Usaha</i></td></tr>
+                        <tr><td colspan="4"><b>Bidang Usaha</b> / <i>Line of Business</i></td></tr>
                         <tr><td colspan="4"><div class="textfield">{{ @$pekerjaan_dan_aset['bidang_usaha'] }}</div></td></tr>
                     </table>
                 </div>
@@ -1287,6 +1290,7 @@
             <div class="box-right">
                 <div class="header"><b>LAMPIRAN</b> / <i>ATTACHMENTS</i></div>
                 <div class="content">
+                    <p><b>Dengan menandatangani formulir ini saya melampirkan fotokopi</b> / <i>By signing this form, I enclose the copies of</i></p>
                     <ul class="list-radio-vertical">
                         <li class="active"><b>KTP/Paspor/KITAS</b><br/><i>ID/Paspor/KITAS</i></li>
                         <li class="{{ $npwp['no_npwp'] ? 'active' : ''}}"><b>Nomor Pokok Wajib Pajak (NPWP)</b><br/><i>Taxpayer Identification Number</i></li>
@@ -1902,7 +1906,7 @@
                 </div>
             </div>
             <div class="box-right">
-                <div class="content">
+                <div class="content" style="line-height:14px">
                     <p class="pdl20">Issuer’s Securities more than 5% ( ve percent). Fault or loss of in any form which
                         caused by failure to deliver noti cation on data change concerning the Customer to
                         BCAS shall be the Customer liability, and the Customer hereby hold harmless
@@ -2149,7 +2153,7 @@
                             forth in Article 1813, 1814 and 1816 of the Indonesian Civil Code.</li>
                     </ol>
                     <p><b>V. CUSTOMER’S REPRESENTATION</b></p>
-                    <ol>
+                    <ol style="font-size:12px">
                         <li>Customer represents that, based on the prevailing laws and regulations in the Republic
                             of Indonesia, the Customer are of legal age and competent and have full authority
                             according to the law to perform all obligations and liabilities, and to perform legal action
@@ -2580,7 +2584,7 @@
                 </div>
             </div>
             <div class="box-right">
-                <div class="content">
+                <div class="content" style="line-height:14px">
                     <p class="pdl15">calculation. However, BCAS shall have the authority to use other benchmark price in
                         calculation of Securities value in Customer’s portfolio if, according to BCAS, such
                         closing price does not re ect a fair market value.</p>
@@ -2754,10 +2758,10 @@
                         kebijakan dan/atau ketentuan yang diterbitkan OJK, Bursa Efek, LKP, dan/atau LPP,
                         serta akibat tidak berfungsinya sistem-sistem yang terkait dengan perdagangan, kliring
                         dan penjaminan serta penyimpanan dan penyelesaian transaksi pada Bursa Efek, LKP
-                        dan/atau LPP.</p>
+                        dan/atau LPP.</p><br/>
                     
                     <p><b>XII. KONFIRMASI DAN PELAPORAN</b></p>
-                    <ol>
+                    <ol style="line-height:14px">
                         <li>Untuk setiap Transaksi Efek yang telah dilaksanakan untuk kepentingan Nasabah,
                             BCAS akan memberikan kon rmasi transaksi kepada Nasabah. Nasabah berhak
                             sewaktu-waktu meminta laporan dan/atau menguji kesesuaian antara saldo Rekening
@@ -2819,10 +2823,10 @@
                         <li>If until the settlement date after Securities purchase transaction is executed, payment
                             from the Customer has not been received by BCAS, then BCAS entitled to prohibit the
                             Customer to execute purchase transaction through BCAS without prior notification to
-                            the Customer until all Customer’s liability to BCAS have been paid off.</li>
+                            the Customer until all Customer’s liability to BCAS have been paid off.</li><br/>
                         <li>If the proceed from such Securities sale above is inadequate to settle the Customer’s
                             liability, then BCAS will deliver letter of sale noti cation and the Customer’s liability
-                            status and to request the Customer to pay o its liability.</li>
+                            status and to request the Customer to pay o its liability.</li><br/>
                         <li>Securities sale transaction payment to Fund Account executed by BCAS on the
                             settlement date after the date of Securities Transaction at earliest at 14.00 WIB with
                             exception if the Customer have not fulfill all Securities delivery liability in connection
@@ -2833,6 +2837,7 @@
                             the transaction based on authority which held by BCAS based on provision IV.1.e of
                             this Agreement.</li>
                     </ol>
+                    <br/>
                     <p><b>XI. SECURITIES DELIVERY AND WITHDRAWAL</b></p>
                     <p class="pdl20">The Customer may request Securities transfer out of the purchase transaction from the
                         Securities Account to a securities account under Customer’s name in other custodian
@@ -2846,6 +2851,7 @@
                         LPP, as well as malfunction of the systems in relation to trading, clearing and
                         guarantee, as well as depository and settlement of transactions in the Stock
                         Exchange, LKP and/or LPP.</p>
+                    <br/>
                     <p><b>XII. CONFIRMATION AND REPORTING</b></p>
                     <ol>
                         <li>For any Securities Transaction which has been executed for the Customer interest,
@@ -3277,7 +3283,7 @@
                             documents in order of Securities Account management.</li>
                         <li>In case the Customer wishes to close the Securities Account, the Customer shall
                             submit a Securities Account closing application in writing to BCAS.</li>
-                    </ol>
+                    </ol><br/>
                     <p><b>XIX. SECURITIES ACCOUNT CLOSINGAND/OR USAGE LIMITATION</b></p>
                     <ol>
                         <li>The Customer agrees that BCAS shall reserve the full title to close or limit usagee of
@@ -3291,7 +3297,7 @@
                                     liabilities either against BCAS and as a consequence of Securities Transaction
                                     which executed by the Customer. For such acts, BCAS shall not be obliged to
                                     provide clari cation with respect to the basis of such decision.</li>
-                                <li>The provisions of Article II Paragraph 1 are not ful lled.</li>
+                                <li>The provisions of Article II Paragraph 1 are not fulfilled.</li>
                                 <li>The provisions of Article V are not fulfilled</li>
                                 <li>there is a violation or non-fulfillment of the provisions that apply in the Capital Market, 
                                     both currently applicable and those that will apply in the future</li>
@@ -3310,15 +3316,16 @@
                                     shall deposit the de cit of such Securities or funds when requested by BCAS;</li>
                                 <li>close the Fund Account.</li>
                             </ol>
-                        </li>
+                        </li><br/>
                         <li>BCAS reserves the right to block the Customer's Securities Account immediately in the event that the Customer 
                             is listed on the List of Suspected Terroristsand Terrorist Organizations (DTTOT), 
                             List of Funding the Proliferation of Weapons of Mass Destruction or on other list(s) of blocking requests 
                             issued byan authorized governmental institution or agency or based on a request by anotherparty founded on a 
                             blocking request by an authorized governmental institution or agency.</li>
                     </ol>
+                    <br/>
                     <p><b>XX. DURATION, AMENDMENT AND TERMINATION OF AGREEMENT</b></p>
-                    <ol>
+                    <ol style="font-size:10px">
                         <li>This Agreement e ective as of the date of Securities Account opening application
                             approval by BCAS (except for issues with respect to BCAS’s right to approve or decline
                             the Securities Account opening application by the Customer e ective as of the
@@ -3330,7 +3337,7 @@
                     <table class="table-list">
                         <tr>
                             <td>
-                                <ol start="2">
+                                <ol start="2" style="font-size:10px">
                                     <li>Any amendment or anything which has not been stipulated in this Agreement will be
                                         set forth by BCAS in writing and will be noti ed in advance to the Customer no later
                                         than 30 (thirty) Business Day prior to e ective date of such amendment or addition.
@@ -3410,7 +3417,7 @@
                     </ol>
                     
                     <p><b>XXI. NASABAH PAILIT DAN / ATAU MENINGGAL DUNIA</b></p>
-                    <ol>
+                    <ol style="line-height:12px">
                         <li>Apabila terhadap Nasabah telah ditunjuk likuidator,kurator atau perwakilan yang
                             diberikan kewenangan atau hak berdasarkan hukum atau perjanjian untuk mengurus
                             dan mengelola hara kekayaan Nasabah, termasuk segala hal yang berkaitan dengan
@@ -3481,27 +3488,27 @@
                         <li>This Agreement may be terminated at any time by BCAS and the Customer by written
                             notice to the other. If this Agreement is terminated by BCAS , then BCAS shall deliver
                             a notice of Securities Account closing to the Customer together with the details of right
-                            to be received by the Customer or liabilities to be ful lled by the Customer (if any).</li>
+                            to be received by the Customer or liabilities to be ful lled by the Customer (if any).</li><br/>
                         <li>The Customer shall pay o /ful ll its liabilities to BCAS within 3 (three) Trading Day after
                             closing noti cation delivered by BCAS. If after such period the Customer has not pay o
                             its liabilities, BCAS entitled to use the Customer’s Securities which available in
                             Securities Account and/or Customer’s Fund which available in Fund Account and sell
                             Customer’s Securities which available in BCAS to pay o Customer’s liabilities with
                             means of sale via Reguler Market, Spot Market or Negotiation Market including with
-                            cross mechanism.</li>
+                            cross mechanism.</li><br/>
                         <li>In case of termination of Agreement by the Customer, notice regarding the termination
                             of Agreement shall delivered to BCAS within 5 ( ve) Trading Days prior to the e ective
                             date of the termination of Agreement which wishes by the Customer.</li>
                         <li>If this Agreement is terminated, then all Customer’s rights, either funds or Securities
                             owned by the Customer (if any), shall be delivered and/or transferred to the Customer
                             and/or any account designated by the Customer, after deducting all outstanding
-                            Customer’s liabilities to BCAS.</li>
+                            Customer’s liabilities to BCAS.</li><br/>
                         <li>If at the time of Agreement termination notice by the Customer as set forth in Section
                             XX number 6 the Customer has remaining outstanding liabilities to BCAS , then such
-                            liabilities shall be settled within 3 (three) Trading Days after termination notice.</li>
+                            liabilities shall be settled within 3 (three) Trading Days after termination notice.</li><br/>
                         <li>BCAS and the Customer hereby waive provision of article 1266 of the Indonesia Civil
                             Code as long as court decision is needed to agreement termination.</li>
-                    </ol>
+                    </ol><br/>
                     <p><b>XXI. CUSTOMER’S INSOLVENCY AND/ OR DEATH</b></p>
                     <ol>
                         <li>If against the Customer has been designated liquidator, curator or representative which
@@ -3533,6 +3540,7 @@
                         <li>BCAS will follow and settle complaint no later than 20 (twenty) Business Day after date
                             of complaint receipt in complete from the Customer.</li>
                     </ol>
+                    <br/>
                     <p><b>XXIII. STATEMENT RELATED TO ONLINE TRADING FACILITY</b></p>
                     <ol>
                         <li>BCAS hereby gives license to the Customer to use Online Trading Facility, as the
@@ -3656,7 +3664,7 @@
                             pemberitahuan kepada Nasabah</li>
                     </ol>
                     <p><b>XXV. PENGGUNAAN FASILITAS AUTOMATED ORDERING</b></p>
-                    <ol>
+                    <ol style="line-height:16px">
                         <li>Fasilitas Automated Ordering adalah fasilitas pesanan beli dan jual yang dapat
                             dilakukan secara otomatis apabila pergerakan saham telah memenuhi parameter
                             tertentu yang telah ditetapkan oleh Nasabah melalui tur yang tersedia pada Fasilitas
@@ -3746,7 +3754,7 @@
                             shall bind the Customer.</li>
                         <li>BCAS fully has the right from time to time to renew, revise, amend and/or terminate
                             any part of the features of the Online Trading Facility by a noti cation to the Customer.</li>
-                    </ol>
+                    </ol><br/><br/>
                     <p><b>XXV. USE OF AUTOMATED ORDERING FACILITY</b></p>
                     <ol style="margin: 0; padding:0 0 0 12px;">
                         <li>Automated Ordering Facility is purchase and sales ordering facility which may be
@@ -3833,7 +3841,7 @@
                         BCAS yang mengakibatkan Fasilitas Online Trading tidak dapat bekerja secara
                         normal. Force Majeure atau Keadaan Memaksa tersebut mencakup namun tidak
                         terbatas pada hal-hal sebagai berikut:</p>
-                    <ul style="margin: 0; padding:0 0 0 12px;">
+                    <ul style="margin: 0; padding:0 0 0 30px;">
                         <li>terjadinya bencana seperti gempa bumi, banjir, kebakaran dan bencana alam lain
                             yang memiliki dampak serupa,</li>
                         <li>terjadinya gangguan keamanan, sosial politik seperti, huru-hara, aksi terorisme,
@@ -3970,7 +3978,7 @@
                     <p class="pdl20">The Customer discharges or releases BCAS from any and all loss, claims, penalty
                         and discharges or releases BCAS from responsibility and obligation which both
                         directly and indirectly may arise as a result of Force Majeure or Irresistible Condition.</p>
-                    
+                    <br/>
                     <p><b>XXVIII. DISCLAIMER</b></p>
                     <ol>
                         <li>Any Investment decision made after reading or hearing about the information given to

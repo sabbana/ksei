@@ -262,6 +262,9 @@ table.tin td {
 .table-list {
     margin-left:-10px;
 }
+.table-list td {
+    text-align: justify;
+}
 .tal {
     text-align: left;
 }
