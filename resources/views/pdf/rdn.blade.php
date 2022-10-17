@@ -1538,7 +1538,15 @@
                             </li>
                             <li>
                                 <div class="bilingual">
-                                    <div>Nasabah memiliki/<s>tidak memiliki</s>* NPWP. <b>(*Coret yang tidak sesuai)</b></div>
+                                    <div>Nasabah 
+                                        @php 
+                                        if (@$npwp['no_npwp']) {
+                                            echo 'memiliki / <s>tidak memiliki</s>';
+                                        } else {
+                                            echo '<s>memiliki</s> / tidak memiliki';
+                                        }
+                                        @endphp
+                                        * NPWP. <b>(*Coret yang tidak sesuai)</b></div>
                                     <div class="blue">Customer holds/does not hold Taxpayer Identification Number (NPWP) <b>(*Cross out as appropriate)</b></div>
                                 </div>
                                 <div class="bilingual">
@@ -1888,7 +1896,12 @@
                                 <td width="30%"></td>
                                 <td width="40%" class="">
                                     {{ @$ktp['kota']['name'] }}, {{ date('d/m/Y', strtotime($nasabah['active_at'])) }}
-                                    <br/><br/><br/><br/><br/><br/><br/><br/>
+                                    @if ($tanda_tangan['path_ttd'])
+                                    <br/>
+                                    <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="ttd" width="150"><br/>
+                                    @else
+                                    <br/><br/><br/><br/><br/>
+                                    @endif
                                     {{ @$ktp['nama_lengkap']}}
                                     <div class="ttd">
                                         <span>Nama Jelas dan Ttd Nasabah</span><br/>
@@ -2173,7 +2186,12 @@
                     <td>
                         <br/>
                         {{ @$ktp['kota']['name'] }}, {{ date('d/m/Y', strtotime($nasabah['active_at'])) }}
-                        <br/><br/><br/><br/><br/><br/>
+                        @if ($tanda_tangan['path_ttd'])
+                        <br/>
+                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="ttd" width="150"><br/>
+                        @else
+                        <br/><br/><br/><br/><br/>
+                        @endif
                         <div class="ttd">({{ @$ktp['nama_lengkap']}})</div>
                     </td>
                 </tr>
