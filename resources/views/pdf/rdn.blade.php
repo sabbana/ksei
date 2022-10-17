@@ -359,7 +359,7 @@
                                 <td>
                                     <ul class="list-radio-vertical">
                                         <li class="{{ @strtolower($ktp['agama']) == 'islam' ? 'active':''}}">Islam<br/><i class="blue">Islam</i></li>
-                                        <li class="{{ @strtolower($ktp['agama']) == 'katolik' ? 'active':''}}">Katolik<br/><i class="blue">Catholic</i></li>
+                                        <li class="{{ @strtolower($ktp['agama']) == 'katholik' || @strtolower($ktp['agama']) == 'katolik' ? 'active':''}}">Katolik<br/><i class="blue">Catholic</i></li>
                                         <li class="{{ @strtolower($ktp['agama']) == 'kristen' ? 'active':''}}">Kristen<br/><i class="blue">Christianity</i></li>
                                     </ul>
                                 </td>
@@ -1588,7 +1588,12 @@
                                 <td width="30%"></td>
                                 <td width="40%" class="tac">
                                     {{ @$ktp['kota']['name'] }}, {{ date('d/m/Y', strtotime($nasabah['active_at'])) }}
-                                    <br/><br/><br/><br/><br/><br/><br/><br/>
+                                    @if ($tanda_tangan['path_ttd'])
+                                    <br/>
+                                    <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="ttd" width="150"><br/>
+                                    @else
+                                    <br/><br/><br/><br/><br/>
+                                    @endif
                                     {{ @$ktp['nama_lengkap'] }}
                                     <div class="ttd">
                                         <span>Nama Jelas dan Ttd Nasabah</span><br/>

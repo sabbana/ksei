@@ -542,15 +542,16 @@
                         <tr>
                             <td width="50%">
                                 <ul class="list-radio-vertical">
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '0 - 50 juta' ? 'active':'' }}"><b>&lt; Rp 50 Juta</b>/<i>Million</i></li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 50 - 250 juta' ? 'active':'' }}"><b>> Rp 50 - 250 Juta</b>/<i>Million</i></li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' ? 'active':'' }}"><b>> Rp 250 - 500 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '0 - 50 juta' ? 'active':'' }}"><b>&lt;= Rp 50 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 50 - 250 juta' ? 'active':'' }}"><b>> Rp 50 - 100 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' ? 'active':'' }}"><b>> Rp 100 - 250 Juta</b>/<i>Million</i></li>
                                 </ul>
                             </td>
                             <td width="50%">
                                 <ul class="list-radio-vertical">
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 juta - 1,5 M' ? 'active':'' }}"><b>> Rp 500 Juta</b>/<i>Million</i> <b>- 1,5 Milyar</b> / <i>Billion</i> </li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 M' ? 'active':'' }}"><b>> Rp 1,5 Milyar</b>/<i>Billion</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' ? 'active':'' }}"><b>> Rp 250 - 500 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 juta - 1,5 M' ? 'active':'' }}"><b>> Rp 500 Juta</b>/<i>Million</i> <b>- 1 Milyar</b> / <i>Billion</i> </li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 M' ? 'active':'' }}"><b>> Rp 1 Milyar</b>/<i>Billion</i></li>
                                 </ul>
                             </td>
                         </tr>
@@ -560,15 +561,16 @@
                         <tr>
                             <td width="50%">
                                 <ul class="list-radio-vertical">
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['kekayan_bersih']) == '0 - 50 juta' ? 'active':'' }}"><b>&lt; Rp 50 Juta</b>/<i>Million</i></li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['kekayan_bersih']) == '> 50 - 250 juta' ? 'active':'' }}"><b>> Rp 50 - 250 Juta</b>/<i>Million</i></li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['kekayan_bersih']) == '> 250 - 500 juta' ? 'active':'' }}"><b>> Rp 250 - 500 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '0 - 50 juta' ? 'active':'' }}"><b>&lt;= Rp 50 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 50 - 250 juta' ? 'active':'' }}"><b>> Rp 50 - 100 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' ? 'active':'' }}"><b>> Rp 100 - 250 Juta</b>/<i>Million</i></li>
                                 </ul>
                             </td>
                             <td width="50%">
                                 <ul class="list-radio-vertical">
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['kekayan_bersih']) == '> 500 juta - 1,5 M' ? 'active':'' }}"><b>> Rp 500 Juta</b>/<i>Million</i> <b>- 1,5 Milyar</b> / <i>Billion</i> </li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['kekayan_bersih']) == '> 1,5 M' ? 'active':'' }}"><b>> Rp 1,5 Milyar</b>/<i>Billion</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' ? 'active':'' }}"><b>> Rp 250 - 500 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 juta - 1,5 M' ? 'active':'' }}"><b>> Rp 500 Juta</b>/<i>Million</i> <b>- 1 Milyar</b> / <i>Billion</i> </li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 M' ? 'active':'' }}"><b>> Rp 1 Milyar</b>/<i>Billion</i></li>
                                 </ul>
                             </td>
                         </tr>
@@ -1126,7 +1128,7 @@
                                             <li class=""><b>Ya, Jabatan</b><br/><i>Yes, Name</i></li>
                                         </ul>
                                     </td>
-                                    <td><div class="textfield"></div></td>
+                                    <td><div class="textfield grey"></div></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
@@ -1200,12 +1202,12 @@
                                     <td><b>TIN/Identitas Setara TIN/Keterangan Lain</b><br/><i>TIN/Equivalent Tax ID/Other Information</i></td>
                                     <td><b>Negara Domisili Pajak</b><br/><i>Country of Tax Residency</i></td>
                                 </tr>
-                                <tr>
+                                <tr class="grey">
                                     <td>1.</td>
                                     <td>{{ @strtolower($pernyataan[6]['jawaban']) == 'ya' ? $pernyataan[6]['child'][0]['jawaban'] : ''}}</td>
                                     <td>{{ @strtolower($pernyataan[6]['jawaban']) == 'ya' ? $pernyataan[6]['child'][1]['jawaban'] : ''}}</td>
                                 </tr>
-                                <tr>
+                                <tr class="grey">
                                     <td>2.</td>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
@@ -1289,7 +1291,7 @@
             </div>
             <div class="box-right">
                 <div class="header"><b>LAMPIRAN</b> / <i>ATTACHMENTS</i></div>
-                <div class="content">
+                <div class="content grey">
                     <p><b>Dengan menandatangani formulir ini saya melampirkan fotokopi</b> / <i>By signing this form, I enclose the copies of</i></p>
                     <ul class="list-radio-vertical">
                         <li class="active"><b>KTP/Paspor/KITAS</b><br/><i>ID/Paspor/KITAS</i></li>
@@ -2196,7 +2198,7 @@
                             terms and condition which applicable in BCAS from time to time.</li>
                         <li>The Customer hereby declares to have read, understood and be bound and agrees to
                             all terms and conditions set forth and described herein.</li>
-                    </ol>
+                    </ol><br/>
                     <p><b>VI. CUSTOMER’S INFORMATION</b></p>
                     <p>The Customer declares that Customer has acknowledged, understood and realized that: </p>
                     <ol>
@@ -2271,7 +2273,7 @@
                             mengungkapkan informasi dan data mengenai Nasabah dan rekening Efek atas
                             nama Nasabah pada bank kustodian dan/atau perusahaan efek lain tersebut
                             apabila diminta oleh BCAS dalam rangka melaksanakan instruksi jual Nasabah
-                            atas Efek yang disimpan di bank kustodian dan/atau perusahaan efek lain tersebut.</li>
+                            atas Efek yang disimpan di bank kustodian dan/atau perusahaan efek lain tersebut.</li><br/>
                         <li>Apabila permintaan informasi dan data mengenai Nasabah dan/atau rekening Efek
                             Nasabah dalam angka 2 butir b di atas ditolak oleh bank kustodian dan/ atau
                             perusahan efek lain di mana Nasabah menyimpan Efeknya, maka BCAS akan
@@ -2391,14 +2393,14 @@
                         <li>Investment in the capital market bears nancial risks. Securities prices may increase
                             which will bring pro ts for the Customer and may also decrease which cause losses
                             to the Customer, and in addition to the increase and decrease of price, the
-                            Securities owned by the Customer may lose its value and become valueless.</li>
+                            Securities owned by the Customer may lose its value and become valueless.</li><br/>
                         <li>Each Securities has di erent level of liquidity that may result in disparity between
-                            the o er price and bid price in the Stock Exchange.</li>
+                            the other price and bid price in the Stock Exchange.</li>
                         <li>As a result of such matter in number 1 and 2 above, the Customer may at any time
                             su er from losses and lose part or all of the funds which invested by the Customer
                             in the capital market, therefore the Customer declares that investment in the capital
                             market is made by the Customer in full awareness of the possible risk of loss.</li>
-                    </ol>
+                    </ol><br/>
                     <p><b>VIII. DEPOSIT</b></p>
                     <ol>
                         <li>In order to perform Securities Transaction, the Customer shall make available a
@@ -2639,7 +2641,7 @@
                             by BCAS based on such instruction if the conditions in number 1 above has not been
                             ful lled; or in case of breach by the Customer of any other provision in this Agreement;
                             or if the Securities Transaction remains to be executed, at the discretion of BCAS ,
-                            may cause a breach by the Customer of this Agreement or the applicable legislations.</li>
+                            may cause a breach by the Customer of this Agreement or the applicable legislations.</li><br/>
                         <li>In executing Customer’s instruction which is given either in oral or written, BCAS shall
                             act as the proxy of the Customer and thus the Customer approves, authorizes and is
                             bound to the actions undertaken by BCAS for and on behalf of the Customer.</li>
@@ -2851,7 +2853,7 @@
                         LPP, as well as malfunction of the systems in relation to trading, clearing and
                         guarantee, as well as depository and settlement of transactions in the Stock
                         Exchange, LKP and/or LPP.</p>
-                    <br/>
+                    <br/><br/>
                     <p><b>XII. CONFIRMATION AND REPORTING</b></p>
                     <ol>
                         <li>For any Securities Transaction which has been executed for the Customer interest,
@@ -2947,7 +2949,7 @@
                             tersedia dana yang cukup dalam Rekening Dana.</li>
                     </ol>
                     <p><b>XIV. PENYELESAIAN TUNGGAKAN</b></p>
-                    <ol>
+                    <ol style="font-size:10.5px">
                         <li>BCAS mempunyai hak untuk membeli atau meminjam Efek atau menjual Efek lain
                             milik Nasabah untuk Rekening Efek Nasabah, dengan tujuan untuk menutup saldo
                             negatif Efek yang tidak dibiayai oleh BCAS atau tidak dijamin secara cukup oleh
@@ -2981,7 +2983,7 @@
                             Transaksi Efek pada tanggal penyelesaian karena Nasabah tidak dapat menyediakan
                             dana dan/ atau Efek pada pada tanggal penyelesaian Transaksi Efek.</li>
                     </ol>
-                    <p><b>XV. PENYELESAIAN TUNGGAKAN</b></p>
+                    <p><b>XV. REGISTRASI DAN KONVERSI</b></p>
                     <ol>
                         <li>Efek yang masih berbentuk warkat dalam Rekening Efek tidak secara otomatis
                             diregistrasi dan/atau dikonversi menjadi Efek dalam penitipan kolektif di KSEI atas
@@ -3008,7 +3010,7 @@
                             transaksi Nasabah.</li>
                     </ol>
                     <p><b>XVII. TINDAKAN KORPORASI</b></p>
-                    <ol>
+                    <ol style="line-hight:17px">
                         <li>Setiap hak yang melekat pada Efek yang dimiliki oleh Nasabah adalah hak Nasabah.
                             Dalam hal Emiten dari Efek yang dimiliki Nasabah melakukan tindakan korporasi
                             (Corporate Action) seperti Rapat Umum Pemegang Saham (“RUPS”) mengenai
@@ -3115,8 +3117,7 @@
                                         inherent to the Securities, BCAS will distribute such
                                         rights to the Customer on the rst day of payment date
                                         for such rights, provided that BCAS has e ectifely
-                                        received such rights from the Issuer and/or KSEI. Paraf
-                                        Initial</li>
+                                        received such rights from the Issuer and/or KSEI.</li>
                                 </ol>
                             </td>
                             <td>
@@ -3233,7 +3234,7 @@
                             Pembukaan Rekening Efek dan Perjanjian ini) sampai dengan dilakukannya
                             pengakhiran oleh BCAS dan/atau Nasabah dengan penutupan Rekening Efek.
                             Pengakhiran Perjanjian ini tidak melepaskan BCAS atau Nasabah dari kewajiban untuk
-                            memenuhi kewajiban yang timbul sebelum diakhirinya Perjanjian ini.</li>
+                            memenuhi kewajiban yang timbul sebelum diakhirinya Perjanjian ini.</li><br/>
                         <li>Setiap perubahan atau segala sesuatu yang belum diatur dalam Perjanjian ini akan
                             diatur lebih lanjut oleh BCAS secara tertulis dan akan diberitahukan terlebih dahulu
                             kepada Nasabah selambat-lambatnya 30 (tiga puluh) Hari Kerja sebelum berlakunya
@@ -3598,7 +3599,7 @@
                 <div class="content">
                     <p class="pdl15">kerahasiaannya. Segala macam penyalahgunaan User ID, Password dan/atau PIN
                         yang terjadi atau disebabkan karena kelalaian Nasabah adalah di luar tanggung jawab
-                        BCAS.</p><br/>
+                        BCAS.</p><br/><br/>
                     <p><b>XXIV. PENGGUNAAN FASILITAS ONLINE TRADING</b></p>
                     <ol>
                         <li>Nasabah memahami, mengetahui, mengakui dan menyetujui segala ketentuan
@@ -4002,7 +4003,7 @@
                             Facility. The Customer understands and is fully aware of the risk and hereby
                             discharges or releases BCAS from any and all loss which has and/or may arise both
                             at the time or after the usage of the Online Trading Facility.</li>
-                    </ol>
+                    </ol><br/>
                     <p><b>XXIX. OTHER PROVISIONS</b></p>
                     <ol>
                         <li>All notices or communications from the Customer to BCAS shall be addressed to :
@@ -4031,7 +4032,7 @@
                             Or other addresses to be noti ed in writing by BCAS to the Customer from time to time
                             and shall be deemed to have been received by BCAS by proper receipt from BCAS.
                         </li>
-                        <li>The Customer hereby declares agrees that conversation record by phone (voice
+                        <li style="font-size:10px">The Customer hereby declares agrees that conversation record by phone (voice
                             recording) in BCAS , book keepings, records and letters and other documents which
                             prepared and issued by the lawfull party and duly represent BCAS shall constitute
                             complete evidences of all transactions and obligations of the Customer to BCAS
@@ -4094,7 +4095,7 @@
                             yang menjadi tidak berlaku atau tidak dapat dijalankan tersebut dengan ketentuan lain
                             yang dapat dijalankan.</li>
                         <li>Nasabah dengan ini mengesahkan setiap tindakan BCAS sebagaimana diatur dalam
-                            Perjanjian ini, kecuali akibat kelalaian dan kesalahan yang disengaja oleh BCAS.</li>
+                            Perjanjian ini, kecuali akibat kelalaian dan kesalahan yang disengaja oleh BCAS.</li><br/>
                         <li>Dalam hal Nasabah mengalami kerugian karena kesalahan dan/atau kelalaian BCAS,
                             maka BCAS wajib membayar ganti rugi kepada Nasabah .</li>
                         <li>Perjanjian ini dibuat dalam Bahasa Inggris dan Bahasa Indonesia, dengan ketentuan
@@ -4105,12 +4106,12 @@
                             mengikatkan diri serta mengerti bahwa Perjanjian ini tidak akan berlaku sebelum
                             diterima baik oleh BCAS, sebagaimana terbukti dengan telah ditanda tangan oleh
                             salah satu dari wakilnya yang telah diberi wewenang pada tempat yang telah
-                            disediakan dibawah ini.</li>
+                            disediakan dibawah ini.</li><br/>
                         <li><b>PERJANJIAN INI TELAH DISESUAIKAN DENGAN KETENTUAN PERATURAN
                             PERUNDANG-UNDANGAN TERMASUK KETENTUAN PERATURAN OTORITAS
                             JASA KEUANGAN</b></li>
                     </ol>
-                    <p><b>XXXI. JAMINAN</b></p>
+                    <p><b>XXX. JAMINAN</b></p>
                     <ol>
                         <li>BCAS tidak berkewajiban untuk membuktikan keaslian dan keabsahan setiap instruksi
                             yang disampaikan secara elektronik oleh Nasabah. Setiap instruksi Nasabah yang
@@ -4163,8 +4164,8 @@
                             as provided bellow.<br/><br/></li>
                         <li><b>THIS AGREEMENT HAS BEEN ADJUSTED WITH PROVISIONS OF LAWS
                             INCLUDING PROVISION OF FINANCIAL SERVICE AUTHORITY REGULATION.</b></li>
-                    </ol>
-                    <p><b>XXXI. WARRANTY</b></p>
+                    </ol><br/>
+                    <p><b>XXX. WARRANTY</b></p>
                     <ol>
                         <li>The BCAS shall not obliged to prove the authenticity and validity of any instructions
                             electronically delivered by the Customer. Any Customer’s instruction that have been
@@ -4172,18 +4173,18 @@
                             instruction has been executed by KSEI and all instructions which executed by the KSEI
                             shall bind the Customer. The Customer agrees to indemnify and hold harmless BCAS
                             of any loss or damage arising from or related to the Customer's instructions and / or
-                            this Agreement.<br/><br/><br/></li>
+                            this Agreement.<br/><br/></li>
                         <li>The Customer declares that any investment decision, decision to sell and / or purchase
                             of Securities taken by the Customer is based on the Customer’s own consideration and
                             decisions therefore the Customer hold harmless BCAS from responsibility for any loss,
                             liability, claim, suit, cost including but not limited to on tax liabilities, which may be su
-                            ered or incurred as a result of the Customer’s decision.<br/><br/><br/></li>
+                            ered or incurred as a result of the Customer’s decision.</li><br/>
                         <li>The Customer warrants and hold harmless BCAS from any loss, claim, or suit that may
                             arise due to information and data delivery concerning the Customer to the authorities
                             by BCAS and the Customer declare shall not make claims or suits againts BCAS if
                             BCAS convey information and data concerning the Customers to the such parties, as
                             long as the delivery of information and data is performed in accordance with the
-                            provisions of applicable laws.<br/><br/></li>
+                            provisions of applicable laws.<br/></li>
                     </ol>
                     <p class="pdl10">This Agreement contains terms and conditions applicable to and binding BCAS and
                         Customer opening Securities Account with BCAS and signed Securities Account Opening
