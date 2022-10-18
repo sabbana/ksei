@@ -28,7 +28,7 @@ class GeneratePdfController extends Controller {
 		}
 		if (isset($data['tanda_tangan']['path_ttd']) && $data['tanda_tangan']['path_ttd']) {
 			$ttdPath = str_replace('./asset/', '', $data['tanda_tangan']['path_ttd']);
-			$data['tanda_tangan']['path_ttd'] = 'storage/'.$ttdPath;
+			$data['tanda_tangan']['path_ttd'] = public_path('storage/'.$ttdPath);
 		}
 		$filename = 'FPRE.pdf';
 		if (!Storage::exists('public/document-nasabah/'.$id)) {
@@ -52,7 +52,7 @@ class GeneratePdfController extends Controller {
 		}
 		if (isset($data['tanda_tangan']['path_ttd']) && $data['tanda_tangan']['path_ttd']) {
 			$ttdPath = str_replace('./asset/', '', $data['tanda_tangan']['path_ttd']);
-			$data['tanda_tangan']['path_ttd'] = 'storage/'.$ttdPath;
+			$data['tanda_tangan']['path_ttd'] = public_path('storage/'.$ttdPath);
 		}
 		$filename = 'Formulir Pembukaan RDN.pdf';
 		if (!Storage::exists('public/document-nasabah/'.$id)) {
