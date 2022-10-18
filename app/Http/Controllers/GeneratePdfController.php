@@ -26,6 +26,10 @@ class GeneratePdfController extends Controller {
 		if (!empty($dataNasabah)) {
 			$data = $dataNasabah;
 		}
+		if (isset($data['tanda_tangan']['path_ttd']) && $data['tanda_tangan']['path_ttd']) {
+			$ttdPath = str_replace('./asset/', '', $data['tanda_tangan']['path_ttd']);
+			$data['tanda_tangan']['path_ttd'] = config('app.url').'storage/'.$ttdPath;
+		}
 		$filename = 'FPRE.pdf';
 		if (!Storage::exists('public/document-nasabah/'.$id)) {
 			Storage::makeDirectory('public/document-nasabah/'.$id);

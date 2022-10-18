@@ -343,13 +343,13 @@
                                 <td>:</td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li class="{{ @strtolower($ktp['status_perkawinan']) == 'belum menikah' ? 'active':''}}">Lajang<br/><i class="blue">Single</i></li>
-                                        <li class="{{ @strtolower($ktp['status_perkawinan']) == 'menikah' ? 'active':''}}">Menikah<br/><i class="blue">Married</i></li>
+                                        <li class="{{ @strtolower($ktp['status_perkawinan']) == 'belum menikah' || @strtolower($ktp['status_perkawinan']) == 'belum kawin' ? 'active':''}}">Lajang<br/><i class="blue">Single</i></li>
+                                        <li class="{{ @strtolower($ktp['status_perkawinan']) == 'menikah' || @strtolower($ktp['status_perkawinan']) == 'kawin' ? 'active':''}}">Menikah<br/><i class="blue">Married</i></li>
                                     </ul>
                                 </td>
                                 <td>
                                     <ul class="list-radio-vertical">
-                                        <li class="{{ @strtolower($ktp['status_perkawinan']) == 'janda/duda' ? 'active':''}}">Janda/Duda<br/><i class="blue">Widow/Widower/Divorced</i></li>
+                                        <li class="{{ @strtolower($ktp['status_perkawinan']) == 'janda/duda' || @strtolower($ktp['status_perkawinan']) == 'duda/janda' ? 'active':''}}">Janda/Duda<br/><i class="blue">Widow/Widower/Divorced</i></li>
                                     </ul>
                                 </td>
                             </tr>
@@ -482,8 +482,12 @@
             </table>
         </div>
         <div class="paraf-box">
-            <div class="paraf">Paraf:</div>
-            <div class="page">1/6</div>
+            <table>
+                <tr>
+                    <td valign="middle">Paraf:</td>
+                    <td><img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="50"></td>
+                    <td valign="middle">1/6</td>
+            </table>
         </div>
     </div>
     <div class="page_break"></div>
@@ -750,8 +754,12 @@
             <br/><br/><br/><br/>
         </div>
         <div class="paraf-box">
-            <span>Paraf:</span>
-            <span class="page">2/6</span>
+            <table>
+                <tr>
+                    <td valign="middle">Paraf:</td>
+                    <td><img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="50"></td>
+                    <td valign="middle">2/6</td>
+            </table>
         </div>
     </div>
     <div class="page_break"></div>
@@ -1254,9 +1262,13 @@
                 *) Diisi jika pernyataan 1 dijawab 'Ya' / <i class="blue">Must be completed if the answer to fact 1 is 'Yes'</i>
             </p>
         </div>
-        <div class="paraf-box">
-            <span>Paraf:</span>
-            <span class="page">3/6</span>
+        <div class="paraf-box" style="margin-top:-5px; z-index:-10">
+            <table>
+                <tr>
+                    <td valign="middle">Paraf:</td>
+                    <td><img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="45"></td>
+                    <td valign="middle">3/6</td>
+            </table>
         </div>
     </div>
 
@@ -1402,8 +1414,12 @@
             </table>
         </div>
         <div class="paraf-box">
-            <span>Paraf:</span>
-            <span class="page">4/6</span>
+            <table>
+                <tr>
+                    <td valign="middle">Paraf:</td>
+                    <td><img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="50"></td>
+                    <td valign="middle">4/6</td>
+            </table>
         </div>
     </div>
     <div class="page_break"></div>
@@ -1596,7 +1612,7 @@
                                 <td width="30%"></td>
                                 <td width="40%" class="tac">
                                     {{ @$ktp['kota']['name'] }}, {{ date('d/m/Y', strtotime($nasabah['active_at'])) }}
-                                    @if ($tanda_tangan['path_ttd'])
+                                    @if (isset($tanda_tangan['path_ttd']))
                                     <br/>
                                     <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="ttd" width="150"><br/>
                                     @else
@@ -1662,8 +1678,12 @@
             <div class="blue">This account opening is considered valid only if it has been approved by the authorized officer of BCA</div>
         </div>
         <div class="paraf-box">
-            <div>Paraf:</div>
-            <div class="page">5/6</div>
+            <table>
+                <tr>
+                    <td valign="middle">Paraf:</td>
+                    <td><img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="50"></td>
+                    <td valign="middle">5/6</td>
+            </table>
         </div>
     </div>
     <div class="page_break"></div>
@@ -1896,7 +1916,7 @@
                                 <td width="30%"></td>
                                 <td width="40%" class="">
                                     {{ @$ktp['kota']['name'] }}, {{ date('d/m/Y', strtotime($nasabah['active_at'])) }}
-                                    @if ($tanda_tangan['path_ttd'])
+                                    @if (isset($tanda_tangan['path_ttd']))
                                     <br/>
                                     <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="ttd" width="150"><br/>
                                     @else
@@ -1922,8 +1942,12 @@
             </table>
         </div>
         <div class="paraf-box">
-            <div>Paraf:</div>
-            <div class="page">6/6</div>
+            <table>
+                <tr>
+                    <td valign="middle">Paraf:</td>
+                    <td><img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="50"></td>
+                    <td valign="middle">6/6</td>
+            </table>
         </div>
     </div>
     <div class="page_break"></div>
@@ -2186,7 +2210,7 @@
                     <td>
                         <br/>
                         {{ @$ktp['kota']['name'] }}, {{ date('d/m/Y', strtotime($nasabah['active_at'])) }}
-                        @if ($tanda_tangan['path_ttd'])
+                        @if (isset($tanda_tangan['path_ttd']))
                         <br/>
                         <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="ttd" width="150"><br/>
                         @else

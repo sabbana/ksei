@@ -790,7 +790,11 @@
                             <tr><td colspan="2"><b>Nama Sesuai KTP/Passpor</b> / <i>Name as indicated in ID/Passport</i></td></tr>
                             <tr><td colspan="2"><div class="signature">
                                 <table class="ttd">
-                                    <tr><td>SIGNATURE<br/><br/><br/><br/></td></tr>
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <tr><td>SIGNATURE<br/><img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100"></td></tr>
+                                    @else
+                                        <tr><td>SIGNATURE<br/><br/><br/><br/></td></tr>
+                                    @endif
                                     <tr><td style="border-bottom:solid 1px #222">{{ @$ktp['nama_lengkap'] }}</td></tr>
                                     <tr><td><b>Nasabah</b> / <i>Customer</i></td></tr>
                                 </table>
@@ -1551,6 +1555,13 @@
                                     </td>
                                     <td>
                                         <div class="paraf">
+                                            @if (isset($tanda_tangan['path_ttd']))
+                                                <br/><br/>
+                                                <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                                <br/><br/>
+                                            @else
+                                                <br/><br/><br/><br/><br/>
+                                            @endif
                                             <div>Paraf / <i>Initial</i></div>
                                         </div>
                                     </td>
@@ -1788,6 +1799,13 @@
                             </td>
                             <td>
                                 <div class="paraf">
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <br/><br/>
+                                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                        <br/><br/>
+                                    @else
+                                        <br/><br/><br/><br/><br/>
+                                    @endif
                                     <div>Paraf / <i>Initial</i></div>
                                 </div>
                             </td>
@@ -2006,6 +2024,13 @@
                                     </td>
                                     <td>
                                         <div class="paraf">
+                                            @if (isset($tanda_tangan['path_ttd']))
+                                                <br/><br/>
+                                                <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                                <br/><br/>
+                                            @else
+                                                <br/><br/><br/><br/><br/>
+                                            @endif
                                             <div>Paraf/Initial</div>
                                         </div>
                                     </td>
@@ -2242,6 +2267,13 @@
                             </td>
                             <td>
                                 <div class="paraf">
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <br/><br/>
+                                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                        <br/><br/>
+                                    @else
+                                        <br/><br/><br/><br/><br/>
+                                    @endif
                                     <div>Paraf/Initial</div>
                                 </div>
                             </td>
@@ -2465,6 +2497,13 @@
                             </td>
                             <td>
                                 <div class="paraf">
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <br/><br/>
+                                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                        <br/><br/>
+                                    @else
+                                        <br/><br/><br/><br/><br/>
+                                    @endif
                                     <div>Paraf/Initial</div>
                                 </div>
                             </td>
@@ -2683,6 +2722,13 @@
                             </td>
                             <td>
                                 <div class="paraf">
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <br/><br/>
+                                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                        <br/><br/>
+                                    @else
+                                        <br/><br/><br/><br/><br/>
+                                    @endif
                                     <div>Paraf/Initial</div>
                                 </div>
                             </td>
@@ -2899,6 +2945,13 @@
                             </td>
                             <td>
                                 <div class="paraf">
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <br/><br/>
+                                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                        <br/><br/>
+                                    @else
+                                        <br/><br/><br/><br/><br/>
+                                    @endif
                                     <div>paraf/initial</div>
                                 </div>
                             </td>
@@ -3122,6 +3175,13 @@
                             </td>
                             <td>
                                 <div class="paraf">
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <br/><br/>
+                                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                        <br/><br/>
+                                    @else
+                                        <br/><br/><br/><br/><br/>
+                                    @endif
                                     <div>Paraf/Initial</div>
                                 </div>
                             </td>
@@ -3358,6 +3418,13 @@
                             </td>
                             <td>
                                 <div class="paraf">
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <br/><br/>
+                                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                        <br/><br/>
+                                    @else
+                                        <br/><br/><br/><br/><br/>
+                                    @endif
                                     <div>Paraf/Initial</div>
                                 </div>
                             </td>
@@ -3574,6 +3641,13 @@
                             </td>
                             <td>
                                 <div class="paraf">
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <br/><br/>
+                                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                        <br/><br/>
+                                    @else
+                                        <br/><br/><br/><br/><br/>
+                                    @endif
                                     <div>Paraf/Initial</div>
                                 </div>
                             </td>
@@ -3786,6 +3860,13 @@
                             </td>
                             <td>
                                 <div class="paraf">
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <br/><br/>
+                                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                        <br/><br/>
+                                    @else
+                                        <br/><br/><br/><br/><br/>
+                                    @endif
                                     <div>Paraf/Initial</div>
                                 </div>
                             </td>
@@ -4059,6 +4140,13 @@
                             </td>
                             <td>
                                 <div class="paraf">
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <br/><br/>
+                                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                        <br/><br/>
+                                    @else
+                                        <br/><br/><br/><br/><br/>
+                                    @endif
                                     <div>Paraf/Initial</div>
                                 </div>
                             </td>
