@@ -46,7 +46,7 @@ class GeneratePdfController extends Controller {
 		if (!empty($dataNasabah)) {
 			$data = $dataNasabah;
 		}
-		if ($data['tanda_tangan']['path_ttd']) {
+		if (isset($data['tanda_tangan']['path_ttd']) && $data['tanda_tangan']['path_ttd']) {
 			$ttdPath = str_replace('./asset/', '', $data['tanda_tangan']['path_ttd']);
 			$data['tanda_tangan']['path_ttd'] = config('app.url').'storage/'.$ttdPath;
 		}
@@ -70,12 +70,11 @@ class GeneratePdfController extends Controller {
 	 * @return json
 	 */
 	private function getDetailNasabah($id) {
-		$token = 'gFAJtJ4iZkKbnn_wivo1lyp2VcO4C6m3CkS_NZTXQloE2jCorYO8iWPJvvprxxzJVeBu6WF1wjYy';
 		$url = config('app.api_url').'detail-account/'.$id;
 		$data = Curl::to($url)
 			->withContentType('application/json')
 			->withHeaders([
-				'app_token: ' . $token,
+				'app_token: ' . config('ksei.appToken'),
 			])->asJson(true)->get();
 		if (!empty($data) && $data['response_schema']['response_code'] == "200") {
 			return $data['response_output']['data'];
@@ -83,22 +82,4 @@ class GeneratePdfController extends Controller {
 		return false;
 	}
 
-	/**
-	 * Get image nasabah
-	 * @param ID
-	 * @return json
-	 */
-	private function getImage($path) {
-		$token = 'gFAJtJ4iZkKbnn_wivo1lyp2VcO4C6m3CkS_NZTXQloE2jCorYO8iWPJvvprxxzJVeBu6WF1wjYy';
-		$url = config('app.api_url').'image?name='.$path;
-		$data = Curl::to($url)
-			->withContentType('application/json')
-			->withHeaders([
-				'app_token: ' . $token,
-			])->asJson(true)->get();
-		if (!empty($data) && $data['response_schema']['response_code'] == "200") {
-			return $data['response_output']['data'];
-		}
-		return false;
-	}
 }

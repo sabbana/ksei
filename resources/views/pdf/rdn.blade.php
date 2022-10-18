@@ -680,7 +680,7 @@
                     <td colspan="2">
                         <ul class="list-radio-vertical">
                             <li><b>> 15 Juta - 25 Juta</b><br/><i class="blue">> 15 Million - 25 Million</i></li>
-                            <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 - 1,5 M' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 M' ? 'active':'' }}"><b>> 400 Juta</b><br/><i class="blue">> 400 Million</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 juta - 1,5 m' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 m' ? 'active':'' }}"><b>> 400 Juta</b><br/><i class="blue">> 400 Million</i></li>
                         </ul>
                     </td>
                 </tr>
@@ -698,13 +698,13 @@
                     <td width="20%">
                         <ul class="list-radio-vertical">
                             <li><b><= 15 Juta</b><br/><i class="blue"><= 15 Million</i></li>
-                            <li><b>> 25 Juta - 400 Juta</b><br/><i class="blue">> 25 Million - 400 Million</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '0 - 50 juta' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 50 - 250 juta' ? 'active':'' }}"><b>> 25 Juta - 400 Juta</b><br/><i class="blue">> 25 Million - 400 Million</i></li>
                         </ul>
                     </td>
                     <td colspan="2">
                         <ul class="list-radio-vertical">
                             <li><b>> 15 Juta - 25 Juta</b><br/><i class="blue">> 15 Million - 25 Million</i></li>
-                            <li><b>> 400 Juta</b><br/><i class="blue">> 400 Million</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 juta - 1,5 m' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 m' ? 'active':'' }}"><b>> 400 Juta</b><br/><i class="blue">> 400 Million</i></li>
                         </ul>
                     </td>
                 </tr>
@@ -723,7 +723,7 @@
                     <td colspan="2">
                         <ul class="list-radio-vertical">
                             <li><b>> 15 Juta - 25 Juta</b><br/><i class="blue">> 15 Million - 25 Million</i></li>
-                            <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 - 1,5 M' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 M' ? 'active':'' }}"><b>> 400 Juta</b><br/><i class="blue">> 400 Million</i></li>
+                            <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 juta - 1,5 m' || @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 m' ? 'active':'' }}"><b>> 400 Juta</b><br/><i class="blue">> 400 Million</i></li>
                         </ul>
                     </td>
                 </tr>

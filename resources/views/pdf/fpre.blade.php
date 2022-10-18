@@ -543,15 +543,15 @@
                             <td width="50%">
                                 <ul class="list-radio-vertical">
                                     <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '0 - 50 juta' ? 'active':'' }}"><b>&lt;= Rp 50 Juta</b>/<i>Million</i></li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 50 - 250 juta' ? 'active':'' }}"><b>> Rp 50 - 100 Juta</b>/<i>Million</i></li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' ? 'active':'' }}"><b>> Rp 100 - 250 Juta</b>/<i>Million</i></li>
+                                    <li class=""><b>> Rp 50 - 100 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 50 - 250 juta' ? 'active':'' }}"><b>> Rp 100 - 250 Juta</b>/<i>Million</i></li>
                                 </ul>
                             </td>
                             <td width="50%">
                                 <ul class="list-radio-vertical">
                                     <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' ? 'active':'' }}"><b>> Rp 250 - 500 Juta</b>/<i>Million</i></li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 juta - 1,5 M' ? 'active':'' }}"><b>> Rp 500 Juta</b>/<i>Million</i> <b>- 1 Milyar</b> / <i>Billion</i> </li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 M' ? 'active':'' }}"><b>> Rp 1 Milyar</b>/<i>Billion</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 juta - 1,5 m' ? 'active':'' }}"><b>> Rp 500 Juta</b>/<i>Million</i> <b>- 1 Milyar</b> / <i>Billion</i> </li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 m' ? 'active':'' }}"><b>> Rp 1 Milyar</b>/<i>Billion</i></li>
                                 </ul>
                             </td>
                         </tr>
@@ -561,16 +561,16 @@
                         <tr>
                             <td width="50%">
                                 <ul class="list-radio-vertical">
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '0 - 50 juta' ? 'active':'' }}"><b>&lt;= Rp 50 Juta</b>/<i>Million</i></li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 50 - 250 juta' ? 'active':'' }}"><b>> Rp 50 - 100 Juta</b>/<i>Million</i></li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' ? 'active':'' }}"><b>> Rp 100 - 250 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['kekayan_bersih']) == '0 - 50 juta' ? 'active':'' }}"><b>&lt;= Rp 50 Juta</b>/<i>Million</i></li>
+                                    <li class=""><b>> Rp 50 - 100 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['kekayan_bersih']) == '> 50 - 250 juta' ? 'active':'' }}"><b>> Rp 100 - 250 Juta</b>/<i>Million</i></li>
                                 </ul>
                             </td>
                             <td width="50%">
                                 <ul class="list-radio-vertical">
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 250 - 500 juta' ? 'active':'' }}"><b>> Rp 250 - 500 Juta</b>/<i>Million</i></li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 500 juta - 1,5 M' ? 'active':'' }}"><b>> Rp 500 Juta</b>/<i>Million</i> <b>- 1 Milyar</b> / <i>Billion</i> </li>
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['pendapatan_per_tahun']) == '> 1,5 M' ? 'active':'' }}"><b>> Rp 1 Milyar</b>/<i>Billion</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['kekayan_bersih']) == '> 250 - 500 juta' ? 'active':'' }}"><b>> Rp 250 - 500 Juta</b>/<i>Million</i></li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['kekayan_bersih']) == '> 500 juta - 1,5 m' ? 'active':'' }}"><b>> Rp 500 Juta</b>/<i>Million</i> <b>- 1 Milyar</b> / <i>Billion</i> </li>
+                                    <li class="{{ @strtolower($pekerjaan_dan_aset['kekayan_bersih']) == '> 1,5 m' ? 'active':'' }}"><b>> Rp 1 Milyar</b>/<i>Billion</i></li>
                                 </ul>
                             </td>
                         </tr>
