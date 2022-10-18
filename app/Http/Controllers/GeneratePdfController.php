@@ -28,7 +28,11 @@ class GeneratePdfController extends Controller {
 		}
 		if (isset($data['tanda_tangan']['path_ttd']) && $data['tanda_tangan']['path_ttd']) {
 			$ttdPath = str_replace('./asset/', '', $data['tanda_tangan']['path_ttd']);
-			$data['tanda_tangan']['path_ttd'] = public_path('storage/'.$ttdPath);
+			$path = public_path('storage/'.$ttdPath);
+			$type = pathinfo($path, PATHINFO_EXTENSION);
+			$image = file_get_contents($path);
+			$base64 = 'data:image/' . $type . ';base64,' . base64_encode($image);
+			$data['tanda_tangan']['path_ttd'] = $base64;
 		}
 		$filename = 'FPRE.pdf';
 		if (!Storage::exists('public/document-nasabah/'.$id)) {
@@ -52,7 +56,11 @@ class GeneratePdfController extends Controller {
 		}
 		if (isset($data['tanda_tangan']['path_ttd']) && $data['tanda_tangan']['path_ttd']) {
 			$ttdPath = str_replace('./asset/', '', $data['tanda_tangan']['path_ttd']);
-			$data['tanda_tangan']['path_ttd'] = public_path('storage/'.$ttdPath);
+			$path = public_path('storage/'.$ttdPath);
+			$type = pathinfo($path, PATHINFO_EXTENSION);
+			$image = file_get_contents($path);
+			$base64 = 'data:image/' . $type . ';base64,' . base64_encode($image);
+			$data['tanda_tangan']['path_ttd'] = $base64;
 		}
 		$filename = 'Formulir Pembukaan RDN.pdf';
 		if (!Storage::exists('public/document-nasabah/'.$id)) {
