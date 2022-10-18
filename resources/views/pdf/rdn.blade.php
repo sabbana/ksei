@@ -2213,6 +2213,7 @@
                         @if (isset($tanda_tangan['path_ttd']))
                         <br/>
                         <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="ttd" width="150"><br/>
+                        {{ @$tanda_tangan['path_ttd'] }}
                         @else
                         <br/><br/><br/><br/><br/>
                         @endif
