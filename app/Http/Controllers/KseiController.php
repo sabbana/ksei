@@ -35,7 +35,7 @@ class KseiController extends Controller
 		}
 		$sdiExt = 'sdi';
 		if ($method == 'StaticDataInvestorAccountCreation') {
-			$sdiExt = 'sdia';
+			$sdiExt = 'sdiac';
 		}
 		$stringMessage = $this->generateXMLMessage($payload, $method, $type);
 		$stringMessageSdi = $this->generateXMLMessage($payload, $method, $type, $sdiExt);
