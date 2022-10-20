@@ -291,22 +291,22 @@
                         <tr>
                             <td>
                                 <ul class="list-radio-vertical">
-                                    <li class="{{ @strtolower($ktp['status_perkawinan']) == 'menikah' ? '':'active'}}"><b>Belum Menikah</b><br><i>Single</i></li>
+                                    <li class="{{ @in_array(strtolower($ktp['status_perkawinan']), ['menikah', 'kawin', 'merried']) ? '': 'active'}}"><b>Belum Menikah</b><br><i>Single</i></li>
                                 </ul>
                             </td>
                             <td>
                                 <ul class="list-radio-vertical">
-                                    <li class="{{ @strtolower($ktp['status_perkawinan']) == 'menikah' ? 'active':''}}"><b>Menikah</b><br><i>Married</i></li>
+                                    <li class="{{ @in_array(strtolower($ktp['status_perkawinan']), ['menikah', 'kawin', 'merried']) ? 'active':''}}"><b>Menikah</b><br><i>Married</i></li>
                                 </ul>
                             </td>
                             <td>
                                 <ul class="list-radio-vertical">
-                                    <li class="{{ @strtolower($ktp['status_perkawinan']) == 'duda' ? 'active':''}}"><b>Duda</b><br><i>Widow</i></li>
+                                    <li class="{{ @in_array(strtolower($ktp['status_perkawinan']), ['cerai hidup', 'cerai mati']) && @strtolower($ktp['jenis_kelamin']) == 'p' ? 'active':''}}"><b>Duda</b><br><i>Widow</i></li>
                                 </ul>
                             </td>
                             <td>
                                 <ul class="list-radio-vertical">
-                                    <li class="{{ @strtolower($ktp['status_perkawinan']) == 'janda' ? 'active':''}}"><b>Janda</b><br><i>Widower</i></li>
+                                    <li class="{{ @in_array(strtolower($ktp['status_perkawinan']), ['cerai hidup', 'cerai mati']) && @strtolower($ktp['jenis_kelamin']) == 'w' ? 'active':''}}"><b>Janda</b><br><i>Widower</i></li>
                                 </ul>
                             </td>
                         </tr>
@@ -784,17 +784,17 @@
                                 <td><b>Paraf</b> / <i>Initial</i></td>
                             </tr>
                             <tr>
-                                <td width="60%"><div class="signature"></div></td>
+                                <td width="60%" align="center"><div class="signature">
+                                    @if (isset($tanda_tangan['path_ttd']))
+                                        <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100">
+                                    @endif
+                                </div></td>
                                 <td><div class="signature"></div></td>
                             </tr>
                             <tr><td colspan="2"><b>Nama Sesuai KTP/Passpor</b> / <i>Name as indicated in ID/Passport</i></td></tr>
                             <tr><td colspan="2"><div class="signature">
                                 <table class="ttd">
-                                    @if (isset($tanda_tangan['path_ttd']))
-                                        <tr><td>SIGNATURE<br/><img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="100"></td></tr>
-                                    @else
-                                        <tr><td>SIGNATURE<br/><br/><br/><br/></td></tr>
-                                    @endif
+                                    <tr><td>SIGNATURE<br/><br/><br/><br/></td></tr>
                                     <tr><td style="border-bottom:solid 1px #222">{{ @$ktp['nama_lengkap'] }}</td></tr>
                                     <tr><td><b>Nasabah</b> / <i>Customer</i></td></tr>
                                 </table>
