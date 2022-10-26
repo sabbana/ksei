@@ -1279,9 +1279,14 @@
                             Jakarta, {{ date('d/m/Y', strtotime($nasabah['active_at'])) }}<br/>
                             Tempat, Tanggal / Bulan / Tahun <i>(Place, dd/mm/yyyy)</i><br/>
                             Nasabah / Customer<br/>
+                            @if (isset($tanda_tangan['path_ttd']))
+                                <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="150">
+                            @else
+                            <br/><br/><br/><br/><br/><br/>
+                            @endif
                         </td></tr>
                     </table>
-                    <br/><br/><br/><br/><br/><br/><br/><br/>
+                    <br/><br/>
                     <hr/>
                     <table>
                         <tr>
@@ -4283,12 +4288,17 @@
             <br/>
             <table>
                 <tr>
-                    <td colspan="3" style="text-align: center; font-weight:bold">Jakarta, 10/06/2022<br/><br/></td>
+                    <td colspan="3" style="text-align: center; font-weight:bold">Jakarta, {{ date('d/m/Y', strtotime($nasabah['active_at'])) }}<br/><br/></td>
                 </tr>
                 <tr>
-                    <td width="40%">
+                    <td width="40%" class="tac">
                         <div class="ttd"><u><b>Nasabah</b> / <i>Customer</i></u></div>
-                        <br/><br/><br/><br/><br/><br/><br/>
+                        <br/>
+                        @if (isset($tanda_tangan['path_ttd']))
+                            <img src="{{ @$tanda_tangan['path_ttd'] }}" alt="paraf" width="150">
+                        @else
+                            <br/><br/><br/><br/><br/><br/>
+                        @endif
                     </td>
                     <td width="20%"></td>
                     <td width="40%">
