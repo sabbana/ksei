@@ -727,7 +727,7 @@
                     <table>
                         <tr>
                             <td>
-                                <b>3. Instruksi Pembayaran (Hasil Transaksi Jual/Divident)</b><br/><i>Payment Instruction</i>
+                                <b>3. Instruksi Pembayaran (Hasil Transaksi Jual/Deviden)</b><br/><i>Payment Instruction</i>
                                 <ul class="list-radio-vertical">
                                     <li class="{{ @strtolower($interuksi_khusus['instruksi_pembayaran']) == 'simpan' ? 'active':'' }}">
                                         <b>Simpan dalam rekening dana atas nama saya</b><br/>
@@ -862,7 +862,7 @@
                                 </b><br>
                             <i>Do you or your family member (including parent/sibling) work for other Securities
                                 Company, Stock Exchange, company regulated by Stock Exchange, Indonesia
-                                Financial Services Authority, Bank, Insurance Company or other similar nancial
+                                Financial Services Authority, Bank, Insurance Company or other similar financial
                                 institution?</i>
                             
                             <table>
@@ -898,7 +898,7 @@
                                 kandung) anda seorang karyawan, direktur atau mempunyai
                                 pengendalian pada suatu Emiten?
                                 </b><br>
-                            <i>Do you or your family members (including your parents/siblings)
+                            <i>Are you or your family members (including your parents/siblings)
                                 an employee, director or control of an Issuer?</i>
                             
                             <table>
@@ -1033,7 +1033,7 @@
                                             <i>
                                                 Required to provide the following supporting documents : copy of non- US
                                                 passport, copy of certi cate of US nationality release, I-407 form or provide
-                                                reason for not having the above certi cation or form.
+                                                reason for not having the above certification or form.
                                             </i>
                                         </div>
                                     </td>
@@ -1512,7 +1512,7 @@
                                     Transaction.</li>
                                 <li><b>"Securities"</b> shall be marketable securities, namely, promissory notes, commercial paper, shares, obligation, debenture, Participation of Collective Investment Contracts,
                                     futures contract related to Securities, and any derivative of Securities.</li>
-                                <li><b>"Issuer"</b> shall be the party who conducts Securities o ering to sell Securities to public based on the procedures set forth in the relevant law and regulations on capital market.</li>
+                                <li><b>"Issuer"</b> shall be the party who conducts Securities offering to sell Securities to public based on the procedures set forth in the relevant law and regulations on capital market.</li>
                                 <li><b>"Force Majeure"</b> shall be the circumstances or event beyond the will and control of the Parties, including but not limited to natural disaster; nuclear and radioactive disaster; war;
                                     revolt; riot; unrest; sabotage; terrorism; strike; re; prohibition by the government or amendment to laws and regulations, Bapepam-LK regulation, OJK regulation, Stock Exchange regulation, LKP Regulations or LPP Regulations which is made after the 
                                     execution hereof that may a ect the implementation of this Agreement; telecommunication interference; technical failure or interference on Stock Exchange’s trading system;
@@ -1549,7 +1549,7 @@
                                                 shall be the state institution established based on the
                                                 Law Number 21 of 2011 on Financial Service Authority,
                                                 which serves to organize the regulatory and supervisory
-                                                system integrated with the entire activities within nancial
+                                                system integrated with the entire activities within financial
                                                 service sector of BAPEPAM-LK as referred to in Article
                                                 3 of the Law Number 8 of 1995 on Capital Market.</li>
                                             <li><b>"Participant"</b> shall be Securities Company or Custodian
@@ -1677,10 +1677,10 @@
                         <li>Nasabah wajib membuka Sub Rekening Efek pada KSEI. Pembukaan Sub Rekening
                             Efek dilakukan Nasabah dengan memberikan kuasa kepada BCAS untuk melaksanakan
                             pembukaan Sub Rekening Efek dan pembuatan nomor tunggal identitas pemodal (single
-                            investor identi cation/SID), sesuai dengan ketentuan dan peraturan yang ditetapkan oleh
+                            investor identification/SID), sesuai dengan ketentuan dan peraturan yang ditetapkan oleh
                             regulator pasar modal. BCAS memiliki kewajiban untuk melaksanakan kuasa pembukaan
                             Sub Rekening Efek dan pembuatan nomor tunggal identitas pemodal (single investor
-                            identi cation/SID) untuk Nasabah.</li>
+                            identification/SID) untuk Nasabah.</li>
                         <li>Nasabah wajib membuka Rekening Dana pada waktu yang bersamaan dengan
                             pembukaan Rekening Efek. Pembukaan Rekening Dana dilakukan oleh Nasabah dengan
                             memberikan kuasa kepada BCAS untuk melaksanakan pembukaan Rekening Dana atas
@@ -1716,10 +1716,10 @@
                         <li>
                             “Beneficial Owner” shall be any party, either directly or indirectly, by agreement or any other means:
                             <ol type="a" style="margin: 0; padding:0 0 0 12px;">
-                                <li>is entitled over and/or to receive particular bene t in relation to :
+                                <li>is entitled over and/or to receive particular benefit in relation to :
                                     <ol style="margin: 0; padding:0 0 0 12px;">
                                         <li>Securities Account; or</li>
-                                        <li>business relation with nancial service provider in capital market;</li>
+                                        <li>business relation with financial service provider in capital market;</li>
                                     </ol>
                                 </li>
                                 <li>is the real owner (ultimate account owner) of the fund in Fund Account and/or
@@ -1734,7 +1734,7 @@
                             their amendments and implementing regulations.</li>
                         <li>“LKP Regulations” shall be the regulations on clearing and settlement of Securities
                             Transaction issued by KPEI.</li>
-                        <li>“LPP Regulations” shall be the regulations on Securities depository issued by KSEI.</li>
+                        <li>“LPP Regulations” shall be the regulations on Securities depository issued by KSEI.</li><br/>
                         <li>“POJK No.12/2017” shall be the Indonesia Financial Service Authority Regulation
                             Number 12/POJK.04/2017 concerning Application of Anti Money Laundering Program
                             and Prevention of Terrorism Funding in Financial Service Sector, including its
@@ -1777,10 +1777,10 @@
                             Customer shall ful ll its obligation in connection with such transaction.</li>
                         <li>The Customer shall open a Securities Sub-Account at KSEI. Securities Sub-Account
                             opening performed by Customer by granting power of attorney to BCAS to open
-                            Securities Sub-Account and obtain single investor identi cation (SID) in accordance with
+                            Securities Sub-Account and obtain single investor identification (SID) in accordance with
                             the provisions and regulations set forth by capital market regulator. BCAS is obliged to
                             perform the authorization of Securities Sub-Account opening and obtaining single investor
-                            identi cation (SID) for the Customer.</li>
+                            identification (SID) for the Customer.</li>
                         <li>The Customer shall open Fund Account at the same time with Securities Account
                             opening. Fund Account opening executed by Customer with granting power of attorney to
                             BCAS to execute opening of Fund Account under Customer name at bank designated by
@@ -1799,7 +1799,7 @@
                                         become a member of management of an Issuer, a
                                         member of the Stock Exchange or capital market
                                         regulatory agencies, or the Customer, either individual
-                                        or institution, become owning Paraf Initial</li>
+                                        or institution, become owning</li>
                                 </ol>
                             </td>
                             <td>
@@ -1933,7 +1933,7 @@
             <div class="box-right">
                 <div class="content" style="line-height:14px">
                     <p class="pdl20">Issuer’s Securities more than 5% ( ve percent). Fault or loss of in any form which
-                        caused by failure to deliver noti cation on data change concerning the Customer to
+                        caused by failure to deliver notification on data change concerning the Customer to
                         BCAS shall be the Customer liability, and the Customer hereby hold harmless
                         BCAS from all claims and demands for any loss which arises from the nonperformance of the obligation above.</p>
                     <p><b>III. BCAS APPOINTMENT</b></p>
@@ -1958,7 +1958,7 @@
                                 <li>open, and operate Securities Sub-Account under Customer name at KSEI for the
                                     Customer benefit;</li>
                                 <li>open and operate Fund Account under the Customer name at BCAS designated
-                                    bank for Customer bene t, including but not limited to debiting, transferring fund
+                                    bank for Customer benefit, including but not limited to debiting, transferring fund
                                     from Fund Account, request document and/or Fund Account data at bank including
                                     but not limited to transfer data dan/or balance at Fund Account and perform other
                                     acts which are required for Fund Account management without any action is
@@ -2088,7 +2088,7 @@
                             Permohonan Pembukaan Rekening Efek berdasarkan Perjanjian ini, dan setiap saat
                             akan menyampaikan kepada BCAS perubahan, tambahan maupun perbaikan atas
                             informasi, data maupun dokumen serta keterangan tersebut.</li>
-                        <li>Nasabah menyatakan bahwa tidak ada pihak lain atau penerima manfaat (bene cial
+                        <li>Nasabah menyatakan bahwa tidak ada pihak lain atau penerima manfaat (beneficial
                             owner) yang memiliki kepentingan terhadap Rekening Efek selain dari pihak-pihak
                             yang dinyatakan secara tegas dalam Formulir Permohonan Pembukaan Rekening
                             Efek.</li>
@@ -2196,7 +2196,7 @@
                             Account Opening Application Form based on this agreement, and shall at any time,
                             deliver to BCAS any change, addition or revision of such information, data, documents
                             and details.</li>
-                        <li>Customer represents that no other party or bene cial owner which own any interest in
+                        <li>Customer represents that no other party or beneficial owner which own any interest in
                             the Securities Account other than the parties explicitly speci ed in the Securities
                             Account Opening Application Form.</li>
                         <li>The Customer represents and warrants that it will not use the Securities broker-dealer
@@ -2214,14 +2214,14 @@
                             money laundering. The Customer shall provide information when required or requested
                             by BCAS and/or the authorities in relation to the source of the Customer’s funds, and
                             the Customer hereby authorize BCAS to verify the origins of Customer’s funds and to
-                            provide Customer’s data and information to the authorized o cial or agency.</li>
+                            provide Customer’s data and information to the authorized official or agency.</li>
                         <li>The Customer hereby declares to obey and to follow all applicable terms and
                             conditions on capital market in Indonesia in connection with Securities Account,
                             Securities Transaction as well as the appointment of BCAS as a Securities brokerdealer hereunder, either as set forth in Bapepam-LK Regulations, OJK Regulations,
                             Stock Exchange Regulations, LKP Regulations, LPP Regulations as well as
-                            regulations and policies set forth by other authorized agencies/o cials, and the
+                            regulations and policies set forth by other authorized agencies/officials, and the
                             applicable rules in BCAS as required by the regulations or policies of the authorized
-                            agencies and/or o cials, either has been and will be and applicable in the future.</li>
+                            agencies and/or officials, either has been and will be and applicable in the future.</li>
                         <li>The Customer hereby acknowledges and agrees that terms and condition of this
                             Agreement may amended from time to time by BCAS in accordance with provision of
                             Section XX of this Agreement. The Customer hereby declares to obey and follow all
@@ -2427,7 +2427,7 @@
                     <p><b>VII. REPRESENTATION CONCERNING RISK</b></p>
                     <p>The Customer acknowledges, understands and realizes that:</p>
                     <ol>
-                        <li>Investment in the capital market bears nancial risks. Securities prices may increase
+                        <li>Investment in the capital market bears financial risks. Securities prices may increase
                             which will bring pro ts for the Customer and may also decrease which cause losses
                             to the Customer, and in addition to the increase and decrease of price, the
                             Securities owned by the Customer may lose its value and become valueless.</li><br/>
@@ -2491,7 +2491,7 @@
                                     <li>In case the funds show negative balance in the
                                         Securities Account, BCAS may use the Securities in
                                         the Securities Account as collateral for loans from
-                                        bank or other nancial institutions and/or execute
+                                        bank or other financial institutions and/or execute
                                         Securities forced selling without prior approval of
                                         the Customer in order to settle Customer’s liabilities.</li>
                                     <li>The Securities benchmark price is which used in
@@ -2662,7 +2662,7 @@
                                 <li>The Customer obligation to ful ll Deposit has been and still met in accordance with
                                     the provision in Section VIII of this Agreement.</li>
                                 <li>If the Customer wishes to buy or sell Securities for other securities company, bank,
-                                    insurance, or other nancial institution, the Customer hereby warrant the availability
+                                    insurance, or other financial institution, the Customer hereby warrant the availability
                                     of fund and/or Securities for the purpose of transaction settlement prior to execute
                                     sell or buy order, and in case the Customer could not provide such fund and/or
                                     Securities, then the Customer agrees to bear and indemnify all losses arising out of
@@ -2878,7 +2878,7 @@
                             Customer to execute purchase transaction through BCAS without prior notification to
                             the Customer until all Customer’s liability to BCAS have been paid off.</li><br/>
                         <li>If the proceed from such Securities sale above is inadequate to settle the Customer’s
-                            liability, then BCAS will deliver letter of sale noti cation and the Customer’s liability
+                            liability, then BCAS will deliver letter of sale notification and the Customer’s liability
                             status and to request the Customer to pay o its liability.</li><br/>
                         <li>Securities sale transaction payment to Fund Account executed by BCAS on the
                             settlement date after the date of Securities Transaction at earliest at 14.00 WIB with
@@ -2908,11 +2908,11 @@
                     <p><b>XII. CONFIRMATION AND REPORTING</b></p>
                     <ol>
                         <li>For any Securities Transaction which has been executed for the Customer interest,
-                            BCAS will deliver transaction con rmation to Customer. The Customer shall be entitled
+                            BCAS will deliver transaction confirmation to Customer. The Customer shall be entitled
                             at any time to request a report and/or verify the consistency between the balance of
-                            Securities Account in the relevant transaction con rmation or BCAS bookkeeping
+                            Securities Account in the relevant transaction confirmation or BCAS bookkeeping
                             against the Customer’s Securities balance in the Securities Sub-Account. All costs
-                            arising out in relation to such report and/or veri cation of balance incurred by BCAS
+                            arising out in relation to such report and/or verification of balance incurred by BCAS
                             and KSEI shall be borne by and the liabilities of the Customer.</li>
                         <li>In case BCAS executes Customer’s instruction to execute Securities Transaction,
                             BCAS will receive a report regarding the status of executed instruction, including but
@@ -2925,11 +2925,11 @@
                             notwithstanding the delay of such reports or there is inconsistency between what the
                             Customer saw on the screen at the transaction or or described by the o cers
                             representing BCAS to deliver such reports.</li>
-                        <li>If the Customer does not approve the con rmation content which was sent by BCAS,
+                        <li>If the Customer does not approve the confirmation content which was sent by BCAS,
                             then the Customer shall submit a written statement within 1 (one) Trading Day after
-                            delivery of such con rmation (with receipt of delivery recorded in BCAS). If within one
+                            delivery of such confirmation (with receipt of delivery recorded in BCAS). If within one
                             (1) Trading Day the Customer does not deliver a written objection, then the Customer
-                            hereby declares that it approves such con rmation and therefore the con rmation shall
+                            hereby declares that it approves such confirmation and therefore the confirmation shall
                             be final.</li>
                     </ol>
                     <table class="table-list">
@@ -3085,7 +3085,7 @@
                     <p><b>XIII. FUNDING</b></p>
                     <ol>
                         <li>The deposit made by the Customer using check/clearing ticket/transfer shall be
-                            deemed valid after the funds are e ective (in good funds) in the Customer Fund Account</li>
+                            deemed valid after the funds are effective (in good funds) in the Customer Fund Account</li>
                         <li>The Customer shall grant an irrevocable power of attorney to BCAS and instruct BCAS to:
                             <ol type="a">
                                 <li>verify and ensure the availability of Customer’s funds in the Fund Account prior to
@@ -3362,7 +3362,7 @@
                                     consecutive times, without release the Customer from all of its outstanding
                                     liabilities either against BCAS and as a consequence of Securities Transaction
                                     which executed by the Customer. For such acts, BCAS shall not be obliged to
-                                    provide clari cation with respect to the basis of such decision.</li>
+                                    provide clarification with respect to the basis of such decision.</li>
                                 <li>The provisions of Article II Paragraph 1 are not fulfilled.</li>
                                 <li>The provisions of Article V are not fulfilled</li>
                                 <li>there is a violation or non-fulfillment of the provisions that apply in the Capital Market, 
@@ -3392,9 +3392,9 @@
                     <br/>
                     <p><b>XX. DURATION, AMENDMENT AND TERMINATION OF AGREEMENT</b></p>
                     <ol style="font-size:10px">
-                        <li>This Agreement e ective as of the date of Securities Account opening application
+                        <li>This Agreement effective as of the date of Securities Account opening application
                             approval by BCAS (except for issues with respect to BCAS’s right to approve or decline
-                            the Securities Account opening application by the Customer e ective as of the
+                            the Securities Account opening application by the Customer effective as of the
                             execution date of Securities Account Opening Form and this Agreement) until
                             termination by BCAS and/or Customer by closing the Securities Account. Termination
                             of Agreement this shall not release BCAS or Customer from the obligations to comply
@@ -3406,9 +3406,9 @@
                                 <ol start="2" style="font-size:10px">
                                     <li>Any amendment or anything which has not been stipulated in this Agreement will be
                                         set forth by BCAS in writing and will be noti ed in advance to the Customer no later
-                                        than 30 (thirty) Business Day prior to e ective date of such amendment or addition.
+                                        than 30 (thirty) Business Day prior to effective date of such amendment or addition.
                                         If there is no objection which submitted by the
-                                        Customer after 30 (thirty) Business Day after noti cation
+                                        Customer after 30 (thirty) Business Day after notification
                                         has been received by the Customer, then the Customer
                                         deemed has. been agree to such amendment or
                                         change. Any amendment or addition based on this
@@ -3553,8 +3553,8 @@
                 <div class="content">
                     <p class="pdl15">caused by changes of Stock Exchange regulation, OJK regulation,LKP regulation, LPP
                         Regulation, or other regulation, such matter will be noti ed in advance to the Customer
-                        no later than 30 (thirty) Business Day before e ective date of such amendment,
-                        addition, revision or reduction. If after 30 (thirty) Business Day after noti cation has
+                        no later than 30 (thirty) Business Day before effective date of such amendment,
+                        addition, revision or reduction. If after 30 (thirty) Business Day after notification has
                         been received by the Customer and the Customer has not submit objection then the
                         Customer deemed has agreed to such amendment, addition, revision or reduction.</p>
                     <ol start="4">
@@ -3563,14 +3563,14 @@
                             a notice of Securities Account closing to the Customer together with the details of right
                             to be received by the Customer or liabilities to be ful lled by the Customer (if any).</li><br/>
                         <li>The Customer shall pay o /ful ll its liabilities to BCAS within 3 (three) Trading Day after
-                            closing noti cation delivered by BCAS. If after such period the Customer has not pay o
+                            closing notification delivered by BCAS. If after such period the Customer has not pay o
                             its liabilities, BCAS entitled to use the Customer’s Securities which available in
                             Securities Account and/or Customer’s Fund which available in Fund Account and sell
                             Customer’s Securities which available in BCAS to pay o Customer’s liabilities with
                             means of sale via Reguler Market, Spot Market or Negotiation Market including with
                             cross mechanism.</li><br/>
                         <li>In case of termination of Agreement by the Customer, notice regarding the termination
-                            of Agreement shall delivered to BCAS within 5 ( ve) Trading Days prior to the e ective
+                            of Agreement shall delivered to BCAS within 5 ( ve) Trading Days prior to the effective
                             date of the termination of Agreement which wishes by the Customer.</li>
                         <li>If this Agreement is terminated, then all Customer’s rights, either funds or Securities
                             owned by the Customer (if any), shall be delivered and/or transferred to the Customer
@@ -3591,7 +3591,7 @@
                             claim against BCAS in case BCAS, after receiving proof of such liquidator, curator or
                             representative designation against Securities Account and/or Fund Account, and
                             hereby the Customer acknowledge and declare that in that case BCAS has no
-                            obligation to request approval or con rmation from the Customer to execute such order
+                            obligation to request approval or confirmation from the Customer to execute such order
                             or instruction.</li>
                         <li>In case of individual Customer’s death, BCAS shall be entitled to request to its
                             inheritor(s) valid copies of death certi cate, legal heir certi cate, testamentary
@@ -3804,7 +3804,7 @@
                             BCAS.</li>
                         <li>The Customer will be chargeable for the use of the Online Trading Facility in
                             accordance with applicable regulations. BCAS has fully the right to amend the
-                            conditions on the amount of the charges with a noti cation to the Customer not later
+                            conditions on the amount of the charges with a notification to the Customer not later
                             than a period of 30 (thirty) working days prior to the validity of the change of the
                             charges. If the Customer fails to submit an objection to such amendment within a
                             period of 30 (thirty) working days, then the Customer is considered to have fully
@@ -3820,20 +3820,20 @@
                         <li>With due observance of the condition at point 7 above, in case the Customer gives
                             order for purchase and sales through the Call Center, the Call Center will verify the
                             data of the Customer for the safety of the Customer. The Customer guarantees and
-                            declares that if the veri cation of BCAS has been conducted properly and may be
+                            declares that if the verification of BCAS has been conducted properly and may be
                             evidenced by BCAS, the Customer will bear any and all rights and obligations that
                             arise from the implementation of the order by BCAS.</li>
-                        <li>BCAS will submit con rmation of the transaction that has been conducted by the
+                        <li>BCAS will submit confirmation of the transaction that has been conducted by the
                             Customer on the same stock exchange day through the e-mail to the Customer in
                             accordance with the e-mail address that has been registered with BCAS. The con
                             rmation which has been sent by BCAS through the e-mail address is considered to
                             have been received by the Customer at the time it is sent by BCAS, and hereby the
-                            Customer agrees that the con rmation which is given by BCAS through the e-mail
+                            Customer agrees that the confirmation which is given by BCAS through the e-mail
                             constitutes accurate and correct information in accordance with the transaction which
                             is conducted by the Customer, and may not be claimed of its accuracy and truth and
                             shall bind the Customer.</li>
                         <li>BCAS fully has the right from time to time to renew, revise, amend and/or terminate
-                            any part of the features of the Online Trading Facility by a noti cation to the Customer.</li>
+                            any part of the features of the Online Trading Facility by a notification to the Customer.</li>
                     </ol><br/><br/>
                     <p><b>XXV. USE OF AUTOMATED ORDERING FACILITY</b></p>
                     <ol style="margin: 0; padding:0 0 0 12px;">
@@ -4270,8 +4270,8 @@
                         <li>The Customer declares that any investment decision, decision to sell and / or purchase
                             of Securities taken by the Customer is based on the Customer’s own consideration and
                             decisions therefore the Customer hold harmless BCAS from responsibility for any loss,
-                            liability, claim, suit, cost including but not limited to on tax liabilities, which may be su
-                            ered or incurred as a result of the Customer’s decision.</li><br/>
+                            liability, claim, suit, cost including but not limited to on tax liabilities, which may be suffered 
+                            or incurred as a result of the Customer’s decision.</li><br/>
                         <li>The Customer warrants and hold harmless BCAS from any loss, claim, or suit that may
                             arise due to information and data delivery concerning the Customer to the authorities
                             by BCAS and the Customer declare shall not make claims or suits againts BCAS if
@@ -4301,9 +4301,10 @@
                         @endif
                     </td>
                     <td width="20%"></td>
-                    <td width="40%">
+                    <td width="40%" class="tac">
                         <div class="ttd"><b>Pejabat Berwenang BCAS</b></div>
-                        <br/><br/><br/><br/><br/><br/><br/>
+                        <br/>
+                        <img src="assets/images/pejabat_bcas.png" alt="ttd pejabat" width="150">
                     </td>
                 </tr>
                 <tr>
@@ -4326,11 +4327,11 @@
                         <table>
                             <tr>
                                 <td width="20%"><b>Nama</b><br/><i>Name</i></td>
-                                <td><div class="textfield"></div></td>
+                                <td><div class="textfield">{{ config('ksei.pejabat_bcas') }}</div></td>
                             </tr>
                             <tr>
                                 <td width="20%"><b>Jabatan</b><br/><i>Position</i></td>
-                                <td><div class="textfield"></div></td>
+                                <td><div class="textfield">{{ config('ksei.jabatan_pejabat_bcas') }}</div></td>
                             </tr>
                         </table>
                     </td>
@@ -4344,7 +4345,7 @@
     <div class="paper">
         <div class="content agreement">
             <div class="box-all">
-                <div class="content">
+                <div class="content grey">
                     <div class="header"><b>KETERANGAN LAIN</b> / <i>OTHER INFORMATION</i></div>
                     <p style="text-align: center;"><br/><b>Mengetahui BCAS dari</b> / <i>Knowing BCAS from</i></p>
                     <table>
@@ -4354,19 +4355,18 @@
                                     <tr>
                                         <td>
                                             <ul class="list-radio-vertical">
-                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'web' ? 'active':'' }}"><b>Website</b><br/><i>Website</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'web' ? 'active':'' }}"><b>Internet</b><br/><i>Internet</i></li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul class="list-radio-vertical">
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'facebook' ? 'active':'' }}"><b>Facebook</b><br/><i>ID</i></li>
                                             </ul>
                                         </td>
                                         <td width="20%"><div class="textfield"></div></td>
                                         <td>
                                             <ul class="list-radio-vertical">
-                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'instagram' ? 'active':'' }}"><b>Instagram</b><br/><i>USER ID</i></li>
-                                            </ul>
-                                        </td>
-                                        <td width="20%"><div class="textfield"></div></td>
-                                        <td>
-                                            <ul class="list-radio-vertical">
-                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'youtube' ? 'active':'' }}"><b>Youtube</b><br/><i>USER ID</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'twitter' ? 'active':'' }}"><b>Twitter</b><br/><i>ID</i></li>
                                             </ul>
                                         </td>
                                         <td width="20%"><div class="textfield"></div></td>
@@ -4374,27 +4374,27 @@
                                     <tr>
                                         <td colspan="2">
                                             <ul class="list-radio-vertical">
-                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'event' ? 'active':'' }}"><b>Acara, Sebutkan</b><br/><i>Event, Specify</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'milis' ? 'active':'' }}"><b>Milis, Sebutkan</b><br/><i>Mailing List, Specify</i></li>
                                             </ul>
                                         </td>
-                                        <td colspan="4"><div class="textfield"></div></td>
+                                        <td colspan="3"><div class="textfield"></div></td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">
                                             <ul class="list-radio-vertical">
-                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'podcast' ? 'active':'' }}"><b>Podcast, Sebutkan</b><br/><i>Podcast, Specify</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'other' ? 'active':'' }}"><b>Lainnya, Sebutkan</b><br/><i>Other, Specify</i></li>
                                             </ul>
                                         </td>
-                                        <td colspan="4"><div class="textfield"></div></td>
+                                        <td colspan="3"><div class="textfield"></div></td>
                                     </tr>
                                 </table>
                             </td>
                             <td>
                                 <table>
                                     <tr>
-                                        <td width="60%">
+                                        <td width="50%">
                                             <ul class="list-radio-vertical">
-                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'referal' ? 'active':'' }}"><b>Referal</b><br/><i>Referral</i></li>
+                                                <li class="{{ strtolower($interuksi_khusus['sumber_info']) == 'referal' ? 'active':'' }}"><b>Teman, Nama</b><br/><i>Friend, Name</i></li>
                                             </ul>
                                         </td>
                                         <td><div class="textfield"></div></td>
@@ -4652,9 +4652,9 @@
                 </div>
             </div>
             <div style="clear:both;margin-bottom:10px"></div>
-            <div class="box-all">
+            <div class="box-all grey">
                 <div class="header"><b>PEJABAT BERWENANG</b> / <i>AUTHORISED OFFICER</i></div>
-                <div class="content">
+                <div class="content" style="padding:10px">
                     <table>
                         <tr>
                             <td width="33%">
@@ -4735,9 +4735,9 @@
                             </td>
                         </tr>
                     </table>
-                    <div class="note">
-                        <b>Catatan</b> / <i>Note</i>
-                    </div>
+                </div>
+                <div class="note">
+                    <b>Catatan</b> / <i>Note</i>
                 </div>
             </div>
             <div class="page_number3">19</div>
