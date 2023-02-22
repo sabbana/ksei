@@ -9,7 +9,7 @@ return [
     'timeout' => 30,
     'accessToken' => 'eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoia2FjdW5nIiwiSXNzdWVyIjoiYmNhc2VrIiwiVXNlcm5hbWUiOiJkZXZlbG9wZXJzdHJlc3MiLCJleHAiOjMzMjE5MTcyNTczLCJpYXQiOjE2NjIyNjM3NzN9.UpFT19Ov5Tgb3XXYzHFHb6givj_wngdYDSHFRtAuhIY',
     'appToken' => 'gFAJtJ4iZkKbnn_wivo1lyp2VcO4C6m3CkS_NZTXQloE2jCorYO8iWPJvvprxxzJVeBu6WF1wjYy',
-    'pejabat_bcas' => 'Donny Kristianto Setiadi',
+    'pejabat_bcas' => 'Donny Kristanto Setiadi',
     'jabatan_pejabat_bcas' => 'Wealth & Channel Management',
     'ttd_pejabat_bcas' => 'assets/images/pejabat_bcas.png',
 ];
