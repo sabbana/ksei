@@ -375,7 +375,7 @@
                             </td>
                             <td>
                                 <ul class="list-radio-vertical">
-                                    <li class="{{ @strtolower($pekerjaan_dan_aset['sumber_dana']) == 'laba usaha' ? 'active':'' }}"><b>Laba Usaha</b><br><i>Bussiness Profit</i></li>
+                                    <li class="{{ @in_array(strtolower($pekerjaan_dan_aset['sumber_dana']), ['laba usaha', 'hasil usaha']) ? 'active':'' }}"><b>Laba Usaha</b><br><i>Bussiness Profit</i></li>
                                 </ul>
                             </td>
                             <td>
@@ -1306,8 +1306,8 @@
                         <li class="active"><b>KTP/Paspor/KITAS</b><br/><i>ID/Paspor/KITAS</i></li>
                         <li class="{{ $npwp['no_npwp'] ? 'active' : ''}}"><b>Nomor Pokok Wajib Pajak (NPWP)</b><br/><i>Taxpayer Identification Number</i></li>
                         <li><b>Surat Kuasa (jika diperlukan)</b><br/><i>Power of Attorney</i></li>
-                        <li><b>Informasi mengenai Pemilik Manfaat/Beneficial Owner (Jika diperlukan)</b><br/><i>Information on Beneficial Owner (if necessary)</i></li>
-                        <li><b>Formulir Rekening Dana Nasabah</b><br/><i>Appliacation Form for Customer</i></li>
+                        <li class="{{ @$pernyataan[5]['jawaban'] == 'tidak' ? '':'active'}}"><b>Informasi mengenai Pemilik Manfaat/Beneficial Owner (Jika diperlukan)</b><br/><i>Information on Beneficial Owner (if necessary)</i></li>
+                        <li class="active"><b>Formulir Rekening Dana Nasabah</b><br/><i>Appliacation Form for Customer</i></li>
                     </ul>
                 </div>
             </div>
